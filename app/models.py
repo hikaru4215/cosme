@@ -1,6 +1,16 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from accounts.models import CustomUser
+
+
+
+class Category(models.Model):
+	name = models.CharField("カテゴリ", max_length=50)
+
+	def __str__(self):
+		return self.name
+
 
 
 class Recommenditem(models.Model):

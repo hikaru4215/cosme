@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Recommenditem, Category
 
-# Register your models here.
+admin.site.register(Recommenditem)
+admin.site.register(Category)
