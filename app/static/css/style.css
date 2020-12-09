@@ -1106,3 +1106,300 @@ transition:1s all;
 .feature-content {
 	margin: 0 10px;
 }
+
+.feature-content > div {
+	width: 320px;
+}
+
+.feature-content h5 {
+	font-weight: 500;
+	padding-bottom: 10px;
+}
+
+.feature-content ul {
+	margin: 10px 0 0 20px;
+}
+
+.feature-content li {
+	list-style: disc;
+	line-height: 1.5em;
+}
+
+.basic-category {
+	width: 127px;
+	position: fixed;
+	border: 1px solid var(--divider);
+}
+
+.basic-category h5 {
+	font-size: 14px;
+	border-bottom: 1px solid var(--divider);
+	background: var(--primary);
+	color: var(--text-icon);
+	padding: 5px 0;
+}
+
+.basic-category li {
+	display: flex;
+	align-items: center;
+	font-size: 13px;
+	line-height: 1em;
+}
+
+.basic-category a {
+	padding: 3px 0;
+	width: 100%;
+	text-decoration: none;
+}
+
+.basic-category a:hover {
+	color: var(--text-primary);
+	background: var(--divider);
+}
+
+
+.basic-category span {
+	font-size: 13px;
+	margin-right: 5px;
+}
+
+.season {
+	margin-top: 30px;
+}
+
+.content {
+	display: none;
+}
+
+.active {
+	display: block;
+}
+/* basic.htmlここまで */
+/* ==================================== */
+/* ==================================== */
+/* ==================================== */
+/* review.htmlここから */
+.count1 {
+	margin-left: 35%;
+}
+.page_review_top {
+	margin-left: 48%;
+}
+
+.page_review_top a:hover {
+	color: var(--text-primary);
+	opacity: 0.6;
+}
+
+.review-wrap {
+	min-width: 355px;
+	max-width: 355px;
+	height: auto;
+	background: var(--light-primary);
+	border: 1px solid rgb(168, 215, 242);
+	padding: 10px;
+	margin: 0 10px 20px;
+}
+
+.new-review-top {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	min-width: 355px;
+	max-width: 355px;
+}
+
+.review p {
+	font-size: 0.75em;
+	margin-left: 20px;
+}
+
+.review-user-name span {
+	font-size: 0.75em;
+}
+
+.review-bg {
+	min-height: 317px;
+	background: var(--text-icon);
+	border: 1px solid var(--divider);
+	padding: 10px;
+}
+
+
+.review-bg img {
+	margin-right: 10px;
+	width: 80px;
+	height: 80px;
+}
+
+.review-bg a {
+	color: var(--text-primary);
+}
+
+.none-img {
+	width: 80px;
+	height: 80px;
+	background-color: var(--divider);
+	margin-right: 10px;
+}
+
+.none-img img:last-child {
+	margin-right: 0;
+}
+
+.review-brand-name {
+	width: 100%;
+}
+
+.review-brand-name li {
+	margin-bottom: 5px;
+}
+
+.review-line {
+	padding-bottom: 10px;
+}
+
+.review-line li:last-child {
+	margin: 0;
+}
+
+.review-img-top {
+	min-height: 100px;
+}
+
+.coment-box {
+	height: 136px;
+	line-height: 1.5em;
+	border: 1px solid var(--divider);
+	padding: 5px 10px;
+	min-height: 125px;
+}
+
+
+.thanks {
+	border: 1px solid var(--text-primary);
+	width: 100px;
+	padding: 5px;
+	margin-left: 10px;
+	background: var(--text-icon);
+}
+
+.category {
+	width: 125px;
+	position: fixed;
+	border: 1px solid var(--divider);
+}
+
+.category h5 {
+	font-size: 14px;
+	padding: 3px 0;
+	background: var(--primary);
+	color: var(--text-icon);
+}
+
+.category li {
+	font-size: 13px;
+	line-height: 1em;
+}
+
+.category a {
+	color: var(--text-primary);
+	width: 100%;
+	text-decoration: none;
+}
+
+.category a:hover {
+	background: var(--divider);
+}
+
+.category span {
+	font-size: 13px;
+	margin-right: 5px;
+}
+
+.search {
+	border-top: 1px solid var(--divider);
+	position: relative;
+}
+
+.search input {
+	height: 24px;
+	width: 122px;
+}
+
+.search button {
+	position: absolute;
+	right: 0;
+}
+
+.search span {
+	margin: 0;
+	font-size: 20px;
+}
+
+.num {
+	font-size: 16px;
+}
+
+.total-count {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.total-count span {
+	margin: 0 10px;
+}
+
+.review-score {
+	padding-left: 10px;
+	margin-bottom: 10px;
+}
+
+.page_num-top {
+	padding: 10px;
+}
+
+.page_num-top a {
+	text-decoration: none;
+	color: var(--text-primary);
+}
+
+.page_num-wrap {
+	border-top: 1px solid var(--divider);
+	padding: 15px;
+}
+
+.page_num-wrap a {
+	text-decoration: none;
+	color: var(--text-primary);
+}
+
+.page_num a {
+	margin-right: 10px;
+	line-height: 1em;
+	text-align: center;
+}
+
+.next-page {
+	border-bottom: 1px solid var(--text-primary);
+}
+
+.next-page:hover {
+	opacity: 0.7;
+}
+
+.active-page{
+	font-weight: 700;
+}
+.return {
+	margin-right: 10px;
+}
+
+.keyword-wrap {
+	margin-left: 43%;
+	margin-bottom: 20px;
+}
+
+.keyword {
+	font-size: 18px;
+}
