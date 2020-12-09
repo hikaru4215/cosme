@@ -1,0 +1,270 @@
+{% extends "app/base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container skin-type-aser-wrap">
+	<div class="skin-type-aser">
+		<ul class="d-flex text-center row">
+			<li class="skin-type-aser1">肌チェック結果</li>
+			<li class="skin-type-aser2">
+				<a href="#advice" class="text-center">
+					<span class="material-icons">
+						keyboard_arrow_down
+					</span>
+					アドバイス
+				</a>
+			</li>
+			<li class="skin-type-aser2">
+				<a href="#recommend">
+					<span class="material-icons">
+						keyboard_arrow_down
+					</span>
+					おすすめ商品
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="anser-wrap">
+		<div class="row">
+			<div class="anser row">
+				{% if user_data %}
+				<h4>{{ user_data }}さんは普通肌タイプです...</h4>
+				{% else %}
+				<h4>あなたは普通肌タイプです...</h4>
+				{% endif %}
+				<p>
+					皮脂の分泌量が適量で、水分量も多い状態です。肌も柔らかく弾力があります。乾燥や皮脂以外の悩みの改善に一番向いている肌質といえます。
+					季節によって変わる可能性もありますが、今の肌質をキープできるようにスキンケアをして健康な肌を保ちましょう。
+				</p>
+			</div>
+			<div class="cause-wrap row">
+				<h4>現在の肌を保つには</h4>
+
+				<div class="d-flex justify-content-around row priority">
+					<div class="priority-wrap">
+						<div class="cause mx-auto">
+							<div class="cause-ball">
+								<h6 class="text-center">優先度１</h6>
+							</div>
+						</div>
+						<div class="cause-text-wrap">
+							<ul class="cause-text">
+								<li>季節の要因に目をむける</li>
+								<li>スキンケアアイテムの見直し</li>
+								<li>紫外線</li>
+							</ul>
+						</div>
+					</div>
+					<div class="priority-wrap">
+						<div class="cause mx-auto">
+							<div class="cause-ball">
+								<h6 class="text-center">優先度2</h6>
+							</div>
+						</div>
+						<div class="cause-text-wrap">
+							<ul class="">
+								<li>スキンケア方法の見直し</li>
+								<li>生活習慣による影響</li>
+							</ul>
+						</div>
+					</div>
+					<div class="priority-wrap">
+						<div class="cause mx-auto">
+							<div class="cause-ball">
+								<h6 class="text-center">優先度3</h6>
+							</div>
+						</div>
+						<div class="cause-text-wrap">
+							<ul class="">
+								<li>ストレスをためない</li>
+								<li>体調不良</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 skintype-dotted">
+					<div class="dotted"></div>
+				</div>
+
+				<div class="byuty-comment-wrap d-flex">
+					<img src="{% static 'img/dry_skin.png' %}" class="order-2">
+					<div class="byuty-comment order-lg-2">
+						<h5>健康的な肌</h5>
+						<p>
+							目で見たり、触ったりできる肌の表面にある、バリア機能が整っている状態です。肌の表面は外からのダメージを受けやすい場所です。お手入れの効果の実感もしやすい場所です。早めにスキンケアの習慣を身につけ健康的で若々しい肌を保ちましょう。
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="" name="advice" id="page-link"></a>
+		<div>
+			<div class="advice-wrap">
+				<h4>スキンケアアドバイス</h4>
+				<div class="advice row">
+					<div class="d-flex justify-content-center advice-content-wrap row">
+						<div class="advice-content advice-content-left">
+							<h5>肌表面の汚れを<span class="accent">リセット</span></h5>
+							<p>
+								洗顔をするときは力加減を意識し優しく汚れを落としてあげてください。洗顔は汚れを落とす重要な役割のアイテムです。今の肌質を保つために丁寧に行いましょう。
+							</p>
+						</div>
+						<div class="advice-content">
+							<h5>栄養を<span class="accent">与えて</span>健康的な肌に</h5>
+							<p>季節に合わせて化粧水、乳液•クリームで保湿、皮脂の適量な分泌を促して肌の働きを良好に保ちましょう。</p>
+						</div>
+						<div class="advice-content advice-content-left">
+							<h5>外的刺激から<span class="accent">ブロック</span></h5>
+							<div class="d-flex">
+								<p class="exclamation text-center">!</p>
+								<p class="point-accent">ポイント</p>
+							</div>
+							<p>紫外線、ホコリなど目に見えないダメージはたくさん。肌をきちんと守るには、日焼け止めの使用がおすすめ。日焼け止めは季節問わず使ってください。</p>
+							<p class="text-center howto mx-auto">
+								<a href="{% url 'skin_feature' %}">
+									How Toを見る
+								</a>
+							</p>
+						</div>
+						<div class="advice-content">
+							<h5>バリア機能を<span class="accent">整える</span></h5>
+							<p>バリア機能が整っています。スキンケアをする際に肌の感触などを確かめながら行い、健康な肌状態を保ちましょう。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="" name="recommend" id="page-link"></a>
+		<div class="recommend">
+			<h4 class="recommend-item-title d-flex align-items-center">おすすめのアイテム</h4>
+			<div class="recommend-data-wrap d-flex row">
+				{% if wash_recommend_data %}
+				<div class="wash-recommend-data d-flex">
+					<div class="recommend-pic">
+						{% if wash_recommend_data.image %}
+						<img src="{{ wash_recommend_data.image.url }}" alt="">
+						{% else %}
+						<div class="">No img</div>
+						{% endif %}
+					</div>
+					<div class="recommend-comment">
+						<ul>
+							<li class="recommend-brand">{{ wash_recommend_data.brand }}</li>
+							<li class="recommend-product">{{ wash_recommend_data.product }}</li>
+							<!-- <li>悩みを入れる</li> -->
+							<li class="recommend-category">
+								&lt; 洗顔 &gt; {{ wash_recommend_data.capacity }}
+							</li>
+						</ul>
+						<ul class="d-flex trouble_name">
+							{% if wash_recommend_data.trouble_name1%}
+							<li class="trouble_name1">
+								{{ wash_recommend_data.trouble_name1 }}
+							</li>
+							{% endif %}
+							{% if wash_recommend_data.trouble_name2 %}
+							<li class="trouble_name2">
+								{{ wash_recommend_data.trouble_name2 }}
+							</li>
+							{% endif %}
+							{% if wash_recommend_data.trouble_name3 %}
+							<li class="trouble_name3">
+								{{ wash_recommend_data.trouble_name3 }}
+							</li>
+							{% endif %}
+							{% if wash_recommend_data.trouble_name4 %}
+							<li class="trouble_name4">
+								{{ wash_recommend_data.trouble_name4 }}
+							</li>
+							{% endif %}
+						</ul>
+						<div class="recommend-dotted dotted"></div>
+						<p class="recommend-content">{{ wash_recommend_data.content }}</p>
+						<div class="recommend-dotted dotted"></div>
+						<p class="recommend-price">
+							<span class="ml-2">価格</span>
+							{{ wash_recommend_data.price }}
+							<span class="ml-2">円</span>
+						</p>
+						<ul class="recommend-btn d-flex row">
+							<li class="offcial mx-auto">
+								<a class="btn" href="{{ wash_recommend_data.official_page }}" target="_blank">
+									公式サイト
+								</a>
+							</li>
+							<li class="rakuten mx-auto">
+								<a class="btn" href="{{ wash_recommend_data.rakuten_page }}" target="_blank">
+									楽天で詳細
+								</a>
+							</li>
+							<li class="amazon mx-auto">
+								<a class="btn" href="{{ wash_recommend_data.amazon_page }}" target="_blank">
+									Amazonで詳細
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				{% endif %}
+				{% if toner_recommend_data %}
+				<div class="wash-recommend-data d-flex">
+					<div class="recommend-pic">
+						{% if toner_recommend_data.image %}
+						<img src="{{ toner_recommend_data.image.url }}" alt="">
+						{% else %}
+						<div class="">No img</div>
+						{% endif %}
+					</div>
+					<div class="recommend-comment">
+						<ul>
+							<li class="recommend-brand">{{ toner_recommend_data.brand }}</li>
+							<li class="recommend-product">{{ toner_recommend_data.product }}</li>
+							<!-- <li>悩みを入れる</li> -->
+							<li class="recommend-category">
+								&lt; 化粧水 &gt; {{ toner_recommend_data.capacity }}
+							</li>
+						</ul>
+						<ul class="d-flex trouble_name">
+							{% if toner_recommend_data.trouble_name1%}
+							<li class="trouble_name1">
+								{{ toner_recommend_data.trouble_name1 }}
+							</li>
+							{% endif %}
+							{% if toner_recommend_data.trouble_name2 %}
+							<li class="trouble_name2">
+								{{ toner_recommend_data.trouble_name2 }}
+							</li>
+							{% endif %}
+							{% if toner_recommend_data.trouble_name3 %}
+							<li class="trouble_name3">
+								{{ toner_recommend_data.trouble_name3 }}
+							</li>
+							{% endif %}
+							{% if toner_recommend_data.trouble_name4 %}
+							<li class="trouble_name4">
+								{{ toner_recommend_data.trouble_name4 }}
+							</li>
+							{% endif %}
+						</ul>
+						<div class="recommend-dotted dotted"></div>
+						<p class="recommend-content">{{ toner_recommend_data.content }}</p>
+						<div class="recommend-dotted dotted"></div>
+						<p class="recommend-price">
+							<span class="mr-2">価格</span>
+							{{ toner_recommend_data.price }}
+							<span class="ml-2">円</span>
+						</p>
+						<ul class="recommend-btn d-flex row">
+							<li class="offcial mx-auto">
+								<a class="btn" href="{{ toner_recommend_data.official_page }}" target="_blank">
+									公式サイト
+								</a>
+							</li>
+							<li class="rakuten mx-auto">
+								<a class="btn" href="{{ toner_recommend_data.rakuten_page }}" target="_blank">
+									楽天で詳細
+								</a>
