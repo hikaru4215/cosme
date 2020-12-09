@@ -2739,3 +2739,272 @@ footer span {
 		height: auto;
 	}
 
+
+	.list {
+		width: 243px;
+	}
+
+	.reiew-img-wrap {
+		width: 100%;
+	}
+
+	.reiew-img-wrap img {
+		display: block;
+		margin: 0 auto;
+	}
+
+
+	.none-img-wrap {
+		width: 100%;
+	}
+
+	.none-img {
+		margin-right: 10px;
+	}
+
+	.edit-review {
+		min-width: 271px;
+	}	
+
+	.keyword {
+		margin-left: 38%;
+	}
+
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+	.sukincare-img {
+		width: 100%;
+		background: var(--text-icon);
+	}
+
+	.basic-wash {
+		border: none;
+	}
+
+	.sukincare-img img {
+		display: flex;
+		margin: 0 auto 10px;
+	}
+
+	.skin-type-aser-wrap {
+		padding: 25px;
+	}
+	.feature-content > div {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.feature-content > div:last-child {
+		margin-bottom: 0;
+	}
+
+	.header-top {
+		background: var(--divider);
+		height: 1px;
+	}
+
+	.header-top > div {
+		display: none;
+	}
+
+	nav {
+		display: none;
+	}
+
+	.header-color {
+		background: var(--divider);
+	}
+
+	.sidebarIconToggle {
+		position: absolute;
+		top: 20px;
+	}
+
+	.humberger-menu {
+		display: block;
+	}
+	
+	.review-user-bg {
+		display: none;
+	}
+
+	.basic {
+		width: 100%;
+	}
+
+	.basic-nav li{
+		display: none;
+	}
+
+
+	.review-user-bg-none {
+		display: none;
+	}
+
+	.review-user-bg-there {
+		display: none;
+	}
+
+	.advice-content-left {
+		margin-right: 0px;
+	}
+
+	.skin-type-aser ul{
+		display: flex;
+		justify-content: center;
+	}
+
+	.skin-type-aser li {
+		margin-bottom: 20px;
+		margin-right: 0px;
+	}
+
+	.skin-type-aser li:last-child {
+		margin-bottom: 0px;
+	}
+
+	.review-top-content-none {
+		width: 175px;
+	}
+
+	.review-top-content {
+		width: 335px;
+	}
+
+
+}
+
+@media (min-width: 0px) and (max-width: 991px) {
+	.wash-recommend-data {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.mypage-allnew {
+		display: none;
+	}
+	.review-side-wrap-none {
+		display: none;
+	}
+	.new-member-wrap {
+		display: none;
+	}
+
+	.review {
+		margin-right: 0;
+	}
+
+	.user {
+		display: none;
+	}
+
+	.review-detail-comment {
+		display: flex;
+		flex-direction: column;
+		margin: 15px 10px;
+	}
+
+	.review-detail-comment h6 {
+		margin-bottom: 10px;
+	}
+
+	.review-detail-product {
+		padding: 15px 10px;
+		width: 100%;
+	}
+
+	.basic-bg {
+		margin-right: 0;
+	}
+
+	.basic-category {
+		display: none;
+	}
+
+	.login-title-wrap {
+		margin: 0 auto;
+	}
+
+	.mypage {
+		display: none;
+	}
+
+	.byuty-comment-wrap {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.byuty-comment-wrap img {
+		margin: 0 auto;
+	}
+
+	.myreview-list-wrap {
+		height: auto;
+	}
+
+	.myreview-list {
+		min-height: 300px;
+	}
+
+	.priority-wrap {
+		margin-bottom: 20px;
+	}
+
+	.basic-item2 {
+		margin-left: 40px;
+	}
+
+	.basic-item3 {
+		margin-top: 40px;
+	}
+}
+
+
+@media(min-width: 576px) and (max-width: 767px) {
+	.check3, .check5 {
+		width: 490px;
+	}
+
+	.container {
+		min-width: 516px;
+	}
+
+	.basic-wash-wrap {
+		width: 528px;
+		margin: 50px auto 0;
+		background: var(--light-primary);
+		padding: 5px;
+	}
+
+	.basic-wash {
+		width: 528px;
+		background: var(--text-icon);
+		padding: 10px;
+		border-bottom: none;
+	}
+
+	.sukincare-img {
+		width: 100%;
+		background: var(--text-icon);
+		padding-bottom: 10px;
+		border: 1px solid var(--divider);
+		border-top: none;
+	}
+
+	.sukincare-img img {
+		display: flex;
+		margin: 0 auto;
+		width: 50%;
+		margin-bottom: 10px;
+		border: 1px solid var(--divider);
+	}
+
+
+	.men-women-mt {
+		margin-top: 40px;
+	}
+
+	.reviewform-bg-w {
+		min-width: 484px;
+	}
