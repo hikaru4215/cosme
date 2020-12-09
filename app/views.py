@@ -267,6 +267,12 @@ class MixskinView(View):
 		})
 
 
+class SkinFeatureView(View):
+	def get(self, request, *args, **kwargs):
+		return render(request, 'app/skin_feature.html')
+
+
+
 
 class ThanksView(View):
 	def get(self, request, *args, **kwargs):
