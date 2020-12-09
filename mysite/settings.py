@@ -38,13 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks', 
-    'app',
+    'app', 
     'accounts', 
     'django.contrib.sites', 
     'allauth', 
     'allauth.account', 
-    'allauth.socialaccount' 
+    'allauth.socialaccount' ,
+    'allauth.socialaccount.providers.google',
+    'social_django'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -69,6 +72,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'app.context_processors.common',
+                'social_django.context_processors.backends', 
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -127,6 +133,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 SITE_ID = 1
+LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
@@ -139,3 +146,28 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.open_id.OpenIdAuth',  
+    'social_core.backends.google.GoogleOpenId',  
+    'social_core.backends.google.GoogleOAuth2',  
+    'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '123',
+            'secret': '456',
+            'key': ''
+        }
+    }
+}
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1075291830929-b7rkpsnanudpdvfnn0e0v039j87qrhrr.apps.googleusercontent.com'  #Paste CLient Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'dgCo9LM48PkB0wT7UQb8YBe1' #Paste Secret Key
