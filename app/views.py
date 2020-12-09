@@ -252,6 +252,20 @@ class OilyskinView(View):
 			'user_data':user_data,
 		})
 
+class NormalskinView(View):
+	def get(self, request, *args, **kwargs):
+		user_data = CustomUser.objects.get(id=request.user.id)
+		return render(request, 'app/normalskin.html', {
+			'user_data':user_data,
+		})
+
+class MixskinView(View):
+	def get(self, request, *args, **kwargs):
+		user_data = CustomUser.objects.get(id=request.user.id)
+		return render(request, 'app/mixskin.html', {
+			'user_data':user_data,
+		})
+
 
 
 class ThanksView(View):
