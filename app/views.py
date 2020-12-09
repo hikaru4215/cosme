@@ -272,6 +272,405 @@ class SkinFeatureView(View):
 		return render(request, 'app/skin_feature.html')
 
 
+class ReviewView(LoginRequiredMixin,View):
+	def get(self, request, *args, **kwargs):
+		# 全てのreview
+		review = Review.objects.order_by('-id')
+		#全てのreview件数
+		total_count = review.count()
+		#1ページに出す件数
+		paginator = Paginator(review, 10)
+		#現在のページ
+		page = request.GET.get('page')
+		#10件のreview
+		all_review = paginator.get_page(page)
+
+		return render(request, 'app/review.html', {
+			'total_count': total_count,
+			'all_review': all_review
+			})
+
+
+class ReviewDetailView(View):
+	def get(self, request, *args, **kwargs):
+		#review全件
+		review = Review.objects.all()
+		# 詳細のデータ
+		review_data = review.get(id=self.kwargs['pk'])
+		#詳細のデータのユーザー
+		detail_user = review_data.user
+		user_count = review.filter(user=detail_user).count()
+		#自分のプロフィール
+		user_data = CustomUser.objects.get(id=request.user.id)
+		#自分が投稿したreviewの件数
+		user_review = review.filter(user=user_data)
+		count = user_review.count()
+		#自分が投稿したreviewの最新
+		new_review = user_review.order_by('-id')
+		if new_review:
+			new_review = new_review[0]
+		#review全体の中から最新のもの
+		all_review_new = review.order_by('-id')
+		new_data = all_review_new[0]
+
+		form = ReviewForm(request.POST or None)
+
+		return render(request, 'app/review_detail.html', {
+			'user_count':user_count,
+			'new_data':new_data,
+			'count':count,
+			'form': form,
+			'user_data': user_data,
+			'review_data': review_data,
+			'new_review':new_review,
+			})
+
+
+class CreateReviewView(LoginRequiredMixin, View):
+	def get(self, request, *args, **kwargs):
+		user_data = CustomUser.objects.get(id=request.user.id)
+		review = Review.objects.filter(user=user_data)
+		count = review.count()
+		new_review = review.order_by('-id')
+
+		if new_review:
+			new_review = new_review[0]
+
+		new = new_review
+		all_review_new = Review.objects.order_by('-id')
+		new_data = all_review_new[0]
+
+		form = ReviewForm(request.POST or None)
+
+		return render(request, 'app/review_form.html', {
+			'new_data':new_data,
+			'new':new,
+			'count':count,
+			'form': form,
+			'user_data': user_data,
+			})
+
+	def post(self, request, *args, **kwargs):
+		form = ReviewForm(request.POST or None)
+
+		if form.is_valid():
+			review_data = Review()
+			review_data.user = request.user
+			review_data.brand = form.cleaned_data['brand']
+			review_data.product = form.cleaned_data['product']
+			category = form.cleaned_data['category']
+			category_data = Category.objects.get(name=category)
+			review_data.category = category_data
+			price = form.cleaned_data['price']
+			price_data = Price.objects.get(price=price)
+			review_data.price = price_data
+			score = form.cleaned_data['score']
+			score_data = Score.objects.get(scores=score)
+			review_data.score = score_data
+			review_data.comment = form.cleaned_data['comment']
+			if request.FILES:
+				review_data.image = request.FILES.get('image')
+			review_data.save()
+			return redirect('review_detail', review_data.id)
+
+		return render(request, 'app/review_form.html', {
+			'form': form
+		})
+
+
+class ReviewEditView(LoginRequiredMixin, View):
+	def get(self, request, *args, **kwargs):
+		user_data = CustomUser.objects.get(id=request.user.id)
+		count = Review.objects.filter(user=user_data).count()
+		new_review = Review.objects.filter(user=user_data).order_by('-id')
+
+		if new_review:
+			new_review = new_review[0]
+
+		new = new_review
+		all_review_new = Review.objects.order_by('-id')
+		new_data = all_review_new[0]
+
+		review_data = Review.objects.get(id=self.kwargs['pk'])
+		form = ReviewForm(
+			request.POST or None,
+			initial={
+				'brand': review_data.brand,
+				'product': review_data.product,
+				'category': review_data.category,
+				'price': review_data.price,
+				'score': review_data.score,
+				'comment': review_data.comment,
+				'image': review_data.image,
+			}
+		)
+
+		return render(request, 'app/review_edit.html', {
+			'form': form,
+			'new_data':new_data,
+			'new':new,
+			'count':count,
+			'form': form,
+			'user_data': user_data,
+		})
+
+	
+	def post(self, request, *args, **kwargs):
+		form = ReviewForm(request.POST or None)
+
+		if form.is_valid():
+			review_data = Review.objects.get(id=self.kwargs['pk'])
+			review_data.brand = form.cleaned_data['brand']
+			review_data.product = form.cleaned_data['product']
+			category = form.cleaned_data['category']
+			category_data = Category.objects.get(name=category)
+			review_data.category = category_data
+			price = form.cleaned_data['price']
+			price_data = Price.objects.get(price=price)
+			review_data.price = price_data
+			score = form.cleaned_data['score']
+			score_data = Score.objects.get(scores=score)
+			review_data.score = score_data
+			review_data.comment = form.cleaned_data['comment']
+			if request.FILES:
+				review_data.image = request.FILES.get('image')
+			review_data.save()
+			return redirect('review_detail', self.kwargs['pk'])
+
+		return render(request, 'app/review_form.html', {
+			'form': form
+		})
+
+
+class ReviewDeleteView(View):
+	def get(self, request, *args, **kwargs):
+		#削除するreview
+		review_data = Review.objects.get(id=self.kwargs['pk'])
+		#本人ユーザーデータ名
+		user_data = CustomUser.objects.get(id=request.user.id)
+		#本人ユーザーのreview件数
+		user_review =  Review.objects.filter(user=user_data)
+		count = user_review.count()
+		#本人ユーザーの最新クチコミ
+		new_review = user_review.order_by('-id')
+		if new_review:
+			new＿review = new_review[0]
+		#全てのreviewから最新のもの	
+		all_review_new = Review.objects.order_by('-id')
+		new_data = all_review_new[0]
+
+		form = ReviewForm(request.POST or None)
+
+		return render(request, 'app/review_delete.html', {
+			'new_data':new_data,
+			'new_review':new_review,
+			'count':count,
+			'form': form,
+			'user_data': user_data,
+			'review_data': review_data
+			})
+
+	def post(self, request, *args, **kwargs):
+		review_data = Review.objects.get(id=self.kwargs['pk'])
+		review_data.delete()
+		return redirect('myreview_list')
+
+
+class MyReviewListView(LoginRequiredMixin,View):
+	def get(self, request, *args, **kwargs):
+		# 全てのreview
+		review = Review.objects.order_by('-id')
+		# 全てのreviewから最新のもの
+		review_new = review[0]
+		#ユーザーデータの取得
+		user_data = CustomUser.objects.get(id=request.user.id)
+		#ユーザーのreviewを取得
+		review_user = review.filter(user=user_data)
+		#ユーザーのreview件数を取得
+		review_count = review_user.count()
+		#1ページに出す件数
+		paginator = Paginator(review_user, 5)
+		#現在のページ
+		page = request.GET.get('page')
+		#10件のreview
+		all_review = paginator.get_page(page)
+		#ユーザーのクチコミ件数の取得
+		count = Review.objects.filter(user=user_data).count()
+
+		return render(request, 'app/myreview_list.html', {
+			'review_count':review_count,
+			'user_data': user_data,
+			'count':count,
+			'review_user':review_user,
+			'review_new':review_new,
+			'all_review': all_review
+		})
+
+
+class CategoryView(View):
+	def get(self, request, *args, **kwargs):
+		#全てのreview
+		review = Review.objects.order_by('-id')
+		#カテゴリーでフィルター
+		category_name = Category.objects.get(name=self.kwargs['category'])
+		print(category_name)
+		#全てのreviewからフィルターしたものの件数
+		total_count = review.filter(category=category_name).count()
+		#1ページに出す件数
+		paginator = Paginator(review.filter(category=category_name), 10)
+		#ページ数をゲット
+		page = request.GET.get('page')
+		#
+		all_review = paginator.get_page(page)
+
+		return render(request, 'app/review.html', {
+			'category_name':category_name,
+			'all_review': all_review,
+			'total_count':total_count,
+		})
+
+
+class PriceView(View):
+	def get(self, request, *args, **kwargs):
+		#全てのreview
+		review = Review.objects.order_by('-id')
+		#カテゴリーでフィルター
+		category_name = Price.objects.get(price=self.kwargs['price'])
+		#全てのreviewからフィルターしたものの件数
+		total_count = review.filter(price=category_name).count()
+		#1ページに出す件数
+		paginator = Paginator(review.filter(price=category_name), 10)
+		#ページ数をゲット
+		page = request.GET.get('page')
+		#
+		all_review = paginator.get_page(page)
+
+		return render(request, 'app/review.html', {
+			'category_name':category_name,
+			'all_review': all_review,
+			'total_count':total_count,
+		})
+
+
+class ScoreView(View):
+	def get(self, request, *args, **kwargs):
+		#全てのreview
+		review = Review.objects.order_by('-id')
+		#カテゴリーでフィルター
+		category_name = Score.objects.get(scores=self.kwargs['score'])
+		#全てのreviewからフィルターしたものの件数
+		total_count = review.filter(score=category_name).count()
+		#1ページに出す件数
+		paginator = Paginator(review.filter(score=category_name), 10)
+		#ページ数をゲット
+		page = request.GET.get('page')
+		#
+		all_review = paginator.get_page(page)
+
+		return render(request, 'app/review.html', {
+			'category_name':category_name,
+			'all_review': all_review,
+			'total_count':total_count,
+		})
+
+
+
+class SearchView(View):
+	def get(self, request, *args, **kwargs):
+		#全てのreview
+		review_data = Review.objects.order_by('-id')
+		#キーワード取得
+		keyword = request.GET.get('keyword')
+
+
+		query_il = []
+
+		if keyword:
+			exclusion_list = set([' ', '　'])
+			query_list = ''
+			for word in keyword:
+				if not word in exclusion_list:
+					query_list += word
+			query = reduce(and_, [Q(brand__icontains=q) | Q(comment__icontains=q) for q in query_list])
+			query_il.append(reduce(and_, [Q(brand__icontains=q) | Q(comment__icontains=q) for q in query_list]))
+			all_review = review_data.filter(query)
+			#検索でヒットした件数
+			total_count = all_review.count()
+			#ヒットした10件を1ページに表示
+			# paginator = Paginator(review_data.filter(query), 10)
+			# #現在のページ取得
+			# page = request.GET.get('page')
+			# #
+			# all_review = paginator.get_page(page)
+
+
+		return render(request, 'app/review.html', {
+			'keyword': keyword,
+			'all_review': all_review,
+			'total_count':total_count,
+		})
+
+
+
+class ContactView(View):
+	def get(self, request, *args, **kwargs):
+		form = ContactForm(request.POST or None)
+
+		return render(request, 'app/contact.html', {
+			'form': form
+		})
+
+
+	def post(self, request, *args, **kwargs):
+		form = ContactForm(request.POST or None)
+
+		if form.is_valid():
+			name = form.cleaned_data['name']
+			email = form.cleaned_data['email']
+			content = form.cleaned_data['content']
+			subject = 'お問い合わせありがとうございます。'
+			message = textwrap.dedent('''
+				※このメールはシステムからの自動返信です。
+                
+                {name} 様
+                
+                お問い合わせありがとうございました。
+                以下の内容でお問い合わせを受け付けいたしました。
+                内容を確認させていただき、ご返信させて頂きますので、少々お待ちください。
+                
+                --------------------
+                ■お名前
+                {name}
+                
+                ■メールアドレス
+                {email}
+                
+                ■メッセージ
+                {content}
+                --------------------
+                ''').format(
+					name=name,
+					email=email,
+					content=content
+				)
+
+			to_list = [email]
+			bcc_list = [settings.EMAIL_HOST_USER]
+
+			try:
+				message = EmailMessage(subject=subject, body=message, to=to_list, bcc=bcc_list)
+				message.send()
+			except BadHeaderError:
+				return HttpResponse("無効なヘッダが検出されました。")
+
+			return redirect('thanks')
+
+		return render(request, 'app/contact.html', {
+			'form':form
+		})
+
+
+
 
 
 class ThanksView(View):
