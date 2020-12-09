@@ -2423,3 +2423,319 @@ transition:1s all;
 .signup-title p {
 	margin: 20px 0 50px;
 }
+
+
+.signup h4 {
+	height: 50px;
+	background: var(--text-secondary);
+	color: var(--text-icon);
+	line-height: 50px;
+	padding: 0 10px;
+	font-weight: 600;
+}
+
+.signup h5 {
+	height: 50px;
+	background: var(--divider);
+	color: var(--text-primary);
+	line-height: 50px;
+	padding: 0 10px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.signup div {
+	margin-bottom: 20px;
+}
+
+.signup input {
+	height: 50px;
+	border: 1px solid var(--text-primary);
+	padding: 5px 10px;
+	width: 100%;
+}
+
+.signup-content p {
+	margin: 10px 0 0 10px;
+}
+
+.signup-pass p {
+	margin: 50px 0 10px 10px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.signup_btn {
+	margin-top: 50px;
+}
+/* signup.htmlここまで */
+/* ==================================== */
+/* ==================================== */
+/* ==================================== */
+/* thanks.htmlここから */
+.contact-thanks-wrap {
+	margin-top: 50px;
+}
+
+.contact-thanks-wrap p {
+	margin-top: 20px;
+	line-height: 20px;
+}
+
+.contact-thanks {
+	width: 220px;
+	height: 50px;
+	margin: 50px;
+	border: 1px solid var(--primary);
+	border-radius: 4px;
+}
+
+.contact-thanks a {
+	text-decoration: none;
+	width: 100%;
+	height: 100%;
+	color: var(--primary);
+}
+
+.contact-thanks a:hover {
+	color: var(--text-icon);
+	background: var(--primary);
+}
+
+/* thanks.htmlここから */
+/* ==================================== */
+/* ==================================== */
+/* ==================================== */
+/* footerここから */
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: var(--text-primary);
+	color: var(--text-icon);
+}
+
+footer span {
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+@media (min-width: 0px) and (max-width: 575px) {
+	.keyword-wrap {
+		margin-left: 0px;
+		text-align: center;
+	}
+
+	.keyword-wrap span {
+		margin-left: 0px;
+	}
+
+	.img-center {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.page_review_top {
+		margin-left: 0px;
+		justify-content: center;
+	}
+	body {
+		margin-top: 100px;
+	}
+
+	.category {
+		display: none;
+	}
+
+	.review-top {
+		width: 327px;
+		margin: 30px 24px 0;
+	}
+
+	.review-wrap {
+		margin-left: 0;
+	}
+
+	.review-detail-img {
+		width: 100px;
+		height: 100px;
+	}
+
+	.feature-border > h5 {
+		margin-bottom: 20px;
+	}
+
+	.season > h5 {
+		margin-bottom: 20px;
+	}
+
+	.image img{
+		width: 160px;
+		height: 100px;
+	}
+
+	.basic-nav li {
+		width: 200px;
+		margin-bottom: 15px;
+	}
+
+	.basic-nav li:last-child {
+		margin-bottom: 0;
+	}
+
+	.basic-nav a {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.container {
+		max-width: 325px;
+	}
+
+	.basic-wash-wrap {
+		margin: 0 auto;
+		margin-bottom: 40px;
+		width: 343px;
+		background: var(--light-primary);
+		border-radius: 4px;
+		padding: 5px;
+	}
+
+	.basic-wash {
+		width: 343px;
+		background: var(--text-icon);
+		padding: 10px;
+	}
+
+	.menu {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.menu li {
+		margin: 0 auto 40px;
+		display: flex;
+		flex-direction: column;
+		width: 310px;
+		/* margin-bottom: 40px; */
+	}
+
+	.basic-item-wrap {
+		margin-top: 0;
+		display: flex;
+		justify-content: center;
+	}
+
+	.basic-item h5 {
+		border-top: none;
+	}
+
+	.basic-item a {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.basic-item img {
+		width: 100px;
+		height: 100px;
+	}
+
+	.index-wrap > div {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.line {
+		height: 1px;
+		width: 307px;
+		background: var(--text-secondary);
+	}
+
+	.first-content {
+		width: 307px;
+	}
+
+	.bg-color-w {
+		padding: 25px;
+	}
+
+	.bg-color-w h5 {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.review-user-bg {
+		width: 100%;
+	}
+
+	.review-user {
+		width: 100%;
+	}
+
+	.logout-btn-bg {
+		margin-right: 0;
+	}
+
+	.logout a {
+		margin-top: 25px;
+	}
+
+	.reviewform-bg-w {
+		min-width: 280px;
+	}
+
+	.review {
+		min-width: 248px;
+	}
+
+	.mypage-review {
+		min-width: 273px;
+	}
+
+	.myreview-list-wrap {
+		min-width: 293px;
+	}
+
+	.myreview-list {
+		min-width: 261px;
+	}
+
+	.check3 {
+		display: flex;
+		justify-content: center;
+		padding-left: 0px;
+		width: 275px;
+		margin-left: 0px;
+	}
+	
+	.check5 {
+		display: flex;
+		justify-content: center;
+		width: 275px;
+		padding-left: 0px;
+		margin-left: 0px;
+	}
+
+	.list_item label {
+		margin-right: 0px;
+	}
+
+
+	.priority-wrap {
+		width: 225px;
+	}
+
+	.cause-wrap  {
+		width: 275px;
+	}
+
+	.byuty-comment-wrap {
+		width: 275px;
+	}
+
+	.byuty-comment-wrap img {
+		width: 225px;
+		height: auto;
+	}
+
