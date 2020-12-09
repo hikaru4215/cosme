@@ -73,6 +73,90 @@ class IndexView(View):
 				checked_il.append("pores_point")
 			elif x == 3:
 				checked_il.append("acne_point")
+			if checked_len == 4:
+			trouble1 = checked_il[0]
+			trouble2 = checked_il[1]
+			trouble3 = checked_il[2]
+			trouble4 = checked_il[3]
+
+			recommend_data = Recommenditem.objects.order_by(trouble1).order_by(trouble2).order_by(trouble3).order_by(trouble4).filter(skintype=skintype_data).filter(age=age).filter(price_data=price)
+
+			wash_recommend_data = recommend_data.filter(item=wash_item)
+
+
+			if wash_recommend_data:
+				wash_recommend_data = wash_recommend_data[0]
+
+			toner_recommend_data = recommend_data.filter(item=toner_item)
+			if toner_recommend_data:
+				toner_recommend_data = toner_recommend_data[0]
+
+			cream_recommend_data = recommend_data.filter(item=cream_item)
+
+			if cream_recommend_data:
+				cream_recommend_data = cream_recommend_data[0]
+
+			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
+			if sunscreen_recommend_data:
+				sunscreen_recommend_data = sunscreen_recommend_data[0]
+
+			if skintype_data =='混合肌':
+				file_template = 'app/mixskin.html'
+			elif skintype_data == '普通肌':
+				file_template = 'app/normalskin.html'
+			elif skintype_data == '脂性肌':
+				file_template = 'app/oilyskin.html'
+			elif skintype_data == '乾燥肌':
+				file_template = 'app/dryskin.html'
+			else:
+				file_template = 'app/index.html'
+			return render(request, file_template, {
+			'wash_recommend_data': wash_recommend_data,
+			'toner_recommend_data': toner_recommend_data,
+			'cream_recommend_data': cream_recommend_data,
+			'sunscreen_recommend_data': sunscreen_recommend_data,
+			})
+			
+		
+		elif checked_len == 3:
+			trouble1 = checked_il[0]
+			trouble2 = checked_il[1]
+			trouble3 = checked_il[2]
+
+			recommend_data = Recommenditem.objects.order_by(trouble1).order_by(trouble2).order_by(trouble3).filter(skintype=skintype_data).filter(age=age).filter(price_data=price)
+
+			wash_recommend_data = recommend_data.filter(item=wash_item)
+			if wash_recommend_data:
+				wash_recommend_data = wash_recommend_data[0]
+
+			toner_recommend_data = recommend_data.filter(item=toner_item)
+			if toner_recommend_data:
+				toner_recommend_data = toner_recommend_data[0]
+
+			cream_recommend_data = recommend_data.filter(item=cream_item)
+			if cream_recommend_data:
+				cream_recommend_data = cream_recommend_data[0]
+
+			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
+			if sunscreen_recommend_data:
+				sunscreen_recommend_data = sunscreen_recommend_data[0]
+
+			if skintype_data =='混合肌':
+				file_template = 'app/mixskin.html'
+			elif skintype_data == '普通肌':
+				file_template = 'app/normalskin.html'
+			elif skintype_data == '脂性肌':
+				file_template = 'app/oilyskin.html'
+			elif skintype_data == '乾燥肌':
+				file_template = 'app/dryskin.html'
+			else:
+				file_template = 'app/index.html'
+			return render(request, file_template, {
+			'wash_recommend_data': wash_recommend_data,
+			'toner_recommend_data': toner_recommend_data,
+			'cream_recommend_data': cream_recommend_data,
+			'sunscreen_recommend_data': sunscreen_recommend_data,
+			})
 
 
 class ThanksView(View):
