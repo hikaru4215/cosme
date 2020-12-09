@@ -1,6 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
-
+from .models import Recommenditem, Review, Category, Price, Score
+from .forms import ContactForm, ReviewForm
+from django.conf import settings
+from django.http import HttpResponse, JsonResponse
+from django.core.mail import BadHeaderError, EmailMessage, send_mail
+from django.contrib.auth.mixins import LoginRequiredMixin
+from accounts.models import CustomUser
 
 class IndexView(View):
 	def get(self, request, *args, **kwargs):
@@ -26,7 +32,7 @@ class IndexView(View):
 
 		skintype_data = []
 
-				if dry_skintype >= 6 and oil_skintype >= 6:
+		if dry_skintype >= 6 and oil_skintype >= 6:
 			skintype_data.append("混合肌")
 		elif dry_skintype <= 3 and oil_skintype <= 3:
 			skintype_data.append("普通肌")
@@ -73,7 +79,8 @@ class IndexView(View):
 				checked_il.append("pores_point")
 			elif x == 3:
 				checked_il.append("acne_point")
-			if checked_len == 4:
+
+		if checked_len == 4:
 			trouble1 = checked_il[0]
 			trouble2 = checked_il[1]
 			trouble3 = checked_il[2]
@@ -84,8 +91,8 @@ class IndexView(View):
 			wash_recommend_data = recommend_data.filter(item=wash_item)
 
 
-			if wash_recommend_data:
-				wash_recommend_data = wash_recommend_data[0]
+		if wash_recommend_data:
+			wash_recommend_data = wash_recommend_data[0]
 
 			toner_recommend_data = recommend_data.filter(item=toner_item)
 			if toner_recommend_data:
@@ -157,7 +164,8 @@ class IndexView(View):
 			'cream_recommend_data': cream_recommend_data,
 			'sunscreen_recommend_data': sunscreen_recommend_data,
 			})
-				elif checked_len == 2:
+
+		elif checked_len == 2:
 			trouble1 = checked_il[0]
 			trouble2 = checked_il[1]
 			recommend_data = Recommenditem.objects.order_by(trouble1).order_by(trouble2).filter(skintype=skintype_data).filter(age=age).filter(price_data=price)
@@ -228,6 +236,22 @@ class IndexView(View):
 			'cream_recommend_data': cream_recommend_data,
 			'sunscreen_recommend_data': sunscreen_recommend_data,
 			})
+
+
+class DryskinView(View):
+	def get(self, request, *args, **kwargs):
+		user_data = CustomUser.objects.get(id=request.user.id)
+		return render(request, 'app/dryskin.html', {
+			'user_data':user_data,
+		})
+
+class OilyskinView(View):
+	def get(self, request, *args, **kwargs):
+		user_data = CustomUser.objects.get(id=request.user.id)
+		return render(request, 'app/oilyskin.html',{
+			'user_data':user_data,
+		})
+
 
 
 class ThanksView(View):
