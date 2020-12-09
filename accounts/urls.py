@@ -1,8 +1,10 @@
 from django.urls import path
 from accounts import views
+from django.conf.urls import include
 
 urlpatterns = [
-		# path('login/', views.LoginView.as_view(), name='account_login'),
-	# path('signup/', views.SignupView.as_view(), name='account_signup'),
+	path('signup/', views.SignupView.as_view(), name='account_signup'),
+	path('login/', views.LoginView.as_view(), name='account_login'),
+	path('logout/', views.LogoutView.as_view(), name='account_logout'),
+	path('oauth/', include('social_django.urls', namespace='social')),
 ]
-
