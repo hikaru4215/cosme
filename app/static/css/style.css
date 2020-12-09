@@ -2124,3 +2124,302 @@ transition:1s all;
 	border-radius: 4px;
 	text-decoration: none;
 }
+
+
+.review-new {
+	position: absolute;
+	top: 170px;
+	left: -1px;
+}
+
+.myreview-list-btn {
+	margin-top: 20px;
+	color: var(--primary);
+}
+
+.myreview-list-btn a {
+	text-decoration: none;
+}
+
+.myreview-list-btn a:hover {
+	color: var(--primary);
+}
+
+/* myreviewlist.htmlここまで */
+/* ==================================== */
+/* ==================================== */
+/* ==================================== */
+/* contact.htmlここから */
+.contact-wrap {
+	margin: 50px 0;
+}
+
+.contact-title {
+	font-weight: 600;
+}
+
+.contact-wrap p {
+	margin: 20px 0 50px;
+}
+
+.contact h4 {
+	height: 50px;
+	background: var(--text-secondary);
+	color: var(--text-icon);
+	line-height: 50px;
+	padding-left: 10px;
+	font-weight: 600;
+}
+
+.contact h5 {
+	height: 50px;
+	background: var(--divider);
+	color: var(--text-primary);
+	line-height: 50px;
+	padding-left: 10px;
+	font-weight: 600;
+}
+
+.contact div {
+	margin-top: 20px;
+}
+
+.contact-write {
+	margin-top: 20px;
+}
+
+.contact input {
+	/* width: 450px; */
+	height: 50px;
+	border: 1px solid #333;
+	padding: 0 10px;
+	/* margin: 0 20px; */
+}
+
+.contact textarea {
+	border: 1px solid #333;
+	padding: 5px 10px;
+	/* margin-left: 20px; */
+}
+
+.contact-text {
+	margin-top: 20px;
+}
+
+.btn-bg-color {
+	margin-top: 50px;
+	position: relative;
+	border: 1px solid rgb(0, 100, 212);
+	background: rgb(110, 200, 212);
+	/* background: linear-gradient(340deg ,var(--primary), rgb(110, 200, 212)); */
+	width: 224px;
+	height: 49px;
+	border-radius: 4px;
+}
+
+.btn-bg-color button {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 220px;
+	height: 45px;
+	line-height: 45px;
+	background: var(--primary);
+	box-shadow: -3px -5px 10px rgb(0, 90, 212) inset;
+	color: var(--text-icon);
+	border-radius: 4px;
+}
+.google {
+	margin-bottom: 50px;
+}
+
+.btn-bg-color a {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 220px;
+	height: 45px;
+	line-height: 45px;
+	background: var(--primary);
+	box-shadow: -3px -5px 10px rgb(0, 90, 212) inset;
+	color: var(--text-icon);
+	border-radius: 4px;
+}
+
+/* contact.htmlここまで */
+/* ==================================== */
+/* ==================================== */
+/* ==================================== */
+/* login.htmlここから */
+.login-top {
+	margin: 50px auto;
+}
+.login-title-wrap {
+	margin: 0 40px;
+}
+
+.login-title {
+	font-weight: 600;
+}
+
+.login-content {
+	margin-top: 20px;
+	line-height: 20px;
+}
+
+.login-content a {
+	color: var(--primary);
+	border-bottom: 1px solid var(--primary);
+	text-decoration: none;
+}
+
+.login-wrap {
+	margin-top: 20px;
+}
+
+.write-field {
+	margin-top: 20px;
+}
+
+.login {
+	margin-right: 40px;
+}
+
+.login h4 {
+	height: 50px;
+	background: var(--text-secondary);
+	color: var(--text-icon);
+	line-height: 50px;
+	font-weight: 600;
+}
+
+.login h5 {
+	height: 50px;
+	background: var(--divider);
+	color: var(--text-primary);
+	line-height: 50px;
+	font-weight: 600;
+}
+
+.pass {
+	margin-top: 20px;
+}
+
+.login input {
+	width: 100%;
+	height: 50px;
+	border: 1px solid var(--text-primary);
+	padding: 5px 10px;
+}
+
+.login-btn {
+	margin: 20px 0;
+	padding-bottom: 20px;
+}
+
+
+.new-member-wrap  h4 {
+	height: 50px;
+	background: var(--text-secondary);
+	color: var(--text-icon);
+	line-height: 50px;
+	font-weight: 600;
+}
+
+.new-member p {
+	color: var(--primary);
+	margin-top: 20px;
+	line-height: 1.5em;
+}
+
+.new-member-wrap a {
+	width: 225px;
+	height: 50px;
+	line-height: 50px;
+	border-radius: 4px;
+	margin-top: 20px;
+	text-decoration: none;
+	border: 1px solid var(--primary);
+	color: var(--primary);
+}
+
+.new-member-wrap a:hover {
+	background: var(--primary);
+	color: var(--text-icon);
+	border: 1px solid rgb(0, 100, 212);
+}
+
+/* login.htmlここまで */
+/* ==================================== */
+/* ==================================== */
+/* ==================================== */
+/* logout.htmlここから */
+.logout-wrap {
+	margin-top: 50px;
+}
+
+.logout-wrap p {
+	margin-top: 20px;
+	line-height: 20px;
+}
+
+.logout-btn-bg {
+	margin-top: 50px;
+	position: relative;
+	border: 1px solid rgb(255, 40, 34);
+	background: rgb(255, 150, 130);
+	/* background: linear-gradient(340deg ,#FF5722, #FFCCBC); */
+	width: 159px;
+	height: 49px;
+	border-radius: 4px;
+	margin-right: 50px;
+}
+
+.logout-btn-bg  button {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 155px;
+	height: 45px;
+	line-height: 45px;
+	background: #FF5722;
+	box-shadow: -3px -5px 10px rgb(255, 40, 34) inset;
+	color: var(--text-icon);
+	border-radius: 4px;
+}
+
+.logout-btn-bg  button:hover {
+	color: var(--text-icon);
+}
+
+.logout a {
+	width: 160px;
+	height: 50px;
+	color: var(--primary);
+	line-height: 50px;
+	margin-top: 50px;
+	border: 1px solid var(--primary);
+}
+
+.logout a:hover {
+	color: var(--text-icon);
+	background: var(--primary);
+	border: 1px solid rgb(0, 100, 212);
+}
+/* logout.htmlここまで */
+/* ==================================== */
+/* ==================================== */
+/* ==================================== */
+/* signup.htmlここから */
+.signup-top {
+	margin: 50px auto;
+}
+
+.signup-title h4 {
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.signup-title p {
+	margin: 20px 0 50px;
+}
