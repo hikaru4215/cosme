@@ -131,4 +131,182 @@
 				</div>
 			</div>
 		</div>
-		
+		<a href="" name="recommend" id="page-link"></a>
+		<div class="recommend">
+			<h4 class="recommend-item-title d-flex align-items-center">おすすめのアイテム</h4>
+			<div class="recommend-data-wrap d-flex row">
+				{% if wash_recommend_data %}
+				<div class="wash-recommend-data d-flex">
+					<div class="recommend-pic">
+						{% if wash_recommend_data.image %}
+						<img src="{{ wash_recommend_data.image.url }}" alt="">
+						{% else %}
+						<div class="">No img</div>
+						{% endif %}
+					</div>
+					<div class="recommend-comment">
+						<ul>
+							<li class="recommend-brand">{{ wash_recommend_data.brand }}</li>
+							<li class="recommend-product">{{ wash_recommend_data.product }}</li>
+							<!-- <li>悩みを入れる</li> -->
+							<li class="recommend-category">
+								&lt; 洗顔 &gt; {{ wash_recommend_data.capacity }}
+							</li>
+						</ul>
+						<ul class="d-flex trouble_name">
+							{% if wash_recommend_data.trouble_name1%}
+							<li class="trouble_name1">
+								{{ wash_recommend_data.trouble_name1 }}
+							</li>
+							{% endif %}
+							{% if wash_recommend_data.trouble_name2 %}
+							<li class="trouble_name2">
+								{{ wash_recommend_data.trouble_name2 }}
+							</li>
+							{% endif %}
+							{% if wash_recommend_data.trouble_name3 %}
+							<li class="trouble_name3">
+								{{ wash_recommend_data.trouble_name3 }}
+							</li>
+							{% endif %}
+							{% if wash_recommend_data.trouble_name4 %}
+							<li class="trouble_name4">
+								{{ wash_recommend_data.trouble_name4 }}
+							</li>
+							{% endif %}
+						</ul>
+						<div class="recommend-dotted dotted"></div>
+						<p class="recommend-content">{{ wash_recommend_data.content }}</p>
+						<div class="recommend-dotted dotted"></div>
+						<p class="recommend-price">
+							<span class="ml-2">価格</span>
+							{{ wash_recommend_data.price }}
+							<span class="ml-2">円</span>
+						</p>
+						<ul class="recommend-btn d-flex row">
+							<li class="offcial mx-auto">
+								<a class="btn" href="{{ wash_recommend_data.official_page }}" target="_blank">
+									公式サイト
+								</a>
+							</li>
+							<li class="rakuten mx-auto">
+								<a class="btn" href="{{ wash_recommend_data.rakuten_page }}" target="_blank">
+									楽天で詳細
+								</a>
+							</li>
+							<li class="amazon mx-auto">
+								<a class="btn" href="{{ wash_recommend_data.amazon_page }}" target="_blank">
+									Amazonで詳細
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				{% endif %}
+				{% if toner_recommend_data %}
+				<div class="wash-recommend-data d-flex">
+					<div class="recommend-pic">
+						{% if toner_recommend_data.image %}
+						<img src="{{ toner_recommend_data.image.url }}" alt="">
+						{% else %}
+						<div class="">No img</div>
+						{% endif %}
+					</div>
+					<div class="recommend-comment">
+						<ul>
+							<li class="recommend-brand">{{ toner_recommend_data.brand }}</li>
+							<li class="recommend-product">{{ toner_recommend_data.product }}</li>
+							<!-- <li>悩みを入れる</li> -->
+							<li class="recommend-category">
+								&lt; 化粧水 &gt; {{ toner_recommend_data.capacity }}
+							</li>
+						</ul>
+						<ul class="d-flex trouble_name">
+							{% if toner_recommend_data.trouble_name1%}
+							<li class="trouble_name1">
+								{{ toner_recommend_data.trouble_name1 }}
+							</li>
+							{% endif %}
+							{% if toner_recommend_data.trouble_name2 %}
+							<li class="trouble_name2">
+								{{ toner_recommend_data.trouble_name2 }}
+							</li>
+							{% endif %}
+							{% if toner_recommend_data.trouble_name3 %}
+							<li class="trouble_name3">
+								{{ toner_recommend_data.trouble_name3 }}
+							</li>
+							{% endif %}
+							{% if toner_recommend_data.trouble_name4 %}
+							<li class="trouble_name4">
+								{{ toner_recommend_data.trouble_name4 }}
+							</li>
+							{% endif %}
+						</ul>
+						<div class="recommend-dotted dotted"></div>
+						<p class="recommend-content">{{ toner_recommend_data.content }}</p>
+						<div class="recommend-dotted dotted"></div>
+						<p class="recommend-price">
+							<span class="mr-2">価格</span>
+							{{ toner_recommend_data.price }}
+							<span class="ml-2">円</span>
+						</p>
+						<ul class="recommend-btn d-flex row">
+							<li class="offcial mx-auto">
+								<a class="btn" href="{{ toner_recommend_data.official_page }}" target="_blank">
+									公式サイト
+								</a>
+							</li>
+							<li class="rakuten mx-auto">
+								<a class="btn" href="{{ toner_recommend_data.rakuten_page }}" target="_blank">
+									楽天で詳細
+								</a>
+							</li>
+							<li class="amazon mx-auto">
+								<a class="btn" href="{{ toner_recommend_data.amazon_page }}" target="_blank">
+									Amazonで詳細
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				{% endif %}
+				{% if cream_recommend_data %}
+				<div class="wash-recommend-data d-flex">
+					<div class="recommend-pic">
+						{% if cream_recommend_data.image %}
+						<img src="{{ cream_recommend_data.image.url }}" alt="">
+						{% else %}
+						<div class="">No img</div>
+						{% endif %}
+					</div>
+					<div class="recommend-comment">
+						<ul>
+							<li class="recommend-brand">{{ cream_recommend_data.brand }}</li>
+							<li class="recommend-product">{{ cream_recommend_data.product }}</li>
+							<li class="recommend-category">
+								&lt; 乳液•クリーム &gt; {{ cream_recommend_data.capacity }}
+							</li>
+						</ul>
+						<ul class="d-flex trouble_name">
+							{% if cream_recommend_data.trouble_name1%}
+							<li class="trouble_name1">
+								{{ cream_recommend_data.trouble_name1 }}
+							</li>
+							{% endif %}
+							{% if cream_recommend_data.trouble_name2 %}
+							<li class="trouble_name2">
+								{{ cream_recommend_data.trouble_name2 }}
+							</li>
+							{% endif %}
+							{% if cream_recommend_data.trouble_name3 %}
+							<li class="trouble_name3">
+								{{ cream_recommend_data.trouble_name3 }}
+							</li>
+							{% endif %}
+							{% if cream_recommend_data.trouble_name4 %}
+							<li class="trouble_name4">
+								{{ cream_recommend_data.trouble_name4 }}
+							</li>
+							{% endif %}
+						</ul>
