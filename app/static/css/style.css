@@ -3008,3 +3008,191 @@ footer span {
 	.reviewform-bg-w {
 		min-width: 484px;
 	}
+
+
+	.review {
+		min-width: 452px;
+	}
+
+	.mypage-review {
+		min-width: 484px;
+	}
+
+	.myreview-list-wrap {
+		min-width: 506px;
+	}
+
+	.myreview-list {
+		min-width: 500px;
+	}
+
+	.check3 {
+		padding-left: 45px;
+		margin-left: 0px;
+		width: 490px;
+	}
+	
+	.check5 {
+		padding-left: 45px;
+		margin-left: 0px;
+		width: 490px;
+	}
+
+	.review-top-content-none {
+		width: 175px;
+	}
+
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+	
+	.check3, .check5 {
+		width: 588px;
+	}
+
+	.container {
+		max-width: 638px;
+	}
+
+	.check3 {
+		padding-left: 95px;
+	}
+
+	.check5 {
+		padding-left: 95px;
+		width: 500px;
+	}
+
+	.review-top-content {
+		width: 478px;
+	}
+
+	.review-side-wrap-none {
+		margin: 10px 0 0 422px;
+	}
+
+	.review-user-bg-none {
+		width: 244px;
+	}
+
+	.reviewform-bg-w {
+		max-width: 638px;
+	}
+
+	.review {
+		max-width: 588px;
+	}
+
+	.review-list-bg {
+		min-width: 584px;
+	}
+
+	.review-user-bg {
+		width: 245px;
+	}
+
+	.review-user {
+		width: 237px;
+	}
+
+	.review-new {
+		width: 245px;
+	}
+
+	.review-gray {
+		width: 245px;
+	}
+
+	.review-user-bg-there {
+		width: 245px;
+	}
+
+	.review-user-none {
+		width: 238px;
+	}
+
+	.reviewform-bg {
+		max-width: 538px;	
+	}
+	
+	.myreview-list-wrap {
+		min-width: 538px;
+	}
+
+	.myreview-list {
+		min-width: 500px;
+	}
+
+	.mypage-review {
+		min-width: 584px;
+	}
+
+	.review-bg {
+		min-height: 225px;
+	}
+
+	.review-wrap {
+		min-width: 480px;
+		max-width: 480px;
+	}
+
+	.coment-box {
+		min-height: 100px;
+	}
+
+	.advice-content-wrap > div {
+		max-width: 250px;
+	}
+
+	.recommend-pic {
+		width: 200px;
+		height: 200px;
+		margin: 0 auto;
+	}
+
+
+.skin-type-aser li {
+	width: 159px;
+	height: 80px;
+	font-size: 1.25em;
+	margin-right: 20px;
+}
+
+.skin-type-aser li:last-child {
+	margin-right: 0px;
+}
+
+.skin-type-aser1 {
+	line-height: 58px;
+	padding: 10px;
+}
+}
+
+
+@media (min-width: 992px) {
+	.container {
+		max-width: 892px;
+	}
+
+}
+
+/* .mypage_newreview {
+	margin-top: 125px;
+} */
+
+.relativ {
+	position: relative;
+}
+@media(min-width: 576px) and (max-width: 991px) {
+	.priority-wrap {
+		display: flex;
+		/* justify-content: space-between; */
+		min-width: 400px;
+	}
+
+	.priority-wrap ul {
+		width: 200px;
+	}
+
+
+}
