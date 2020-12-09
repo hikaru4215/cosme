@@ -229,3 +229,217 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
 /* base.htmlここから */
+header {
+	border-bottom: 1px solid var(--text-primary);
+}
+
+.header-top {
+	height: 30px;
+	font-size: 12px;
+	background: var(--divider);
+}
+
+.header-ber li {
+	margin-right: 20px;
+}
+
+.header-ber li:last-child {
+	margin-right: 0;
+}
+
+.header-ber a {
+	color: var(--text-primary);
+}
+
+.header-color {
+	background: var(--text-icon);
+	height: 50px;
+}
+
+.header-color .container {
+	height: 100%;
+}
+
+.header-nav {
+	height: 100%;
+}
+
+.header-nav h4 {
+	font-size: 24px;
+	color:var(--primary);
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.header-nav nav {
+	height: 100%;
+}
+
+.header-nav ul {
+	height: 100%;
+}
+.radius {
+	border-radius: 10px;
+}
+
+.header-nav li {
+	height: 100%;
+}
+
+.header-nav a {
+	height: 100%;
+	padding: 0 10px;
+	text-decoration: none;
+	color: var(--text-primary);
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+}
+
+.header-nav a:hover {
+	background: linear-gradient(180deg, rgba(30, 160, 212), var(--primary));
+	color: var(--text-icon);
+}
+
+
+/* base.htmlここまで */
+/* ============================= */
+/* ============================= */
+/* ============================= */
+/* index.htmlここから */
+.index-wrap {
+	margin-top: 50px;
+}
+
+.index-wrap h1 {
+	font-weight: 300;
+	letter-spacing: 0.1em;
+	line-height: 60px;
+}
+
+.check {
+	font-weight: 600;
+}
+
+.checked-color {
+	background: pink;
+}
+
+.list_item {
+	position: relative;
+	font-weight: 600;
+}
+
+.list_item input {
+	position: absolute;
+	top: 32px;
+	left: 10px;
+} 
+
+.check_order {
+	font-size: 18px;
+	position: absolute;
+	top: 26px;
+	left: 12px;
+	z-index: 10;
+	color: var(--text-primary);
+}
+
+/* radioボタン */
+.input-btn div {
+	z-index: 1;
+	position: absolute;
+	top: 29px;
+	left: 7px;
+	width: 20px;
+	height: 20px;
+	background: var(--divider);
+	border-radius: 50%;
+}
+
+
+.cp_ipradio .option-input {
+	margin: 0 1rem 0 0;
+
+}
+
+.cp_ipradio .option-input:before,
+.cp_ipradio .option-input:after {
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	left: 0px;
+	width: 178px;
+	height: 78px;
+	content: '';
+	background: var(--text-icon);
+}
+.cp_ipradio .option-input:after {
+	z-index: -2;
+	top: 0px;
+	left: 0px;
+	width: 178px;
+	height: 80px;
+}
+.cp_ipradio .option-input:checked:before {
+	top: -31px;
+	left: -9px;
+	background: var(--light-primary);
+}
+
+
+/* radioボタン */
+
+.skincare {
+	color: var(--light-primary);
+}
+
+.line {
+	height: 170px;
+	width: 1px;
+	background: var(--text-secondary);
+	margin: 0 30px;
+}
+
+
+.first-content p {
+	margin: 20px 0;
+	line-height: 2em;
+}
+
+.start-btn {
+	margin-top: 50px;
+	width: 250px;
+	height: 60px;
+	background: var(--light-primary);
+	line-height: 60px;
+	font-size: 30px;
+	color: var(--text-icon);
+	border-radius: 10px;
+}
+
+.start-btn:hover {
+	opacity: 0.7;
+}
+
+.bg-color-g {
+	background: var(--color3);
+	border-radius: 10px;
+	padding: 20px 10px;
+}
+
+.index h4 {
+	font-size: 24px;
+}
+
+.bg-color-w {
+	padding: 25px;
+}
+
+.question {
+	color: var(--light-primary);
+	font-size: 45px;
+	margin-right: 20px;
+}
+
+.puestion-title {
+	margin-top: 20px;
