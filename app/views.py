@@ -129,7 +129,6 @@ class IndexView(View):
 			'sunscreen_recommend_data': sunscreen_recommend_data,
 			})
 			
-		
 		elif checked_len == 3:
 			trouble1 = checked_il[0]
 			trouble2 = checked_il[1]
@@ -601,13 +600,6 @@ class SearchView(View):
 			all_review = review_data.filter(query)
 			#検索でヒットした件数
 			total_count = all_review.count()
-			#ヒットした10件を1ページに表示
-			# paginator = Paginator(review_data.filter(query), 10)
-			# #現在のページ取得
-			# page = request.GET.get('page')
-			# #
-			# all_review = paginator.get_page(page)
-
 
 		return render(request, 'app/review.html', {
 			'keyword': keyword,
