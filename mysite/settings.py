@@ -169,7 +169,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'dgCo9LM48PkB0wT7UQb8YBe1' #Paste Secret Key
 DEBUG = False
 
 try:
-    form .local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
 
