@@ -96,8 +96,8 @@ class IndexView(View):
 			wash_recommend_data = recommend_data.filter(item=wash_item)
 
 
-		if wash_recommend_data:
-			wash_recommend_data = wash_recommend_data[0]
+			if wash_recommend_data:
+				wash_recommend_data = wash_recommend_data[0]
 
 			toner_recommend_data = recommend_data.filter(item=toner_item)
 			if toner_recommend_data:
