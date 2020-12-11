@@ -334,16 +334,12 @@ class CreateReviewView(LoginRequiredMixin, View):
 	def get(self, request, *args, **kwargs):
 		#クチコミ全件取得
 		review= Review.objects.order_by('-id')
-		print(review)
 		#ユーザーデータの取得
 		user_data = CustomUser.objects.get(id=request.user.id)
-		print(user_data)
 		#クチコミからユーザーのもののみ取得
 		user_review = review.filter(user=user_data)
-		print(review)
 		#ユーザーのクチコミ件数取得
 		count = user_review.count()
-		print(count)
 		#全部のクチコミから新しいもの1件
 		if review:
 			review = review[0]
@@ -489,31 +485,31 @@ class ReviewDeleteView(View):
 
 class MyReviewListView(LoginRequiredMixin,View):
 	def get(self, request, *args, **kwargs):
-		# 全てのreview
-		review = Review.objects.order_by('-id')
-		# 全てのreviewから最新のもの
-		review_new = review[0]
+		#クチコミ全件取得
+		review= Review.objects.order_by('-id')
 		#ユーザーデータの取得
 		user_data = CustomUser.objects.get(id=request.user.id)
-		#ユーザーのreviewを取得
-		review_user = review.filter(user=user_data)
-		#ユーザーのreview件数を取得
-		review_count = review_user.count()
+		#クチコミからユーザーのもののみ取得
+		user_review = review.filter(user=user_data)
+		#ユーザーのクチコミ件数取得
+		count = user_review.count()
 		#1ページに出す件数
-		paginator = Paginator(review_user, 5)
+		paginator = Paginator(review, 5)
 		#現在のページ
 		page = request.GET.get('page')
 		#10件のreview
 		all_review = paginator.get_page(page)
-		#ユーザーのクチコミ件数の取得
-		count = Review.objects.filter(user=user_data).count()
+		#全部のクチコミから新しいもの1件
+		if review:
+			review = review[0]
+		#ユーザーのクチコミ最新
+		if user_review:
+			user_review = user_review[0]
 
 		return render(request, 'app/myreview_list.html', {
-			'review_count':review_count,
 			'user_data': user_data,
 			'count':count,
-			'review_user':review_user,
-			'review_new':review_new,
+			'review':review,
 			'all_review': all_review
 		})
 
