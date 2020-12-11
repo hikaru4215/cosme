@@ -162,8 +162,8 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1075291830929-b7rkpsnanudpdvfnn0e0v039j87qrhrr.apps.googleusercontent.com'  #Paste CLient Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'dgCo9LM48PkB0wT7UQb8YBe1' #Paste Secret Key
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1075291830929-b7rkpsnanudpdvfnn0e0v039j87qrhrr.apps.googleusercontent.com'  #Paste CLient Key
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'dgCo9LM48PkB0wT7UQb8YBe1' #Paste Secret Key
 
 
 DEBUG = False
