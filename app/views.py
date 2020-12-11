@@ -332,23 +332,30 @@ class ReviewDetailView(View):
 
 class CreateReviewView(LoginRequiredMixin, View):
 	def get(self, request, *args, **kwargs):
+		#クチコミ全件取得
+		review= Review.objects.order_by('-id')
+		print(review)
+		#ユーザーデータの取得
 		user_data = CustomUser.objects.get(id=request.user.id)
-		review = Review.objects.filter(user=user_data)
-		count = review.count()
-		new_review = review.order_by('-id')
-
-		if new_review:
-			new_review = new_review[0]
-
-		new = new_review
-		all_review_new = Review.objects.order_by('-id')
-		new_data = all_review_new[0]
+		print(user_data)
+		#クチコミからユーザーのもののみ取得
+		user_review = review.filter(user=user_data)
+		print(review)
+		#ユーザーのクチコミ件数取得
+		count = user_review.count()
+		print(count)
+		#全部のクチコミから新しいもの1件
+		if review:
+			review = review[0]
+		#ユーザーのクチコミ最新
+		if user_review:
+			user_review = user_review[0]
 
 		form = ReviewForm(request.POST or None)
 
 		return render(request, 'app/review_form.html', {
-			'new_data':new_data,
-			'new':new,
+			'review':review,
+			'user_review':user_review,
 			'count':count,
 			'form': form,
 			'user_data': user_data,

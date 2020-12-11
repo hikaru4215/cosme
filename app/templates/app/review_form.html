@@ -70,52 +70,52 @@
 						</div>
 					</div>
 					<div class="my-review">
-						{% if new %}
+						{% if user_review %}
 						<p>あなたのクチコミ</p>
 						<div class="review-gray">
 							<div class="review-white">
 								<div class="new-image">
-									{% if new.image %}
+									{% if user_review.image %}
 									<img src="{{ new.image.url }}" alt="" width="60px" height="60px">
 									{% else %}
 									<div class="review-img-none mx-auto">Non<br> Img</div>
 									{% endif %}
 									<ul class="review-form-side">
 										<li></li>
-										<li>{{ new.brand }}</li>
-										<li>{{ new.product }}</li>
-										<li>{{ new.score }}</li>
+										<li>{{ user_review.brand }}</li>
+										<li>{{ user_review.product }}</li>
+										<li>{{ user_review.score }}</li>
 									</ul>
 								</div>
 								<div class="dotted"></div>
 								<div class="review-edit text-center">
-									<a href="{% url 'review_edit' new.id %}" class="">
+									<a href="{% url 'review_edit' user_review.id %}" class="">
 										編集</a>
 								</div>
 							</div>
 						</div>
 						<div class="all-review-new">
-							<p>あなたのクチコミ</p>
-							{% if new_data %}
+							<p>最新のクチコミ</p>
+							{% if review %}
 							<div class="review-gray">
 								<div class="review-white">
 									<div class="new-image">
-										{% if new_data.image %}
-										<img src="{{ new_data.image.url }}" alt="" width="60px" height="60px">
+										{% if review.image %}
+										<img src="{{ review.image.url }}" alt="" width="60px" height="60px">
 										{% else %}
 										<div
 										class="review-img-none mx-auto d-flex justify-content-center align-items-center">
 										No<br> Img</div>
 										{% endif %}
 										<ul class="review-form-side">
-											<li>{{ new_data.brand }}</li>
-											<li>{{ new_data.product }}</li>
-											<li>{{ new_data.score }}</li>
+											<li>{{ review.brand }}</li>
+											<li>{{ review.product }}</li>
+											<li>{{ review.score }}</li>
 										</ul>
 									</div>
 									<div class="dotted"></div>
 									<div class="review-edit text-center">
-										<a href="{% url 'review_detail' new_data.id %}" class="">詳細</a>
+										<a href="{% url 'review_detail' review.id %}" class="">詳細</a>
 									</div>
 								</div>
 							</div>
@@ -125,25 +125,25 @@
 					{% else %}
 					<div class="all-review-new-none">
 						<p>最新のクチコミ</p>
-						{% if new_data %}
+						{% if review %}
 						<div class="review-gray">
 							<div class="review-white">
 								<div class="new-image">
-									{% if new_data.image %}
-									<img src="{{ new_data.image.url }}">
+									{% if review.image %}
+									<img src="{{ review.image.url }}">
 									{% else %}
 									<div class="review-img-none mx-auto d-flex justify-content-center align-items-center">
 									Non<br> Img</div>
 									{% endif %}
 									<ul class="review-form-side">
-										<li>{{ new_data.brand }}</li>
-										<li>{{ new_data.product }}</li>
-										<li>{{ new_data.score }}</li>
+										<li>{{ review.brand }}</li>
+										<li>{{ review.product }}</li>
+										<li>{{ review.score }}</li>
 									</ul>
 								</div>
 								<div class="dotted"></div>
 								<div class="review-edit text-center">
-									<a href="{% url 'review_detail' new_data.id %}" class="">詳細</a>
+									<a href="{% url 'review_detail' review.id %}" class="">詳細</a>
 								</div>
 							</div>
 						</div>
