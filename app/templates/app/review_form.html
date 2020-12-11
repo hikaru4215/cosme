@@ -75,7 +75,7 @@
 							<div class="review-white">
 								<div class="new-image">
 									{% if user_review.image %}
-									<img src="{{ new.image.url }}" alt="" width="60px" height="60px">
+									<img src="{{ user_review.image.url }}" alt="">
 									{% else %}
 									<div class="review-img-none mx-auto">Non<br> Img</div>
 									{% endif %}
@@ -100,7 +100,7 @@
 								<div class="review-white">
 									<div class="new-image">
 										{% if review.image %}
-										<img src="{{ review.image.url }}" alt="" width="60px" height="60px">
+										<img src="{{ review.image.url }}" alt="">
 										{% else %}
 										<div
 										class="review-img-none mx-auto d-flex justify-content-center align-items-center">
@@ -118,8 +118,8 @@
 									</div>
 								</div>
 							</div>
+							{% endif %}
 						</div>
-						{% endif %}
 					</div>
 					{% else %}
 					<div class="all-review-new-none">
