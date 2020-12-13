@@ -37,9 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sites', 
     'allauth', 
     'allauth.account', 
-    'allauth.socialaccount' ,
-    'allauth.socialaccount.providers.google',
-    'social_django'
 ]
 
 
@@ -67,8 +64,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'app.context_processors.common',
-                'social_django.context_processors.backends', 
-                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -139,32 +134,6 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 
 MEDIA_URL = '/media/'
-
-AUTHENTICATION_BACKENDS = [
-    'social_core.backends.open_id.OpenIdAuth',  
-    'social_core.backends.google.GoogleOpenId',  
-    'social_core.backends.google.GoogleOAuth2',  
-    'allauth.account.auth_backends.AuthenticationBackend',
-    'django.contrib.auth.backends.ModelBackend',
-]
-
-
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
-    }
-}
-
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1075291830929-b7rkpsnanudpdvfnn0e0v039j87qrhrr.apps.googleusercontent.com'  #Paste CLient Key
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'dgCo9LM48PkB0wT7UQb8YBe1' #Paste Secret Key
-
 
 DEBUG = False
 

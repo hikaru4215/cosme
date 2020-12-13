@@ -16,12 +16,6 @@
         <div class="d-flex login-wrap row">
             <div class="login col-sm-7 col-10 mx-auto">
                 <h4 class="pl-3">会員登録済みの方</h4>
-                <h5 class="pl-3">googleでログイン</h5>
-                <div class="d-flex justify-content-center">
-                    <div class="btn-bg-color google">
-                        <a href="{% url 'social:begin' 'google-oauth2' %}" class="d-flex align-items-center justify-content-center">Google</a>
-                    </div>
-                </div>
                 <h5 class="pl-3">会員ID(メールアドレス)</h5>
                 <div class="write-field">
                     {% render_field form.login class=""  placeholder="メールアドレス" %}
@@ -45,12 +39,6 @@
                 <a href="{% url 'account_signup' %}" class="d-flex justify-content-center mx-auto">新規メンバー登録</a>
             </div>
         </div>
-        <!-- <ul class="d-flex">
-                <li class="twitter">tweeter</li>
-                <li class="facebook">facebook</li>
-                <li class="yahoo">yahoo</li>
-                <li class="instagram">instagram</li>
-            </ul> -->
 </div>
 
 </form>

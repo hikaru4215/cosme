@@ -21,7 +21,7 @@
 					<h6>男性のスキンケアがまとめてわかる</h6>
 					<ul class="d-flex">
 						{% if user.is_authenticated %}
-						<li><a href="{% url 'myreview_list' %}">{{ user }}さん</a></li>
+						<li>{{ user }}</li>
 						<li><a href="{% url 'account_logout' %}">ログアウト</a></li>
 						{% else %}
 						<li>ゲストさん</li>
