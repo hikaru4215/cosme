@@ -149,7 +149,7 @@ if DEBUG:
 else:
     import environ
     env = environ.Env()
-    env.read_env(os.path.join(BASE_DIR, 'env'))
+    env.read_env(os.path.join(BASE_DIR, '.env'))
 
     SECRET_KEY = env('SECRET_KEY')
     ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
