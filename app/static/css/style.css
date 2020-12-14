@@ -757,6 +757,11 @@ header {
 	height: 260px;
 	margin: 0 auto;
 }
+.recommend-pic img{
+	width: 260px;
+	height: 260px;
+	margin: 0 auto;
+}
 
 .recommend-comment {
 	padding: 10px;
