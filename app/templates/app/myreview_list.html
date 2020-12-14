@@ -7,7 +7,7 @@
 	<div class="myreview-list-wrap mx-auto">
 		<h4>My Page</h4>
 		<div class="myreview-list d-flex justify-content-between">
-			{% if review_user %}
+			{% if all_review %}
 			<div class="mypage-review">
 				<h5>{{ user_data.first_name }}さんのクチコミ一覧</h5>
 				<div class="d-flex justify-content-between mb-2 page_num-top">
@@ -128,26 +128,26 @@
 					</div>
 					<div class="mypage-allnew">
 						<p>最新のクチコミ</p>
-						{% if review_new %}
+						{% if review %}
 						<div class="review-gray">
 							<div class="review-white">
 								<div class="new-image">
-									{% if review_new.image %}
-									<img src="{{ review_new.image.url }}" alt="">
+									{% if review.image %}
+									<img src="{{ review.image.url }}" alt="">
 									{% else %}
 									<div
 										class="review-img-none mx-auto d-flex justify-content-center align-items-center">
 										Non<br> Img</div>
 									{% endif %}
 									<ul class="review-form-side">
-										<li>{{ review_new.brand }}</li>
-										<li>{{ review_new.product }}</li>
-										<li>{{ review_new.score }}</li>
+										<li>{{ review.brand }}</li>
+										<li>{{ review.product }}</li>
+										<li>{{ review.score }}</li>
 									</ul>
 								</div>
 								<div class="dotted"></div>
 								<div class="review-edit text-center">
-									<a href="{% url 'review_edit' review_new.id %}">詳細</a>
+									<a href="{% url 'review_edit' review.id %}">詳細</a>
 								</div>
 							</div>
 						</div>
@@ -178,24 +178,24 @@
 						</div>
 						<div class="mypage_newreview">
 							<p>最新のクチコミ</p>
-							{% if review_new %}
+							{% if review %}
 							<div class="review-gray">
 								<div class="review-white">
 									<div class="new-image">
-										{% if review_new.image %}
-										<img src="{{ review_new.image.url }}" alt="">
+										{% if review.image %}
+										<img src="{{ review.image.url }}" alt="">
 										{% else %}
 										<div class="review-img-none">Non<br> Img</div>
 										{% endif %}
 										<ul class="review-form-side">
 											<li></li>
-											<li>{{ review_new.brand }}</li>
-											<li>{{ review_new.product }}</li>
-											<li>{{ review_new.score }}</li>
+											<li>{{ review.brand }}</li>
+											<li>{{ review.product }}</li>
+											<li>{{ review.score }}</li>
 										</ul>
 									</div>
 									<div class="review-edit text-center">
-										<a href="{% url 'review_detail' review_new.id %}" class="">詳細</a>
+										<a href="{% url 'review_detail' review.id %}" class="">詳細</a>
 									</div>
 								</div>
 							</div>
