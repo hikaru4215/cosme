@@ -146,6 +146,15 @@ if DEBUG:
     ALLOWED_HOSTS = ['*']
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.googlemail.com'
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = 'hikaru4215hkr2178ay@gmail.com'
+    EMAIL_HOST_PASSWORD = 'SaNtEnEo4215'
+    EMAIL_USE_TLS = True
+
+
 else:
     import environ
     env = environ.Env()
