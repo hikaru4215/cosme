@@ -2523,6 +2523,13 @@ footer span {
 }
 
 @media (min-width: 0px) and (max-width: 575px) {
+	.review-wrap {
+		min-width: 327px;
+		max-width: 327px;
+	}
+	.count1 {
+		margin-left: 0px;
+	}
 	.keyword-wrap {
 		margin-left: 0px;
 		text-align: center;
@@ -2552,7 +2559,7 @@ footer span {
 
 	.review-top {
 		width: 327px;
-		margin: 30px 24px 0;
+		margin: 30px 0;
 	}
 
 	.review-wrap {
@@ -2964,6 +2971,9 @@ footer span {
 
 
 @media(min-width: 576px) and (max-width: 767px) {
+	.count1 {
+		margin-left: 30%;
+	}
 	.check3, .check5 {
 		width: 490px;
 	}
@@ -3047,6 +3057,9 @@ footer span {
 }
 
 @media(min-width: 768px) and (max-width: 991px) {
+	.count1 {
+		margin-left: 22%;
+	}
 	
 	.check3, .check5 {
 		width: 588px;
