@@ -77,16 +77,18 @@
 
 	<div class="d-flex justify-content-end">
 		<div>
-			<div class="review-page">
-				<div class="d-flex align-items-center">
-					<h4>クチコミ</h4>
-					<img src="{% static 'img/icon.png' %}" alt="" class="comment-img">
+			<div class="review-top d-flex justify-content-end row">
+				<div>
+				<div class="review-page">
+					<div class="d-flex align-items-center">
+						<h4>クチコミ</h4>
+						<img src="{% static 'img/icon.png' %}" alt="" class="comment-img">
+					</div>
+					<p class="review-top-content">
+						Men's Cosme新着のクチコミを紹介！ みなさんの実際の声をチェックしてみてください。
+						商品を使用した感想など、みなさんからの“クチコミ”もお待ちしております！
+					</p>
 				</div>
-				<p class="review-top-content">
-					Men's Cosme新着のクチコミを紹介！ みなさんの実際の声をチェックしてみてください。
-					商品を使用した感想など、みなさんからの“クチコミ”もお待ちしております！
-				</p>
-			</div>
 				{% if keyword %}
 				<p class="keyword-wrap"><span class="keyword">『{{keyword}}』</span>を含むクチコミ{{ total_count }}件。</p>
 				{% else %}
@@ -119,6 +121,8 @@
 						{% endif %}
 					</div>
 				</div>
+			</div>
+			</div>
 				{% endif %}
 				{% if total_count == 1 %}
 				<div class="review-top d-flex row">
@@ -264,9 +268,8 @@
 						{% endif %}
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
 
-
-
-
-
-				{% endblock %}
+	{% endblock %}

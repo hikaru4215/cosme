@@ -21,7 +21,9 @@
                                     <img src="{{ review_data.image.url }}" alt="">
                                 </div>
                                 {% else %}
-                                <div class="none-img d-flex justify-content-center align-items-center">No <br>img</div>
+                                <div class="detail-img-none">
+                                    <div class="none-img d-flex justify-content-center align-items-center">No <br>img</div>
+                                </div>
                                 {% endif %}
                                 <ul class="list">
                                     <li>{{ review_data.brand }}</li>
