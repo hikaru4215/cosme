@@ -2506,6 +2506,7 @@ transition:1s all;
 	box-shadow: -3px -5px 10px rgb(0, 90, 212) inset;
 	color: var(--text-icon);
 	border-radius: 4px;
+	text-decoration: none;
 }
 /* logout.htmlここまで */
 /* ==================================== */
