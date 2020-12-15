@@ -15,15 +15,10 @@
                                 {{ review_data.user }}さん
                                 <span class="user_count">クチコミ件数{{ user_count }}件</span>
                             </h5>
-                            <!-- <ul class="d-flex mb-2">
-                                <li class="mr-3">10~20代</li>
-                                <li class="mr-3">肌タイプ</li>
-                                <li>カテゴリー</li>
-                            </ul> -->
                             <div class="d-flex bottom-dotted row">
                                 {% if review_data.image %}
                                 <div class="img-center">
-                                    <img src="{{ review_data.image.url }}" alt="" >
+                                    <img src="{{ review_data.image.url }}" alt="">
                                 </div>
                                 {% else %}
                                 <div class="none-img d-flex justify-content-center align-items-center">No <br>img</div>
@@ -43,7 +38,8 @@
                                 <li class="list2">{{ review_data.created }}</li>
                                 <li class="dotted m-0"></li>
                                 <li class="list2">
-                                    <a href="{% url 'review' %}" class="d-flex justify-content-end align-items-center">一覧
+                                    <a href="{% url 'review' %}"
+                                        class="d-flex justify-content-end align-items-center">一覧
                                         <span class="material-icons">
                                             navigate_next
                                         </span>
@@ -57,7 +53,7 @@
                 <!-- 商品詳細の終わり -->
                 <!-- ユーザー情報 -->
                 <div class="mypage-allnew">
-                    <div class="review-user-bg-there mt-4">
+                    <div class="review-user-bg-there">
                         <div class="review-user-none">
                             <h5>{{ user_data.first_name }}さん</h5>
                             <p class="review-num">クチコミ件数
@@ -67,12 +63,12 @@
                                 0
                                 {% endif %}
                                 件</p>
-                                <div class="dotted"></div>
-                            <ul class="d-flex justify-content-end profile">
-                                <li class="profile-delete">
-                                    <a href="{% url 'review' %}" class="btn">クチコミ一覧</a>
-                                </li>
-                            </ul>
+                            <div class="dotted"></div>
+                            <div class="d-flex justify-content-end profile my-profile">
+                                <p>
+                                    <a href="{% url 'review_new' %}">クチコミする</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <!-- ユーザーのクチコミがあれば -->
@@ -85,7 +81,9 @@
                                     {% if new_review.image %}
                                     <img src="{{ new_review.image.url }}">
                                     {% else %}
-                                    <div class="none-img d-flex justify-content-center mx-auto align-items-center">No <br>img</div>
+                                    <div class="none-img d-flex justify-content-center mx-auto align-items-center">No
+                                        <br>img
+                                    </div>
                                     {% endif %}
                                     <ul class="review-form-side">
                                         <li>{{ new_review.brand }}</li>
@@ -109,7 +107,9 @@
                                         {% if new_data.image %}
                                         <img src="{{ new_data.image.url }}">
                                         {% else %}
-                                        <div class="none-img d-flex justify-content-center mx-auto align-items-center">No <br>img</div>
+                                        <div class="none-img d-flex justify-content-center mx-auto align-items-center">
+                                            No
+                                            <br>img</div>
                                         {% endif %}
                                         <ul class="review-form-side">
                                             <li>{{ new_data.brand }}</li>

@@ -64,15 +64,15 @@
 						<ul class="list">
 							<li class="list2"><span class="mr-3">{{ review.score }}</li>
 							<li class="dotted m-0"></li>
-							<li class="list2">{{ review.comment }}</li>
+							<li class="list2">{{ review.comment|linebreaksbr }}</li>
 							<li class="dotted m-0"></li>
 							<li class="list2">{{ review.created }}</li>
 							<li class="dotted m-0"></li>
 						</ul>
 						<ul class="d-flex justify-content-end mt-3">
-							<li class="list-edit d-flex align-items-center"><span class="material-icons">
-									navigate_next
-								</span><a href="{% url 'review_edit' review.id %}" class="">編集する</li>
+							<li class="list-edit d-flex align-items-center">
+								<a href="{% url 'review_edit' review.id %}" class="">編集する</a>
+							</li>
 							<li class="mypage-delete-btn">
 								<a href="{% url 'review_delete' review.id %}" class="text-center">
 									削除する
@@ -121,7 +121,7 @@
 							<div class="dotted"></div>
 							<div class="d-flex justify-content-end profile my-profile">
 								<p>
-									<a href="{% url 'review_new' %}" class="btn">クチコミする</a>
+									<a href="{% url 'review_new' %}">クチコミする</a>
 								</p>
 							</div>
 						</div>

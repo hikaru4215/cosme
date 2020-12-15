@@ -32,9 +32,9 @@
 		<div class="row">
 			<div class="anser row">
 				{% if user_data %}
-				<h4>{{ user_data }}さんは混合肌タイプです...</h4>
+				<h4>{{ user_data }}さんは<span class="skin-type">混合肌タイプ</span>です...</h4>
 				{% else %}
-				<h4>あなたは混合肌タイプです...</h4>
+				<h4>あなたは<span class="skin-type">混合肌タイプ</span>です...</h4>
 				{% endif %}
 				<p>
 					肌のうるおいが不足し、皮脂が多く出ている状態です。日本人に一番多い肌質と言われています。乾燥している部分(多くはUゾーンと呼ばれるフェイスライン)、皮脂が多い部分(多くはTゾーンと呼ばれる額や鼻)が混在している肌質のことです。
@@ -44,8 +44,8 @@
 				<h4>肌悩みの原因</h4>
 				<div class="d-flex justify-content-around row priority">
 					<div class="priority-wrap">
-						<div class="cause mx-auto">
-							<div class="cause-ball">
+						<div class="cause cause1 mx-auto">
+							<div class="cause-ball cause-ball1">
 								<h6 class="text-center">解決優先度１</h6>
 							</div>
 						</div>
@@ -58,8 +58,8 @@
 						</div>
 					</div>
 					<div class="priority-wrap">
-						<div class="cause mx-auto">
-							<div class="cause-ball">
+						<div class="cause cause2 mx-auto">
+							<div class="cause-ball cause-ball2">
 								<h6 class="text-center">解決優先度2</h6>
 							</div>
 						</div>
@@ -72,8 +72,8 @@
 						</div>
 					</div>
 					<div class="priority-wrap">
-						<div class="cause mx-auto">
-							<div class="cause-ball">
+						<div class="cause cause3  mx-auto">
+							<div class="cause-ball cause-ball3">
 								<h6 class="text-center">解決優先度3</h6>
 							</div>
 						</div>

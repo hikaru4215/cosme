@@ -18,6 +18,7 @@ class IndexView(View):
 		return render(request, 'app/index.html')
 
 	def post(self, request, *args, **kwargs):
+		user_data = CustomUser.objects.get(id=request.user.id)
 		# 肌タイプのデータを取得
 		dry_skintype_int = request.POST.getlist('skintype_dry')
 		dry_len = len(dry_skintype_int)
@@ -143,10 +144,11 @@ class IndexView(View):
 			else:
 				file_template = 'app/index.html'
 			return render(request, file_template, {
-			'wash_recommend_data': wash_recommend_data,
-			'toner_recommend_data': toner_recommend_data,
-			'cream_recommend_data': cream_recommend_data,
-			'sunscreen_recommend_data': sunscreen_recommend_data,
+				'user_data':user_data,
+				'wash_recommend_data': wash_recommend_data,
+				'toner_recommend_data': toner_recommend_data,
+				'cream_recommend_data': cream_recommend_data,
+				'sunscreen_recommend_data': sunscreen_recommend_data,
 			})
 			
 		elif checked_len == 3:
@@ -203,10 +205,11 @@ class IndexView(View):
 			else:
 				file_template = 'app/index.html'
 			return render(request, file_template, {
-			'wash_recommend_data': wash_recommend_data,
-			'toner_recommend_data': toner_recommend_data,
-			'cream_recommend_data': cream_recommend_data,
-			'sunscreen_recommend_data': sunscreen_recommend_data,
+				'user_data':user_data,
+				'wash_recommend_data': wash_recommend_data,
+				'toner_recommend_data': toner_recommend_data,
+				'cream_recommend_data': cream_recommend_data,
+				'sunscreen_recommend_data': sunscreen_recommend_data,
 			})
 
 		elif checked_len == 2:
@@ -254,10 +257,11 @@ class IndexView(View):
 			else:
 				file_template = 'app/index.html'
 			return render(request, file_template, {
-			'wash_recommend_data': wash_recommend_data,
-			'toner_recommend_data': toner_recommend_data,
-			'cream_recommend_data': cream_recommend_data,
-			'sunscreen_recommend_data': sunscreen_recommend_data,
+				'user_data':user_data,
+				'wash_recommend_data': wash_recommend_data,
+				'toner_recommend_data': toner_recommend_data,
+				'cream_recommend_data': cream_recommend_data,
+				'sunscreen_recommend_data': sunscreen_recommend_data,
 			})
 
 
@@ -298,40 +302,32 @@ class IndexView(View):
 			else:
 				file_template = 'app/index.html'
 			return render(request, file_template, {
-			'wash_recommend_data': wash_recommend_data,
-			'toner_recommend_data': toner_recommend_data,
-			'cream_recommend_data': cream_recommend_data,
-			'sunscreen_recommend_data': sunscreen_recommend_data,
+				'user_data':user_data,
+				'wash_recommend_data': wash_recommend_data,
+				'toner_recommend_data': toner_recommend_data,
+				'cream_recommend_data': cream_recommend_data,
+				'sunscreen_recommend_data': sunscreen_recommend_data,
 			})
 
 
 class DryskinView(View):
 	def get(self, request, *args, **kwargs):
-		user_data = CustomUser.objects.get(id=request.user.id)
-		return render(request, 'app/dryskin.html', {
-			'user_data':user_data,
-		})
+		return render(request, 'app/dryskin.html')
 
 class OilyskinView(View):
 	def get(self, request, *args, **kwargs):
 		user_data = CustomUser.objects.get(id=request.user.id)
-		return render(request, 'app/oilyskin.html',{
-			'user_data':user_data,
-		})
+		return render(request, 'app/oilyskin.html')
 
 class NormalskinView(View):
 	def get(self, request, *args, **kwargs):
 		user_data = CustomUser.objects.get(id=request.user.id)
-		return render(request, 'app/normalskin.html', {
-			'user_data':user_data,
-		})
+		return render(request, 'app/normalskin.html')
 
 class MixskinView(View):
 	def get(self, request, *args, **kwargs):
 		user_data = CustomUser.objects.get(id=request.user.id)
-		return render(request, 'app/mixskin.html', {
-			'user_data':user_data,
-		})
+		return render(request, 'app/mixskin.html')
 
 
 class SkinFeatureView(View):

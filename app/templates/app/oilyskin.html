@@ -30,9 +30,9 @@
 		<div class="row">
 			<div class="anser row">
 				{% if user_data %}
-				<h4>{{ user_data }}さんは脂性肌タイプです...</h4>
+				<h4>{{ user_data }}さんは<span class="skin-type">脂性肌タイプ</span>です...</h4>
 				{% else %}
-				<h4>あなたは脂性肌タイプです...</h4>
+				<h4>あなたは<span class="skin-type">脂性肌タイプ</span>です...</h4>
 				{% endif %}
 				<p>
 					皮脂が多く出ている状態です。皮脂は肌を守るために分泌されますが、過剰な皮脂はニキビや毛穴の広がりなどの他の悩みにもつながります。肌にうるおいや弾力なあるがベタつくなどの特徴があります。季節に合わせて皮脂のとりすぎに注意しながらのケアを心がけましょう。
@@ -42,8 +42,8 @@
 				<h4>肌悩みの原因</h4>
 				<div class="d-flex justify-content-around row priority">
 					<div class="priority-wrap">
-						<div class="cause mx-auto">
-							<div class="cause-ball">
+						<div class="cause cause1 mx-auto">
+							<div class="cause-ball cause-ball1">
 								<h6 class="text-center">解決優先度１</h6>
 							</div>
 						</div>
@@ -56,8 +56,8 @@
 						</div>
 					</div>
 					<div class="priority-wrap">
-						<div class="cause mx-auto">
-							<div class="cause-ball">
+						<div class="cause cause2 mx-auto">
+							<div class="cause-ball cause-ball2">
 								<h6 class="text-center">解決優先度2</h6>
 							</div>
 						</div>
@@ -69,8 +69,8 @@
 						</div>
 					</div>
 					<div class="priority-wrap">
-						<div class="cause mx-auto">
-							<div class="cause-ball">
+						<div class="cause cause3  mx-auto">
+							<div class="cause-ball cause-ball3">
 								<h6 class="text-center">解決優先度3</h6>
 							</div>
 						</div>
