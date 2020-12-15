@@ -796,8 +796,7 @@ input[type="checkbox"]:checked + div {
 .recommend-pic {
 	min-width: 260px;
 	max-width: 260px;
-	min-height: 260px;
-	max-height: 260px;
+	height: auto;
 	margin: 0 auto;
 }
 
@@ -3366,7 +3365,7 @@ footer span {
 
 	.recommend-pic {
 		width: 200px;
-		height: 200px;
+		height: auto;
 		margin: 0 auto;
 	}
 

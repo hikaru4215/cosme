@@ -142,17 +142,16 @@ try:
 except ImportError:
     pass
 
+# ローカル用設定
 if DEBUG:
     ALLOWED_HOSTS = ['*']
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    SECRET_KEY='66jfs&9jawe5z(_ae#4mktz4f9v-=9_gzdt)2sw0krq-1o(rew'
 
-
-else:
+if not DEBUG:
     import environ
     env = environ.Env()
-    env.read_env(os.path.join(BASE_DIR, '.env'))
+    env.read_env(os.path.join(BASE_DIR,'.env'))
 
     SECRET_KEY = env('SECRET_KEY')
     ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
