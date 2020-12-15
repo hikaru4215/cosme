@@ -1458,7 +1458,9 @@ transition:1s all;
 }
 
 .keyword-wrap {
-	margin-left: 43%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin-bottom: 20px;
 }
 
