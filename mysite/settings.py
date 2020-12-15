@@ -135,7 +135,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 MEDIA_URL = '/media/'
 
-DEBUG = True
+DEBUG = False
 
 try:
     from .local_settings import *
