@@ -571,7 +571,6 @@ class CategoryView(View):
 		review = Review.objects.order_by('-id')
 		#カテゴリーでフィルター
 		category_name = Category.objects.get(name=self.kwargs['category'])
-		print(category_name)
 		#全てのreviewからフィルターしたものの件数
 		total_count = review.filter(category=category_name).count()
 		#1ページに出す件数
