@@ -794,9 +794,15 @@ input[type="checkbox"]:checked + div {
 }
 
 .recommend-pic {
-	max-width: 260px;
+	min-width: 200px;
+	max-width: 200px;
 	height: auto;
 	margin: 0 auto;
+}
+
+.recommend-pic img {
+	max-width: 200px;
+	height: auto;
 }
 
 .recommend-comment {
@@ -1284,7 +1290,7 @@ transition:1s all;
 
 .review-bg img {
 	margin-right: 10px;
-	width: 80px;
+	max-width: 80px;
 	height: auto;
 }
 
@@ -3011,6 +3017,12 @@ footer span {
 }
 
 @media (min-width: 0px) and (max-width: 991px) {
+	.recommend-pic {
+		max-width: 200px;
+		height: auto;
+		margin: 0 auto;
+	}
+
 	.review-wrap {
 		margin-left: 0;
 		margin-right: 0;
@@ -3363,13 +3375,6 @@ footer span {
 		max-width: 250px;
 	}
 
-	.recommend-pic {
-		width: 200px;
-		height: auto;
-		margin: 0 auto;
-	}
-
-
 .skin-type-aser li {
 	width: 159px;
 	height: 80px;
@@ -3395,7 +3400,9 @@ footer span {
 	.container {
 		max-width: 892px;
 	}
-
+	.recommend-pic {
+		margin-right: 20px;
+	}
 }
 
 /* .mypage_newreview {

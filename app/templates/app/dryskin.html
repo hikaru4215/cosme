@@ -140,17 +140,12 @@
 				{% if wash_recommend_data %}
 				<div class="wash-recommend-data d-flex">
 					<div class="recommend-pic">
-						{% if wash_recommend_data.image %}
 						<img src="{{ wash_recommend_data.image.url }}" alt="">
-						{% else %}
-						<div class="">No img</div>
-						{% endif %}
 					</div>
 					<div class="recommend-comment">
 						<ul>
 							<li class="recommend-brand">{{ wash_recommend_data.brand }}</li>
 							<li class="recommend-product">{{ wash_recommend_data.product }}</li>
-							<!-- <li>悩みを入れる</li> -->
 							<li class="recommend-category">
 								&lt; 洗顔 &gt; {{ wash_recommend_data.capacity }}
 							</li>
@@ -208,17 +203,12 @@
 				{% if toner_recommend_data %}
 				<div class="wash-recommend-data d-flex">
 					<div class="recommend-pic">
-						{% if toner_recommend_data.image %}
 						<img src="{{ toner_recommend_data.image.url }}" alt="">
-						{% else %}
-						<div class="">No img</div>
-						{% endif %}
 					</div>
 					<div class="recommend-comment">
 						<ul>
 							<li class="recommend-brand">{{ toner_recommend_data.brand }}</li>
 							<li class="recommend-product">{{ toner_recommend_data.product }}</li>
-							<!-- <li>悩みを入れる</li> -->
 							<li class="recommend-category">
 								&lt; 化粧水 &gt; {{ toner_recommend_data.capacity }}
 							</li>
@@ -276,11 +266,7 @@
 				{% if cream_recommend_data %}
 				<div class="wash-recommend-data d-flex">
 					<div class="recommend-pic">
-						{% if cream_recommend_data.image %}
 						<img src="{{ cream_recommend_data.image.url }}" alt="">
-						{% else %}
-						<div class="">No img</div>
-						{% endif %}
 					</div>
 					<div class="recommend-comment">
 						<ul>
@@ -343,11 +329,7 @@
 				{% if sunscreen_recommend_data %}
 				<div class="wash-recommend-data d-flex">
 					<div class="recommend-pic">
-						{% if sunscreen_recommend_data.image %}
 						<img src="{{ sunscreen_recommend_data.image.url }}" alt="">
-						{% else %}
-						<div class="">No img</div>
-						{% endif %}
 					</div>
 					<div class="recommend-comment">
 						<ul>

@@ -94,7 +94,9 @@
 								<div class="review-white">
 									<div class="new-image">
 										{% if new_data.image %}
-										<img src="{{ new_data.image.url }}" alt="" width="60px" height="60px">
+										<div class="d-flex justify-content-center">
+											<img src="{{ new_data.image.url }}" alt="">
+										</div>
 										{% else %}
 										<div class="none-img d-flex justify-content-center mx-auto align-items-center">No <br>img</div>
 										{% endif %}
@@ -121,7 +123,9 @@
 						<div class="review-gray">
 							<div class="review-white">
 								{% if new_data.image %}
-								<img src="{{ new_data.image.url }}" alt="" width="60px" height="60px">
+								<div class="d-flex justify-content-center">
+									<img src="{{ new_data.image.url }}" alt="">
+								</div>
 								{% else %}
 								<div class="none-img d-flex justify-content-center mx-auto align-items-center">No <br>img</div>
 								{% endif %}
