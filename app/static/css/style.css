@@ -852,9 +852,11 @@ input[type="checkbox"]:checked + div {
 
 .offcial {
 	border: 1px solid var(--divider);
+	background: var(--divider);
 }
 
 .offcial:hover {
+	opacity: 0.7;
 	background: var(--divider);
 }
 
