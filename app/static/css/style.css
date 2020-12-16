@@ -794,7 +794,6 @@ input[type="checkbox"]:checked + div {
 }
 
 .recommend-pic {
-	min-width: 260px;
 	max-width: 260px;
 	height: auto;
 	margin: 0 auto;
@@ -1904,8 +1903,8 @@ transition:1s all;
 }
 
 .review-white img {
-	width: 80px;
-	height: 80px;
+	max-width: 80px;
+	height: auto;
 }
 
 .new-image {
@@ -2093,7 +2092,7 @@ transition:1s all;
 
 
 .list-bg img {
-	width: 80px;
+	max-width: 80px;
 	height: auto;
 	margin-right: 20px; 
 }
