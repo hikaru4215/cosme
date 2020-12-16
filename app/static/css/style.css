@@ -1772,8 +1772,8 @@ transition:1s all;
 
 
 .review-user-bg-none {
-	background: var(--accent);
-	border: 1px solid rgb(255, 40, 34);
+	background: var(--divider);
+	border: 1px solid #c8c8c8;
 	height: auto;
 	padding: 3px;
 	height: auto;
