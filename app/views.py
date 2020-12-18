@@ -66,10 +66,10 @@ class IndexView(View):
 			x = int(checked[i])
 			if x == 0:
 				trouble_il.append("wrinkle_point")
-				check_il.append("trouble_name4")
+				check_il.append("trouble_name3")
 			elif x == 1:
 				trouble_il.append("beard_point")
-				check_il.append("trouble_name3")
+				check_il.append("trouble_name4")
 			elif x == 2:
 				trouble_il.append("pores_point")
 				check_il.append("trouble_name2")
