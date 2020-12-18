@@ -42,13 +42,6 @@ class IndexView(View):
 			skintype_data.append("脂性肌")
 		skintype_data = skintype_data[0]	
 
-		# 年齢のデータを取得
-		# age_il = request.POST.getlist('age')
-		# age_len = len(age_il)
-		# if age_len == 0:
-		# 	return render(request, 'app/index.html')
-		# age = age_il[0]
-
 		# アイテムの種類を１種類ずつ
 		wash_item = "洗顔"
 		toner_item = "化粧水"
@@ -545,7 +538,7 @@ class MyReviewListView(LoginRequiredMixin,View):
 		#ユーザーのクチコミ件数取得
 		count = user_review.count()
 		#1ページに出す件数
-		paginator = Paginator(review, 5)
+		paginator = Paginator(user_review, 5)
 		#現在のページ
 		page = request.GET.get('page')
 		#10件のreview

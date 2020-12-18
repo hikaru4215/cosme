@@ -1044,6 +1044,10 @@ text-align: center; */
 /* ==================================== */
 /* skin_feature.htmlここから */
 
+.wash-order {
+	margin-bottom: 0px;
+}
+
 .wash-order li {
 	list-style-type: decimal;
 	margin-left: 20px;
@@ -1201,8 +1205,12 @@ font-weight: 600;
 	margin-bottom: 10px;
 }
 
+.basic-wash h5 {
+	font-weight: 600;
+}
+
 .basic-wash h6 {
-	font-size: 1.25rem;
+	font-size: 1.1rem;
 	margin-right: 10px;
 }
 
@@ -2201,6 +2209,7 @@ font-weight: 600;
 	max-width: 80px;
 	height: auto;
 	margin-right: 20px; 
+	margin-bottom: 20px;
 }
 
 .list li {
