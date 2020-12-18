@@ -33,10 +33,11 @@ class Recommenditem(models.Model):
 	item = models.CharField("アイテムの種類", max_length=100)
 	price = models.CharField("本体価格", max_length=100)
 	price_data = models.IntegerField("価格データ", default=1000)
+	age = models.IntegerField("年齢", default=10)
 	skintype = models.CharField("肌タイプ", max_length=100)
 	acne_point = models.IntegerField("ニキビポイント", default=0)
 	pores_point = models.IntegerField("毛穴ポイント", default=0)
-	beard_point = models.IntegerField("髭剃り負けポイント", default=0)
+	spots_point = models.IntegerField("シミポイント", default=0)
 	wrinkle_point = models.IntegerField("シワポイント", default=0)
 	official_page = models.URLField("公式URL")
 	rakuten_page = models.URLField("楽天URL")
@@ -44,7 +45,7 @@ class Recommenditem(models.Model):
 	trouble_name1 =  models.CharField("ニキビ", max_length=100, blank=True)
 	trouble_name2 =  models.CharField("毛穴", max_length=100, blank=True)
 	trouble_name3 =  models.CharField("シワ", max_length=100, blank=True)
-	trouble_name4 =  models.CharField("髭剃り負け", max_length=100, blank=True)
+	trouble_name4 =  models.CharField("シミ", max_length=100, blank=True)
 	capacity = models.CharField("容量", max_length=100)
 
 
