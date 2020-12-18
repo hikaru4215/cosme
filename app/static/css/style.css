@@ -1397,7 +1397,6 @@ font-weight: 600;
 
 
 .review-bg img {
-	margin-right: 10px;
 	max-width: 80px;
 	height: auto;
 }
@@ -1418,6 +1417,7 @@ font-weight: 600;
 }
 
 .review-brand-name {
+	margin-left: 10px;
 	width: 100%;
 }
 
