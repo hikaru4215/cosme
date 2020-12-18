@@ -68,7 +68,7 @@ class IndexView(View):
 				trouble_il.append("wrinkle_point")
 				check_il.append("trouble_name3")
 			elif x == 1:
-				trouble_il.append("beard_point")
+				trouble_il.append("spots_point")
 				check_il.append("trouble_name4")
 			elif x == 2:
 				trouble_il.append("pores_point")
