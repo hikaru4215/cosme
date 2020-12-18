@@ -1011,8 +1011,9 @@ text-align: center; */
 }
 
 .trouble_name li{
-	width: 50px;
-	height: 25px;
+	padding: 2px 5px;
+	width: auto;
+	/* height: 30px; */
 	text-align: center;
 	line-height: 25px;
 	margin-right: 10px;
