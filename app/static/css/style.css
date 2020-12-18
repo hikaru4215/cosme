@@ -343,11 +343,21 @@ header {
 	left: 12px;
 	z-index: 10;
 	color: var(--text-icon);
-	transition: all 0.8s;
+	transition: all 0.5s;
 }
 
 /* radioボタン */
-.input-btn div {
+.check-active {
+	z-index: 2;
+	position: absolute;
+	top: 34px;
+	left: 12px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
+.check-active2 {
 	z-index: 1;
 	position: absolute;
 	top: 29px;
@@ -358,21 +368,37 @@ header {
 	border-radius: 50%;
 }
 
-input[type="radio"]:checked + div {
+input[type="radio"]:checked + .check-active + .check-active2 {
 	z-index: 1;
 	width: 20px;
 	height: 20px;
-	background: var(--primary);
+	background: var(--light-primary);
 	transition: all 0.8s;
 }
 
-input[type="checkbox"]:checked + div {
+input[type="radio"]:checked + .check-active{
+	z-index: 3;
+	width: 10px;
+	height: 10px;
+	background: #59D5E2;
+	transition: all 0.8s;
+}
+
+input[type="checkbox"]:checked + .check-active + .check-active2 {
 	z-index: 1;
 	width: 20px;
 	height: 20px;
-	background: var(--primary);
+	background: #59D5E2;
 	transition: all 0.8s;
 }
+/* 
+input[type="checkbox"]:checked + .check-active{
+	z-index: 3;
+	width: 10px;
+	height: 10px;
+	background: #59D5E2;
+	transition: all 0.8s;
+} */
 
 
 
@@ -402,7 +428,7 @@ input[type="checkbox"]:checked + div {
 .cp_ipradio .option-input:checked:before {
 	top: -31px;
 	left: -9px;
-	background: var(--light-primary);
+	background: #E9F9FB;
 }
 
 /* radioボタン */
@@ -502,7 +528,7 @@ input[type="checkbox"]:checked + div {
 .check-list label {
 	width: 180px;
 	height: 80px;
-	border: 1px solid var(--text-secondary);
+	border: 1px solid var(--divider);
 	margin-right: 20px;
 	cursor: pointer;
 	line-height: 80px;
@@ -510,13 +536,13 @@ input[type="checkbox"]:checked + div {
 }
 
 .check-list label:hover {
-	background: var(--light-primary);
+	background: #E9F9FB;
 }
 
 .check-list-last label {
 	width: 180px;
 	height: 80px;
-	border: 1px solid var(--text-secondary);
+	border: 1px solid var(--divider);
 	margin-right: 20px;
 	cursor: pointer;
 	line-height: 80px;
@@ -524,7 +550,7 @@ input[type="checkbox"]:checked + div {
 }
 
 .check-list-last label:hover {
-	background: var(--light-primary);
+	background: #E9F9FB;
 }
 
 
@@ -541,15 +567,61 @@ input[type="checkbox"]:checked + div {
 	opacity: 0.8;
 }
 
+.non-recommend-item img {
+	margin-left: 20px;
+	width: 30px;
+	height: auto;
+}
+
+.review-nav {
+	margin-top: 30px;
+}
+
+.review-nav a {
+	color: var(--primary);
+	border-bottom: 1px solid var(--primary);
+	text-decoration: none;
+}
+
+.review-nav a:hover {
+	opacity: 0.7;
+}
+/* position: relative;
+border: 1px solid rgb(0, 100, 212);
+background: rgb(110, 200, 212);
+width: 75px;
+height: 29px;
+border-radius: 4px;
+margin-right: 10px;
+}
+
+.list-edit a {
+position: absolute;
+top: 1px;
+left: 1px;
+width: 71px;
+height: 25px;
+line-height: 13px;
+background: var(--primary);
+box-shadow: -3px -5px 10px rgb(0, 90, 212) inset;
+color: var(--text-icon);
+border-radius: 4px;
+text-decoration: none;
+padding: 5px;
+text-align: center; */
+
 /* index.htmlここまで */
 /* ==================================== */
 /* ==================================== */
 /* ==================================== */
 /* スキンタイプここから */
+.health li {
+	list-style: inside;
+	margin: 5px 0;
+}
 .skin-type {
 	font-size: 1.25em;
 	font-weight: 700;
-	/* border-bottom: 1px solid var(--accent); */
 }
 
 .skin-type-aser-wrap {
@@ -665,7 +737,16 @@ input[type="checkbox"]:checked + div {
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
-	border:1px solid var(--light-primary);
+}
+
+.cause1,.cause-ball1 {
+	border:1px solid var(--accent);
+}
+.cause2,.cause-ball2 {
+	border:1px solid var(--primary);
+}
+.cause3,.cause-ball3 {
+	border:1px solid var(--dark-primary);
 }
 
 .cause-ball {
@@ -675,7 +756,6 @@ input[type="checkbox"]:checked + div {
 	width: 90px;
 	height: 90px;
 	border-radius: 50%;
-	border:1px solid var(--light-primary);
 }
 
 .cause-ball h6 {
@@ -689,18 +769,6 @@ input[type="checkbox"]:checked + div {
 
 .cause-ball span {
 	font-size: 24px;
-}
-
-.num1 {
-	color: var(--accent);
-}
-
-.num2 {
-	color: var(--primary);
-}
-
-.num3 {
-	color: var(--dark-primary);
 }
 
 .cause-text {
@@ -851,7 +919,7 @@ input[type="checkbox"]:checked + div {
 
 
 .offcial {
-	border: 1px solid var(--divider);
+	border: 1px solid #CCCCCC;
 	background: var(--divider);
 }
 
@@ -862,6 +930,7 @@ input[type="checkbox"]:checked + div {
 
 .rakuten {
 	background: #a22041;
+	border: 1px solid #771731;
 }
 
 .rakuten a {
@@ -874,6 +943,7 @@ input[type="checkbox"]:checked + div {
 }
 
 .amazon {
+	border: 1px solid #0E5185;
 	background: #146EB4;
 }
 
@@ -945,21 +1015,24 @@ input[type="checkbox"]:checked + div {
 	height: 25px;
 	text-align: center;
 	line-height: 25px;
-	border: 1px solid var(--divider);
 	margin-right: 10px;
 }
 
 .trouble_name1 {
 	background: #F5CD39;
+	border: 1px solid #EDBC0C;
 }
 .trouble_name2 {
 	background: #BCECCD;
+	border: 1px solid #94E0AE;
 }
 .trouble_name3 {
 	background: #FADBF5;
+	border: 1px solid #F2AAE7;
 }
 .trouble_name4 {
-	background:#69B6DB
+	background:#69B6DB;
+	border: 1px solid #3EA1D0;
 }
 
 .recommend-dotted {
@@ -970,6 +1043,11 @@ input[type="checkbox"]:checked + div {
 /* ==================================== */
 /* ==================================== */
 /* skin_feature.htmlここから */
+
+.wash-order li {
+	list-style-type: decimal;
+	margin-left: 20px;
+}
 .basic-wrap {
 	margin-top: 50px;
 }
@@ -1028,6 +1106,18 @@ font-weight: 600;
 	border-bottom: 5px solid var(--text-secondary);
 }
 
+.basic-skincare > h5 {
+	border-left: 5px solid var(--primary);
+	padding-left: 10px;
+	font-weight: 600;
+}
+
+.feature-border > h5 {
+	border-left: 5px solid var(--primary);
+	padding-left: 10px;
+	font-weight: 600;
+}
+
 .basic-item-wrap {
 	margin-top: 20px;
 }
@@ -1054,8 +1144,7 @@ font-weight: 600;
 }
 
 .basic-item img:hover {
-transform:scale(1.1,1.1);
-transition:1s all;
+	opacity: 0.7;
 }
 
 .basic-item a {
@@ -1199,7 +1288,6 @@ transition:1s all;
 }
 
 .basic-category li {
-	padding-left: 7px;
 	display: flex;
 	align-items: center;
 	font-size: 13px;
@@ -1207,13 +1295,13 @@ transition:1s all;
 }
 
 .basic-category a {
-	padding: 3px 0;
+	padding: 3px 0 3px 7px;
 	width: 100%;
 	text-decoration: none;
 	color: var(--text-primary);
 }
 
-.basic-category li:hover {
+.basic-category a:hover {
 	color: var(--text-primary);
 	background: var(--divider);
 }
@@ -1235,6 +1323,16 @@ transition:1s all;
 .active {
 	display: block;
 }
+.category-title {
+	height: 25px;
+	text-align: center;
+	margin-left: 7px;
+}
+
+.category-title1 {
+	border-top: 1px solid var(--divider);
+}
+
 /* basic.htmlここまで */
 /* ==================================== */
 /* ==================================== */

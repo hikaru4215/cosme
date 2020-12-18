@@ -13,6 +13,8 @@
 				カテゴリ
 			</h5>
 			<ul class="category-menu">
+				<li class="category-title">スキンケアの役割</li>
+				<div class="category-title1"></div>
 				<li>
 					<a href="#category-wash" class="d-flex align-items-center">
 						<span class="material-icons">
@@ -48,7 +50,9 @@
 						日焼け止め
 					</a>
 				</li>
-				<li class="dotted"></li>
+				<div class="category-title1"></div>
+				<li class="category-title">肌の特徴</li>
+				<div class="category-title1"></div>
 				<li>
 					<a href="#category-mens" class="d-flex align-items-center">
 						<span class="material-icons">
@@ -75,7 +79,9 @@
 						男女の違い
 					</a>
 				</li>
-				<li class="dotted"></li>
+				<div class="category-title1"></div>
+				<li class="category-title">季節の肌ダメージ</li>
+				<div class="category-title1"></div>
 				<li>
 					<a href="#category-spring" class="d-flex align-items-center">
 						<span class="material-icons">
@@ -117,11 +123,11 @@
 			<div class="basic-bg">
 				<div class="d-flex row">
 					<div class="basic">
-						<h4>スキンケアの基本</h4>
-						<p>スキンケアアイテムの役割や季節、男性の肌の特徴などわかりやすく解説。</p>
+						<h4>スキンケアの基本と肌知識</h4>
+						<p>スキンケアアイテムの役割や季節、男性の肌の特徴などわかりやすく解説。いつもしているスキンケアを見直すことでより一層健康的な肌に。</p>
 					</div>
 				</div>
-				<ul class="d-flex justify-content-around row feature-border basic-nav">
+				<!-- <ul class="d-flex justify-content-around row feature-border basic-nav">
 					<li>
 						<p class="d-flex align-items-center justify-content-between">スキンケアの役割
 							<span class="material-icons">
@@ -144,7 +150,7 @@
 							</span>
 						</a>
 					</li>
-				</ul>
+				</ul> -->
 				<!-- =========== -->
 				<!-- =========== -->
 				<!-- =========== -->
@@ -213,12 +219,18 @@
 								<h5>Step.1</h5>
 								<div class="dotted2 mb-2"></div>
 								<div class="d-flex align-items-center">
-									<h6>洗顔</h6>
+									<h5 class="mr-2">洗顔</h5>
 									<img src="{% static 'img/sun.png' %}" alt="">
 									<img src="{% static 'img/moon.png' %}" alt="">
 								</div>
-								<p>もこもこの泡を作り、手の摩擦がかからないように優しく洗いましょう。洗う順番も皮脂が出やすいTゾーン(額や鼻) → Uゾーン(頬や口) →
-									目周りの順番で洗うのがおすすめ。洗顔のステップはとても大事なので丁寧に行いましょう。</p>
+								<p>もこもこの泡を作り、手の摩擦がかからないように優しく洗いましょう。</p>
+								<h6 class="my-2">顔を洗う順番</h6>
+								<ol class="wash-order">
+									<li>皮脂が出やすいTゾーンと言われる額や鼻</li>
+									<li>Uゾーンと言われる頬や口</li>
+									<li>目の周り</li>
+								</ol>
+								<p>少しの差が大きな違いとなってきます。せっかく顔を洗うのであれば丁寧に行い、綺麗な肌を保ちましょう。</p>
 							</div>
 							<div class="sukincare-img order-lg-2">
 								<img src="{% static 'img/buble.jpg' %}" alt="">
@@ -231,11 +243,13 @@
 								<h5>Step.2</h5>
 								<div class="dotted2 mb-2"></div>
 								<div class="d-flex align-items-center">
-									<h6>化粧水</h6>
+									<h5 class="mr-2">化粧水</h5>
 									<img src="{% static 'img/sun.png' %}" alt="">
 									<img src="{% static 'img/moon.png' %}" alt="">
 								</div>
-								<p>滑らせるように塗布し、顔を覆うように軽い力で抑えてあげるのがポイント。手でもコットンでもどちらでも良いですが、コットンは全体的に均等につけることができます。さらに余分な角質が取れ滑らかな肌になります。面倒でない方はコットンを使うことをおすすめします。
+								<p>滑らせるように塗布し、手のひらで顔を覆うように軽い力で抑えてあげるのがポイント。</p>
+								<h6 class="my-2">手とコットンはどちらがいいの？</h6>
+								正解はありません。ただ、コットンは全体的に均等につけることができます。さらに余分な角質が取れ滑らかな肌になります。<br>面倒でない方はコットンを使うことをおすすめします。
 								</p>
 							</div>
 							<div class="image sukincare-img order-lg-2">
@@ -251,11 +265,15 @@
 								<h5>Step.3</h5>
 								<div class="dotted2 mb-2"></div>
 								<div class="d-flex align-items-center">
-									<h6>乳液クリーム</h6>
+									<h5 class="mr-2">乳液•クリーム</h5>
 									<img src="{% static 'img/sun.png' %}" alt="">
 									<img src="{% static 'img/moon.png' %}" alt="">
 								</div>
-								<p>油分が足りなくなると、肌に凹凸ができカサカサしてきたり、髭剃り負けが起きやすくなります。乳液、クリームは肌表面に膜を貼ることができます。外からの刺激を防ぐことができ、さらには肌内部の水分を逃さないようにすることもできます。
+								<p>乳液、クリームは肌表面にバリアを貼ることができ、外からの刺激を防ぐことがでます。
+								</p>
+								<h6 class="my-2">肌にうるおいが足りなくなると...</h6>
+								<p>肌に凹凸ができカサカサ、ザラザラ、さらには髭剃り負けが起きやすくなります。<br>
+								滑らかな肌を保つために、肌内部の水分を逃さないようにすることがポイントになります。
 								</p>
 							</div>
 							<div class="image sukincare-img order-lg-2">
@@ -269,10 +287,12 @@
 								<h5>Step.4</h5>
 								<div class="dotted2 mb-2"></div>
 								<div class="d-flex align-items-center">
-									<h6>日焼け止め</h6>
+									<h5>日焼け止め</h5>
 									<img src="{% static 'img/sun.png' %}" alt="">
 								</div>
-								<p>肌に与えるダメージの約8割は紫外線と言われています。紫外線をしっかり防ぐことが健康的な肌を保つ秘訣といえるでしょう。紫外線を防ぐ以外にも肌にバリアを張ることができるので水分を保つことも。1年中使うことをおすすめします。
+								<p>肌に与えるダメージの約8割は紫外線と言われています。紫外線をしっかり防ぐことが健康的な肌を保つ秘訣といえます。</p>
+								<h6 class="my-2">日焼け止めは紫外線を防ぐだけではない!</h6>
+								肌にバリアを張ることができるので水分を保つことができる。<br>紫外線は季節問わず気にかけておきましょう。日焼け止めは1年中使うことをおすすめします。
 								</p>
 							</div>
 							<div class="image sukincare-img order-lg-2">
@@ -504,15 +524,15 @@
 								<div class="d-flex justify-content-between row feature-content">
 									<div class="">
 										<h5 class="">春の紫外線量は夏と同じくらい</h5>
-										<div class="dotted2 mb-2"></div>
-										<p>冬は紫外線量が少ないため肌に耐性ができていません。その状態で紫外線をたくさん浴びると肌に大きなダメージを与えてしまいます。特に老化の原因となるUV-A波が多いので、日焼け止めは必須アイテムとなります。
+										<div class="dotted2"></div>
+										<p class="mt-3">冬は紫外線量が少ないため肌に耐性ができていません。紫外線をたくさん浴びてしまうと肌に大きなダメージとなります。<br>特に老化の原因となるUV-A波が多いので、日焼け止めは必須アイテムとなります。
 										</p>
 									</div>
 									<div class="point-contetn">
 										<h5 class="">花粉によるダメージ</h5>
-										<div class="dotted2 mb-2"></div>
-										<p>4月の花粉量は1年で1番多く、
-											見えないところで肌を傷つけています。肌のバリア機能が弱くなルコとでかゆくなったり、赤みが出たりします。
+										<div class="dotted2"></div>
+										<p class="mt-3">春の花粉量は1年で1番多い。<br>
+											見えないところで肌を傷つけています。肌のバリア機能が弱くなるとかゆくなったり、赤みが出たりします。<br>
 											敏感肌に対応しているスキンケアや、炎症を抑えるスキンケアがおすすめです。
 										</p>
 									</div>
@@ -530,19 +550,18 @@
 								<div class="d-flex justify-content-between row feature-content">
 									<div class="">
 										<h5 class="">1年で一番多い紫外線量</h5>
-										<div class="dotted2 mb-2"></div>
-										<p>
-											夏の紫外線対策は必須です。
-											肌をこんがり黒くするUV-B波。肌の老化の原因となるUV-A波。特に夏は1番紫外線量が多いので注意が必要です。<br>
-											さらには肌ダメージの8割が紫外線と言われています。日々のスキンケアを入念にし、日焼け止めを取り入れましょう。
+										<div class="dotted2"></div>
+										<p class="mt-3">
+											夏の紫外線対策は必須です。肌を黒くするUV-B波。肌の老化の原因となるUV-A波。<br>
+											肌のダメージは8割が紫外線と言われています。日々のスキンケアを入念にし、日焼け止めを取り入れましょう。
 										</p>
 									</div>
 									<div class="point-contetn">
 										<h5 class="">エアコンによる乾燥対策</h5>
-										<div class="dotted2 mb-2"></div>
-										<p>
-											涼しくて必需品なエアコンが夏の乾燥肌に。
-											外と中の気温差、エアコンの風を浴びるなど肌の水分が外に逃げていくことで、インナードライになる要素がたくさんあります。<br>
+										<div class="dotted2"></div>
+										<p class="mt-3">
+											涼しくて必需品なエアコンが夏の乾燥肌に。<br>
+											室内外の気温差、エアコンの風を浴びるなど肌の水分が外に逃げ、インナードライになる要素がたくさん。<br>
 											水分を補うように化粧水を多めにつけたり、夏でも乳液クリームで水分を逃げないようにすることが大事です。
 										</p>
 									</div>
@@ -560,17 +579,17 @@
 								<div class="d-flex justify-content-between row feature-content">
 									<div class="">
 										<h5 class="">徐々に気温と湿度が下がり始める</h5>
-										<div class="dotted2 mb-2"></div>
-										<p>
+										<div class="dotted2"></div>
+										<p class="mt-3">
 											気温と湿度の急激な変化で乾燥肌に。<br>
-											気温の低下に伴い、空気が乾燥し始めます。皮脂の分泌も減少し肌のバリア機能が弱くなります。乾燥は肌の大敵と言えるでしょう。早めの乾燥対策を心がけ、バリア機能を整えましょう。
+											気温の低下に伴い、空気が乾燥し始めます。皮脂の分泌も減少し肌のバリア機能が弱くなります。乾燥は肌の大敵と言えるでしょう。<br>早めの乾燥対策を心がけ、バリア機能を整えましょう。
 										</p>
 									</div>
 									<div class="point-contetn">
 										<h5 class="">夏のダメージが肌に現れる</h5>
-										<div class="dotted2 mb-2"></div>
-										<p>
-											紫外線などのダメージから肌を守ろうと肌が厚く、硬くなっています。そのままにしておくと毛穴が広がって見えたり、疲れた感じに見えたりします。肌を柔らかく保つために、化粧水をたっぷりつける、乳液クリームを欠かさず塗ることを心がけましょう。
+										<div class="dotted2"></div>
+										<p class="mt-3">
+											紫外線などのダメージから肌を守ろうと肌が厚く、硬くなっています。<br>そのままにしておくと毛穴が広がって見え、疲れた感じに見えてしまうことも。<br>肌を柔らかく保つために、化粧水をたっぷりつける、乳液クリームを欠かさず塗ることを心がけましょう。
 										</p>
 									</div>
 								</div>

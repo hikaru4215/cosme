@@ -43,11 +43,11 @@ class IndexView(View):
 		skintype_data = skintype_data[0]	
 
 		# 年齢のデータを取得
-		age_il = request.POST.getlist('age')
-		age_len = len(age_il)
-		if age_len == 0:
-			return render(request, 'app/index.html')
-		age = age_il[0]
+		# age_il = request.POST.getlist('age')
+		# age_len = len(age_il)
+		# if age_len == 0:
+		# 	return render(request, 'app/index.html')
+		# age = age_il[0]
 
 		# アイテムの種類を１種類ずつ
 		wash_item = "洗顔"
@@ -75,7 +75,7 @@ class IndexView(View):
 				trouble_il.append("wrinkle_point")
 				check_il.append("trouble_name4")
 			elif x == 1:
-				trouble_il.append("spots_point")
+				trouble_il.append("beard_point")
 				check_il.append("trouble_name3")
 			elif x == 2:
 				trouble_il.append("pores_point")
@@ -90,9 +90,9 @@ class IndexView(View):
 			trouble3 = trouble_il[2]
 			trouble4 = trouble_il[3]
 
-			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(age=age).filter(price_data=price)
+			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(price_data=price)
 			check1 = check_il[0]
-			print(check1)
+
 			if check1 == "trouble_name1":
 				recommend_data = recommend_data.filter(trouble_name1='ニキビ')
 
@@ -104,8 +104,8 @@ class IndexView(View):
 
 			elif check1 == "trouble_name4":
 				recommend_data = recommend_data.filter(trouble_name4='シミ')
-			recommend_data = recommend_data.order_by(trouble2)
 
+			recommend_data = recommend_data.order_by(trouble2)
 			check2 = check_il[1]
 			if check2 == "trouble_name1":
 				recommend_data = recommend_data.filter(trouble_name1='ニキビ')
@@ -154,7 +154,7 @@ class IndexView(View):
 			trouble2 = trouble_il[1]
 			trouble3 = trouble_il[2]
 
-			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(age=age).filter(price_data=price)
+			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(price_data=price)
 			check1 = check_il[0]
 			if check1 == "trouble_name1":
 				recommend_data = recommend_data.filter(trouble_name1='ニキビ')
@@ -213,7 +213,7 @@ class IndexView(View):
 			trouble1 = trouble_il[0]
 			trouble2 = trouble_il[1]
 
-			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(age=age).filter(price_data=price)
+			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(price_data=price)
 			check1 = check_il[0]
 			if check1 == "trouble_name1":
 				recommend_data = recommend_data.filter(trouble_name1='ニキビ')
@@ -263,7 +263,7 @@ class IndexView(View):
 
 		elif checked_len == 1:
 			trouble1 = trouble_il[0]
-			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(age=age).filter(price_data=price)
+			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(price_data=price)
 			check1 = check_il[0]
 			if check1 == "trouble_name1":
 				recommend_data = recommend_data.filter(trouble_name1='ニキビ')

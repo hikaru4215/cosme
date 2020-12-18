@@ -33,15 +33,15 @@
 			<div class="anser row">
 				<h4>あなたは<span class="skin-type">混合肌タイプ</span>です...</h4>
 				<p>
-					肌のうるおいが不足し、皮脂が多く出ている状態です。日本人に一番多い肌質と言われています。乾燥している部分(多くはUゾーンと呼ばれるフェイスライン)、皮脂が多い部分(多くはTゾーンと呼ばれる額や鼻)が混在している肌質のことです。
+					肌のうるおいが不足し、皮脂が多く出ている状態。日本人に一番多い肌質と言われています。<br>乾燥している部分(多くはUゾーンと呼ばれるフェイスライン)、皮脂が多い部分(多くはTゾーンと呼ばれる額や鼻)が混在している肌質のことです。
 				</p>
 			</div>
 			<div class="cause-wrap row">
 				<h4>肌悩みの原因</h4>
 				<div class="d-flex justify-content-around row priority">
 					<div class="priority-wrap">
-						<div class="cause mx-auto">
-							<div class="cause-ball">
+						<div class="cause cause1 mx-auto">
+							<div class="cause-ball cause-ball1">
 								<h6 class="text-center">解決優先度
 									<span class="text-center num1">1</span>
 								</h6>
@@ -56,8 +56,8 @@
 						</div>
 					</div>
 					<div class="priority-wrap">
-						<div class="cause mx-auto">
-							<div class="cause-ball">
+						<div class="cause cause2 mx-auto">
+							<div class="cause-ball cause-ball2">
 								<h6 class="text-center">解決優先度
 									<span class="text-center num2">2</span>
 								</h6>
@@ -72,8 +72,8 @@
 						</div>
 					</div>
 					<div class="priority-wrap">
-						<div class="cause mx-auto">
-							<div class="cause-ball">
+						<div class="cause cause3 mx-auto">
+							<div class="cause-ball cause-ball3">
 								<h6 class="text-center">解決優先度
 									<span class="text-center num3">3</span>
 								</h6>
@@ -93,9 +93,13 @@
 				<div class="byuty-comment-wrap d-flex">
 					<img src="{% static 'img/dry_skin.png' %}" class="order-2">
 					<div class="byuty-comment order-lg-2">
-						<h5>健康的な肌</h5>
-						<p>目で見たり、触ったりできる肌の表面にある、バリア機能が整っている状態です。肌の表面は外からのダメージを受けやすい場所です。お手入れの効果の実感もしやすい場所です。早めにスキンケアの習慣を身につけ健康的で若々しい肌を保ちましょう。
-						</p>
+						<h5>健康的な肌とは</h5>
+						<ul class="health">
+							<li>触れると滑らかで弾力がある</li>
+							<li>肌表面にあるバリア機能が整っている</li>
+							<li>油分と水分のバランスがよく季節に左右されにくい</li>
+							<li>ちょっとしたトラブルができても治りやすく繰り返しにくい</li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -107,12 +111,12 @@
 				<div class="d-flex justify-content-center advice-content-wrap row">
 					<div class="advice-content advice-content-left">
 						<h5>肌表面の汚れを<span class="accent">リセット</span></h5>
-						<p>洗顔をするときは力加減を意識し優しく汚れを落としてあげてください。皮脂が多く出やすいTゾーンから洗い始めるなど、洗顔方法の見直しをしましょう。
+						<p>洗顔をするときは力加減を意識し優しく汚れを落としてあげてください。<br>皮脂が多く出やすいTゾーンから洗い始めるなど、洗顔方法の見直しをしましょう。
 						</p>
 					</div>
 					<div class="advice-content">
 						<h5>栄養を<span class="accent">与えて</span>健康的な肌に</h5>
-						<p>化粧水での水分補給、乳液•クリームで保湿をして肌の働きを良好に保ちましょう。塗る場所によってつける量をかえるなどの工夫がおすすめです。</p>
+						<p>化粧水での水分補給、乳液•クリームで保湿をして肌の働きを良好に保ちましょう。<br>塗る場所によってつける量をかえるなどの工夫がおすすめです。</p>
 					</div>
 					<div class="advice-content advice-content-left">
 						<h5>外的刺激から<span class="accent">ブロック</span></h5>
@@ -129,16 +133,17 @@
 					</div>
 					<div class="advice-content">
 						<h5>バリア機能を<span class="accent">整える</span></h5>
-						<p>肌表面のバリア機能がうまく働いていない可能性が。肌の水分と油分のバランスを保つようにしっかり与えましょう。特に乾燥しやすい場所には多めにつけるなど工夫も。</p>
+						<p>肌表面のバリア機能がうまく働いていない可能性があります。<br>肌の水分と油分のバランスを保つようにしっかり与えましょう。特に乾燥しやすい場所には多めにつけるなど工夫も。</p>
 					</div>
 				</div>
 			</div>
 		</div>
 		<a href="" name="recommend" id="page-link"></a>
 		<div class="recommend">
+			{% if wash_recommend_data or toner_recommend_data or cream_recommend_data or sunscreen_recommend_data %}
 			<h4 class="recommend-item-title d-flex align-items-center">おすすめのアイテム</h4>
+			{% if wash_recommend_data %}
 			<div class="recommend-data-wrap d-flex row">
-				{% if wash_recommend_data %}
 				<div class="wash-recommend-data d-flex">
 					<div class="recommend-pic">
 						<img src="{{ wash_recommend_data.image.url }}" alt="">
@@ -147,7 +152,6 @@
 						<ul>
 							<li class="recommend-brand">{{ wash_recommend_data.brand }}</li>
 							<li class="recommend-product">{{ wash_recommend_data.product }}</li>
-							<!-- <li>悩みを入れる</li> -->
 							<li class="recommend-category">
 								&lt; 洗顔 &gt; {{ wash_recommend_data.capacity }}
 							</li>
@@ -175,7 +179,7 @@
 							{% endif %}
 						</ul>
 						<div class="recommend-dotted dotted"></div>
-						<p class="recommend-content">{{ wash_recommend_data.content }}</p>
+						<p class="recommend-content">{{ wash_recommend_data.content|linebreaksbr }}</p>
 						<div class="recommend-dotted dotted"></div>
 						<p class="recommend-price">
 							<span class="ml-2">価格</span>
@@ -211,7 +215,6 @@
 						<ul>
 							<li class="recommend-brand">{{ toner_recommend_data.brand }}</li>
 							<li class="recommend-product">{{ toner_recommend_data.product }}</li>
-							<!-- <li>悩みを入れる</li> -->
 							<li class="recommend-category">
 								&lt; 化粧水 &gt; {{ toner_recommend_data.capacity }}
 							</li>
@@ -239,7 +242,7 @@
 							{% endif %}
 						</ul>
 						<div class="recommend-dotted dotted"></div>
-						<p class="recommend-content">{{ toner_recommend_data.content }}</p>
+						<p class="recommend-content">{{ toner_recommend_data.content|linebreaksbr }}</p>
 						<div class="recommend-dotted dotted"></div>
 						<p class="recommend-price">
 							<span class="mr-2">価格</span>
@@ -265,7 +268,7 @@
 						</ul>
 					</div>
 				</div>
-				{% endif %}
+				{% endif%}
 				{% if cream_recommend_data %}
 				<div class="wash-recommend-data d-flex">
 					<div class="recommend-pic">
@@ -302,7 +305,7 @@
 							{% endif %}
 						</ul>
 						<div class="recommend-dotted dotted"></div>
-						<p class="recommend-content">{{ cream_recommend_data.content }}</p>
+						<p class="recommend-content">{{ cream_recommend_data.content|linebreaksbr }}</p>
 						<div class="recommend-dotted dotted"></div>
 						<p class="recommend-price">
 							<span class="mr-2">価格</span>
@@ -365,7 +368,7 @@
 							{% endif %}
 						</ul>
 						<div class="recommend-dotted dotted"></div>
-						<p class="recommend-content">{{ sunscreen_recommend_data.content }}</p>
+						<p class="recommend-content">{{ sunscreen_recommend_data.content|linebreaksbr }}</p>
 						<div class="recommend-dotted dotted"></div>
 						<p class="recommend-price">
 							<span class="mr-2">価格</span>
@@ -389,6 +392,19 @@
 								</a>
 							</li>
 						</ul>
+					</div>
+				</div>
+				{% endif %}
+				{% else %}
+				<div class="non-recommend-item">
+					<div class="d-flex justify-content-center">
+						<h5>おすすめできる商品がありません</h5>
+						<img src="{% static 'img/2829.png' %}" alt="">
+					</div>
+					<div class="review-nav d-flex justify-content-center">
+						<a href="{% url 'review' %}">
+							クチコミから探す &gt; 
+						</a>
 					</div>
 				</div>
 				{% endif %}
