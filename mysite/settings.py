@@ -135,7 +135,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 MEDIA_URL = '/media/'
 
-DEBUG = True
+DEBUG = False
 
 try:
     from .local_settings import *
@@ -144,11 +144,11 @@ except ImportError:
 
 # ローカル用設定
 if DEBUG:
-#     ALLOWED_HOSTS = ['*']
-#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-#     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    ALLOWED_HOSTS = ['*']
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# else:
+else:
     import environ
     env = environ.Env()
     env.read_env(os.path.join(BASE_DIR,'.env'))

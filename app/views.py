@@ -265,17 +265,20 @@ class IndexView(View):
 			elif check1 == "trouble_name3":
 				recommend_data = recommend_data.filter(trouble_name3='シワ')
 			elif check1 == "trouble_name4":
-				recommend_data = recommend_data.filter(trouble_name4='シミ')
+				recommend_data = recommend_data.filter(trouble_name4='髭剃り負け')
 				
 			wash_recommend_data = recommend_data.filter(item=wash_item)
 			if wash_recommend_data:
 				wash_recommend_data = wash_recommend_data[0]
+
 			toner_recommend_data = recommend_data.filter(item=toner_item)
 			if toner_recommend_data:
 				toner_recommend_data = toner_recommend_data[0]
+
 			cream_recommend_data = recommend_data.filter(item=cream_item)
 			if cream_recommend_data:
 				cream_recommend_data = cream_recommend_data[0]
+
 			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
 			if sunscreen_recommend_data:
 				sunscreen_recommend_data = sunscreen_recommend_data[0]
