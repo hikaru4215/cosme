@@ -874,6 +874,7 @@ text-align: center; */
 }
 
 .recommend-comment {
+	width: 100%;
 	padding: 10px;
 }
 
