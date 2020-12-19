@@ -80,48 +80,37 @@ class IndexView(View):
 		if checked_len == 4:
 			trouble1 = trouble_il[0]
 			trouble2 = trouble_il[1]
-			trouble3 = trouble_il[2]
-			trouble4 = trouble_il[3]
 
 			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(price_data=price)
-			check1 = check_il[0]
 
-			if check1 == "trouble_name1":
-				recommend_data = recommend_data.filter(trouble_name1='ニキビ')
+			recommend_data_acne = recommend_data.filter(trouble_name1='ニキビ')
+			recommend_data_pore = recommend_data.filter(trouble_name2='毛穴')
+			recommend_data_linkle = recommend_data.filter(trouble_name3='シワ')
+			recommend_data_spots = recommend_data.filter(trouble_name4='シミ')
 
-			elif check1 == "trouble_name2":
-				recommend_data = recommend_data.filter(trouble_name2='毛穴')
-
-			elif check1 == "trouble_name3":
-				recommend_data = recommend_data.filter(trouble_name3='シワ')
-
-			elif check1 == "trouble_name4":
-				recommend_data = recommend_data.filter(trouble_name4='シミ')
+			for i in check_il:
+				if i == "trouble_name1":
+					recommend_data = recommend_data_acne
+				elif i == "trouble_name2":
+					recommend_data = recommend_data_pore
+				elif i == "trouble_name3":
+					recommend_data = recommend_data_linkle
+				else:
+					recommend_data = recommend_data_spots
 
 			recommend_data = recommend_data.order_by(trouble2)
-			check2 = check_il[1]
-			if check2 == "trouble_name1":
-				recommend_data = recommend_data.filter(trouble_name1='ニキビ')
-			elif check1 == "trouble_name2":
-				recommend_data = recommend_data.filter(trouble_name2='毛穴')
-			elif check1 == "trouble_name3":
-				recommend_data = recommend_data.filter(trouble_name3='シワ')
-			elif check1 == "trouble_name4":
-				recommend_data = recommend_data.filter(trouble_name4='シミ')
-
+			
 			wash_recommend_data = recommend_data.filter(item=wash_item)
+			toner_recommend_data = recommend_data.filter(item=toner_item)
+			cream_recommend_data = recommend_data.filter(item=cream_item)
+			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
+
 			if wash_recommend_data:
 				wash_recommend_data = wash_recommend_data[0]
-
-			toner_recommend_data = recommend_data.filter(item=toner_item)
 			if toner_recommend_data:
 				toner_recommend_data = toner_recommend_data[0]
-
-			cream_recommend_data = recommend_data.filter(item=cream_item)
 			if cream_recommend_data:
 				cream_recommend_data = cream_recommend_data[0]
-
-			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
 			if sunscreen_recommend_data:
 				sunscreen_recommend_data = sunscreen_recommend_data[0]
 
@@ -145,43 +134,36 @@ class IndexView(View):
 		elif checked_len == 3:
 			trouble1 = trouble_il[0]
 			trouble2 = trouble_il[1]
-			trouble3 = trouble_il[2]
 
 			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(price_data=price)
-			check1 = check_il[0]
-			if check1 == "trouble_name1":
-				recommend_data = recommend_data.filter(trouble_name1='ニキビ')
-			elif check1 == "trouble_name2":
-				recommend_data = recommend_data.filter(trouble_name2='毛穴')
-			elif check1 == "trouble_name3":
-				recommend_data = recommend_data.filter(trouble_name3='シワ')
-			elif check1 == "trouble_name4":
-				recommend_data = recommend_data.filter(trouble_name4='シミ')
+			recommend_data_acne = recommend_data.filter(trouble_name1='ニキビ')
+			recommend_data_pore = recommend_data.filter(trouble_name2='毛穴')
+			recommend_data_linkle = recommend_data.filter(trouble_name3='シワ')
+			recommend_data_spots = recommend_data.filter(trouble_name4='シミ')
+
+			for i in check_il:
+				if i == "trouble_name1":
+					recommend_data = recommend_data_acne
+				elif i == "trouble_name2":
+					recommend_data = recommend_data_pore
+				elif i == "trouble_name3":
+					recommend_data = recommend_data_linkle
+				else:
+					recommend_data = recommend_data_spots
+
 			recommend_data = recommend_data.order_by(trouble2)
-
-			check2 = check_il[1]
-			if check2 == "trouble_name1":
-				recommend_data = recommend_data.filter(trouble_name1='ニキビ')
-			elif check2 == "trouble_name2":
-				recommend_data = recommend_data.filter(trouble_name2='毛穴')
-			elif check2 == "trouble_name3":
-				recommend_data = recommend_data.filter(trouble_name3='シワ')
-			elif check2 == "trouble_name4":
-				recommend_data = recommend_data.filter(trouble_name4='シミ')
-
+			
 			wash_recommend_data = recommend_data.filter(item=wash_item)
+			toner_recommend_data = recommend_data.filter(item=toner_item)
+			cream_recommend_data = recommend_data.filter(item=cream_item)
+			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
+
 			if wash_recommend_data:
 				wash_recommend_data = wash_recommend_data[0]
-
-			toner_recommend_data = recommend_data.filter(item=toner_item)
 			if toner_recommend_data:
 				toner_recommend_data = toner_recommend_data[0]
-
-			cream_recommend_data = recommend_data.filter(item=cream_item)
 			if cream_recommend_data:
 				cream_recommend_data = cream_recommend_data[0]
-
-			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
 			if sunscreen_recommend_data:
 				sunscreen_recommend_data = sunscreen_recommend_data[0]
 
@@ -204,35 +186,34 @@ class IndexView(View):
 
 		elif checked_len == 2:
 			trouble1 = trouble_il[0]
-			trouble2 = trouble_il[1]
 
 			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(price_data=price)
-			check1 = check_il[0]
-			if check1 == "trouble_name1":
-				recommend_data = recommend_data.filter(trouble_name1='ニキビ')
+			recommend_data_acne = recommend_data.filter(trouble_name1='ニキビ')
+			recommend_data_pore = recommend_data.filter(trouble_name2='毛穴')
+			recommend_data_linkle = recommend_data.filter(trouble_name3='シワ')
+			recommend_data_spots = recommend_data.filter(trouble_name4='シミ')
 
-			elif check1 == "trouble_name2":
-				recommend_data = recommend_data.filter(trouble_name2='毛穴')
-
-			elif check1 == "trouble_name3":
-				recommend_data = recommend_data.filter(trouble_name3='シワ')
-
-			elif check1 == "trouble_name4":
-				recommend_data = recommend_data.filter(trouble_name4='シミ')
-
+			for i in check_il:
+				if i == "trouble_name1":
+					recommend_data = recommend_data_acne
+				elif i == "trouble_name2":
+					recommend_data = recommend_data_pore
+				elif i == "trouble_name3":
+					recommend_data = recommend_data_linkle
+				else:
+					recommend_data = recommend_data_spots
+				
 			wash_recommend_data = recommend_data.filter(item=wash_item)
+			toner_recommend_data = recommend_data.filter(item=toner_item)
+			cream_recommend_data = recommend_data.filter(item=cream_item)
+			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
+
 			if wash_recommend_data:
 				wash_recommend_data = wash_recommend_data[0]
-
-			toner_recommend_data = recommend_data.filter(item=toner_item)
 			if toner_recommend_data:
 				toner_recommend_data = toner_recommend_data[0]
-
-			cream_recommend_data = recommend_data.filter(item=cream_item)
 			if cream_recommend_data:
 				cream_recommend_data = cream_recommend_data[0]
-
-			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
 			if sunscreen_recommend_data:
 				sunscreen_recommend_data = sunscreen_recommend_data[0]
 
@@ -256,30 +237,34 @@ class IndexView(View):
 
 		elif checked_len == 1:
 			trouble1 = trouble_il[0]
+
 			recommend_data = Recommenditem.objects.order_by(trouble1).filter(skintype=skintype_data).filter(price_data=price)
-			check1 = check_il[0]
-			if check1 == "trouble_name1":
-				recommend_data = recommend_data.filter(trouble_name1='ニキビ')
-			elif check1 == "trouble_name2":
-				recommend_data = recommend_data.filter(trouble_name2='毛穴')
-			elif check1 == "trouble_name3":
-				recommend_data = recommend_data.filter(trouble_name3='シワ')
-			elif check1 == "trouble_name4":
-				recommend_data = recommend_data.filter(trouble_name4='髭剃り負け')
+			recommend_data_acne = recommend_data.filter(trouble_name1='ニキビ')
+			recommend_data_pore = recommend_data.filter(trouble_name2='毛穴')
+			recommend_data_linkle = recommend_data.filter(trouble_name3='シワ')
+			recommend_data_spots = recommend_data.filter(trouble_name4='シミ')
+
+			for i in check_il:
+				if i == "trouble_name1":
+					recommend_data = recommend_data_acne
+				elif i == "trouble_name2":
+					recommend_data = recommend_data_pore
+				elif i == "trouble_name3":
+					recommend_data = recommend_data_linkle
+				else:
+					recommend_data = recommend_data_spots
 				
 			wash_recommend_data = recommend_data.filter(item=wash_item)
+			toner_recommend_data = recommend_data.filter(item=toner_item)
+			cream_recommend_data = recommend_data.filter(item=cream_item)
+			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
+
 			if wash_recommend_data:
 				wash_recommend_data = wash_recommend_data[0]
-
-			toner_recommend_data = recommend_data.filter(item=toner_item)
 			if toner_recommend_data:
 				toner_recommend_data = toner_recommend_data[0]
-
-			cream_recommend_data = recommend_data.filter(item=cream_item)
 			if cream_recommend_data:
 				cream_recommend_data = cream_recommend_data[0]
-
-			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
 			if sunscreen_recommend_data:
 				sunscreen_recommend_data = sunscreen_recommend_data[0]
 
