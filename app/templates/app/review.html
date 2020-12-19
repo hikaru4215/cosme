@@ -74,62 +74,57 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="d-flex justify-content-end">
-		<div>
-			<div class="review-top d-flex justify-content-end row">
-				<div>
-				<div class="review-page">
-					<div class="d-flex align-items-center">
-						<h4>クチコミ</h4>
-						<img src="{% static 'img/icon.png' %}" alt="" class="comment-img">
-					</div>
-					<p class="review-top-content">
-						Men's Cosme新着のクチコミを紹介！ みなさんの実際の声をチェックしてみてください。
-						商品を使用した感想など、みなさんからの“クチコミ”もお待ちしております！
+		<div class="row">
+			<div class="review-page">
+				<div class="d-flex align-items-center">
+					<h4>クチコミ</h4>
+					<img src="{% static 'img/icon.png' %}" alt="" class="comment-img">
+				</div>
+				<p class="review-top-content">
+					Men's Cosme新着のクチコミを紹介！ みなさんの実際の声をチェックしてみてください。
+					商品を使用した感想など、みなさんからの“クチコミ”もお待ちしております！
+				</p>
+				<div class="mb-2">
+					{% if keyword %}
+					<p class="keyword-wrap"><span class="keyword">『{{keyword}}』</span>を含むクチコミ{{ total_count }}件。
 					</p>
-				</div>
-				{% if keyword %}
-				<p class="keyword-wrap"><span class="keyword">『{{keyword}}』</span>を含むクチコミ{{ total_count }}件。</p>
-				{% else %}
-				<div class="d-flex mb-2 justify-content-center">
-					<div class="mr-2">
-						{{ total_count }}件中{{ all_review.start_index }}～{{ all_review.end_index }}件を表示
-					</div>
-					<div class="d-flex justify-content-center ">
-						{% if all_review.has_previous %}
-						<a href="?page={{ all_review.previous_page_number }}" class="return">&#8810;</a>
-						{% endif %}
-						{% for num in all_review.paginator.page_range %}
-						<div class="page_num">
-							{% if all_review.number == num %}
-							<p class="active-page">
-								<a class="" href="#!">
-									{{ num }}
-								</a>
-							</p>
-							{% else %}
-							<a href="?page={{ num }}" class="next-page">{{ num }}</a>
-							{% endif %}
+					{% else %}
+					<div class="d-flex justify-content-center mb-3">
+						<div class="mr-2">
+							{{ total_count }}件中{{ all_review.start_index }}～{{ all_review.end_index }}件を表示
 						</div>
-						{% endfor %}
-						{% if all_review.has_next %}
-						<a href="?page={{ all_review.paginator.num_pages }}" class="">
-							&#8811;
-						</a>
-
+						<div>
+							{% if all_review.has_previous %}
+							<a href="?page={{ all_review.previous_page_number }}" class="return">&#8810;</a>
+							{% endif %}
+							{% for num in all_review.paginator.page_range %}
+							<div class="page_num">
+								{% if all_review.number == num %}
+								<p class="active-page">
+									<a class="" href="#!">
+										{{ num }}
+									</a>
+								</p>
+								{% else %}
+								<a href="?page={{ num }}" class="next-page">{{ num }}</a>
+								{% endif %}
+							</div>
+							{% endfor %}
+							{% if all_review.has_next %}
+							<a href="?page={{ all_review.paginator.num_pages }}" class="">
+								&#8811;
+							</a>
+						</div>
 						{% endif %}
 					</div>
 				</div>
-			</div>
-			</div>
 				{% endif %}
-				{% if total_count == 1 %}
-				<div class="review-top d-flex row">
+				<div class="d-flex row">
 					{% for review in all_review %}
 					<div class="review-wrap">
 						<div class="d-flex review">
-							<h5 class="review-user-name">
+							<h5 class="review-user-name mb-1">
 								{{ review.user }}
 								<span>さん</span>
 							</h5>
@@ -138,9 +133,10 @@
 							<div class="d-flex review-img-top">
 								<div class="">
 									{% if review.image %}
-									<img src="{{ review.image.url }}" alt="" class="mr-2">
+									<img src="{{ review.image.url }}" alt="">
 									{% else %}
-									<div class="none-img d-flex justify-content-center align-items-center">No<br>img
+									<div class="none-img d-flex justify-content-center align-items-center">
+										No<br>img
 									</div>
 									{% endif %}
 								</div>
@@ -175,101 +171,46 @@
 						</div>
 					</div>
 					{% endfor %}
+				</div>
+				<div class="d-flex mb-2 justify-content-center">
+					{% if total_count == 0 %}
+					<p>まだ投稿はありません</p>
 					{% else %}
-					<div class="review-top d-flex justify-content-end row">
-						{% for review in all_review %}
-						<div class="review-wrap">
-							<div class="d-flex review">
-								<h5 class="review-user-name mb-1">
-
-									{{ review.user }}
-									<span>さん</span>
-								</h5>
-							</div>
-							<div class="review-bg">
-								<div class="d-flex review-img-top">
-									<div class="">
-										{% if review.image %}
-										<img src="{{ review.image.url }}" alt="">
-										{% else %}
-										<div class="none-img d-flex justify-content-center align-items-center">No<br>img
-										</div>
-										{% endif %}
-									</div>
-									<div class="review-brand-name">
-										<ul class="">
-											<li>{{ review.brand }}</li>
-											<li>{{ review.product|truncatechars:30 }}</li>
-											<li>
-												<a href="{% url 'category' review.category %}">
-													{{ review.category }}
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<p class="review-score">
-									<a href="{% url 'score' review.score %}">
-										{{ review.score }}
-									</a>
-								</p>
-								<div class="coment-box">
-									<p>{{ review.comment|truncatechars:100 }}</p>
-								</div>
-								<p class="mt-2">{{ review.created }}</p>
-							</div>
-							<div class="d-flex justify-content-end">
-								<p class="review-detail-btn">
-									<a href="{% url 'review_detail' review.id %}" class="detail text-center">
-										詳細
-									</a>
-								</p>
-							</div>
+					<div class="mr-2">
+						{% if keyword %}
+						{{ total_count }}件ヒットしました。
+						{% else %}
+						{{ total_count }}件中{{ all_review.start_index }}～{{ all_review.end_index }}件を表示
+						{% endif %}
+					</div>
+					<div class="d-flex justify-content-center ">
+						{% if all_review.has_previous %}
+						<a href="?page={{ all_review.previous_page_number }}" class="return">&#8810;</a>
+						{% endif %}
+						{% for num in all_review.paginator.page_range %}
+						<div class="page_num">
+							{% if all_review.number == num %}
+							<p class="active-page">
+								<a class="" href="#!">
+									{{ num }}
+								</a>
+							</p>
+							{% else %}
+							<a href="?page={{ num }}" class="next-page">{{ num }}</a>
+							{% endif %}
 						</div>
 						{% endfor %}
-						{% endif %}
-
-					</div>
-					<div class="d-flex mb-2 justify-content-center">
-						{% if total_count == 0 %}
-						<p>まだ投稿はありません</p>
-						{% else %}
-						<div class="mr-2">
-							{% if keyword %}
-							{{ total_count }}件ヒットしました。
-							{% else %}
-							{{ total_count }}件中{{ all_review.start_index }}～{{ all_review.end_index }}件を表示
-							{% endif %}
-						</div>
-						<div class="d-flex justify-content-center ">
-							{% if all_review.has_previous %}
-							<a href="?page={{ all_review.previous_page_number }}" class="return">&#8810;</a>
-							{% endif %}
-							{% for num in all_review.paginator.page_range %}
-							<div class="page_num">
-								{% if all_review.number == num %}
-								<p class="active-page">
-									<a class="" href="#!">
-										{{ num }}
-									</a>
-								</p>
-								{% else %}
-								<a href="?page={{ num }}" class="next-page">{{ num }}</a>
-								{% endif %}
-							</div>
-							{% endfor %}
-							{% if all_review.has_next %}
-							<a href="?page={{ all_review.paginator.num_pages }}" class="">
-								&#8811;
-							</a>
-
-							{% endif %}
-						</div>
+						{% if all_review.has_next %}
+						<a href="?page={{ all_review.paginator.num_pages }}" class="">
+							&#8811;
+						</a>
 						{% endif %}
 					</div>
+					{% endif %}
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
 	{% endblock %}

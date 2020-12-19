@@ -1362,8 +1362,8 @@ font-weight: 600;
 }
 
 .review-wrap {
-	min-width: 335px;
-	max-width: 335px;
+	min-width: 325px;
+	max-width: 325px;
 	height: auto;
 	background: var(--light-primary);
 	border: 1px solid rgb(168, 215, 242);
