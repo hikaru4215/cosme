@@ -397,13 +397,16 @@
 				{% endif %}
 				{% else %}
 				<div class="non-recommend-item">
-					<div class="d-flex justify-content-center">
-						<h5>おすすめできる商品がありません</h5>
-						<img src="{% static 'img/2829.png' %}" alt="">
+					<h4 class="recommend-item-title d-flex align-items-center">おすすめのアイテム</h4>
+					<div class="d-flex justify-content-center dokeza">
+						<p class="mt-4">おすすめできる商品がありません。<br>
+							違う条件で探していただく見つかると思います。
+						</p>
+						<img src="{% static 'img/2829.png' %}">
 					</div>
 					<div class="review-nav d-flex justify-content-center">
-						<a href="{% url 'review' %}">
-							クチコミから探す &gt; 
+						<a href="{% url 'index' %}">
+							もう一度肌チェックをする &gt; 
 						</a>
 					</div>
 				</div>

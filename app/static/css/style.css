@@ -7,6 +7,10 @@
 	background:transparent;
 }
 
+html{
+	scroll-behavior: smooth;
+}
+
 html,body,form,div,h1,h2,h3,h4,h5,h6,ul,li,p,a,img,form,input,label,span{
 	margin: 0;
 	padding: 0;
@@ -41,6 +45,7 @@ img {
 	line-height: 1.0;
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
 }
 
 button {
@@ -307,6 +312,14 @@ header {
 /* ============================= */
 /* ============================= */
 /* index.htmlここから */
+.dokeza {
+	margin-top: 50px;
+}
+
+.dokeza img {
+
+}
+
 .index-wrap {
 	margin-top: 50px;
 }
@@ -337,10 +350,12 @@ header {
 } 
 
 .check_order {
+	width: 20px;
+	height: 20px;
 	font-size: 18px;
 	position: absolute;
-	top: 26px;
-	left: 12px;
+	top: 25px;
+	left: 7px;
 	z-index: 10;
 	color: var(--text-icon);
 	transition: all 0.5s;
@@ -390,21 +405,6 @@ input[type="checkbox"]:checked + .check-active + .check-active2 {
 	height: 20px;
 	background: #59D5E2;
 	transition: all 0.8s;
-}
-/* 
-input[type="checkbox"]:checked + .check-active{
-	z-index: 3;
-	width: 10px;
-	height: 10px;
-	background: #59D5E2;
-	transition: all 0.8s;
-} */
-
-
-
-.cp_ipradio .option-input {
-	margin: 0 1rem 0 0;
-
 }
 
 .cp_ipradio .option-input:before,
@@ -911,7 +911,7 @@ text-align: center; */
 .recommend-btn a {
 	width: 100%;
 	height: 100%;
-	line-height: 30px;
+	line-height: 28px;
 }
 
 .recommend-category {
@@ -2740,6 +2740,9 @@ footer span {
 }
 
 @media (min-width: 0px) and (max-width: 575px) {
+	.dokeza {
+		display: none;
+	}
 	.review-brand-name {
 		margin-left: 10px;
 	}
