@@ -57,6 +57,40 @@ class IndexView(View):
 
 		# 悩みのデータ取得
 		checked_trouble_data = request.POST.getlist('trouble')
+		if checked_trouble_data == ['']:
+			recommend_data = Recommenditem.objects.all().filter(skintype=skintype_data).filter(price_data=price)
+			wash_recommend_data = recommend_data.filter(item=wash_item)
+			toner_recommend_data = recommend_data.filter(item=toner_item)
+			cream_recommend_data = recommend_data.filter(item=cream_item)
+			sunscreen_recommend_data = recommend_data.filter(item=sunscreen_item)
+
+			if wash_recommend_data:
+				wash_recommend_data = wash_recommend_data[0]
+			if toner_recommend_data:
+				toner_recommend_data = toner_recommend_data[0]
+			if cream_recommend_data:
+				cream_recommend_data = cream_recommend_data[0]
+			if sunscreen_recommend_data:
+				sunscreen_recommend_data = sunscreen_recommend_data[0]
+
+			if skintype_data =='混合肌':
+				file_template = 'app/mixskin.html'
+			elif skintype_data == '普通肌':
+				file_template = 'app/normalskin.html'
+			elif skintype_data == '脂性肌':
+				file_template = 'app/oilyskin.html'
+			elif skintype_data == '乾燥肌':
+				file_template = 'app/dryskin.html'
+			else:
+				file_template = 'app/index.html'
+			return render(request, file_template, {
+				'wash_recommend_data': wash_recommend_data,
+				'toner_recommend_data': toner_recommend_data,
+				'cream_recommend_data': cream_recommend_data,
+				'sunscreen_recommend_data': sunscreen_recommend_data,
+			})
+
+
 		checked_trouble = checked_trouble_data[0]
 		checked = checked_trouble.split(',')
 		checked_len = len(checked)
