@@ -116,11 +116,6 @@
 						<p>
 							力加減を意識し、優しく汚れを落としましょう。<br>ゴシゴシ擦ることで、余計に皮脂が出やすい状況を作ってしまします。
 						</p>
-						<p class="text-center howto mx-auto">
-							<a href="{% url 'skin_feature' %}">
-								How Toを見る
-							</a>
-						</p>
 					</div>
 					<div class="advice-content">
 						<h5>栄養を<span class="accent">与えて</span>健康的な肌に</h5>
@@ -397,14 +392,17 @@
 				</div>
 				{% endif %}
 				{% else %}
-				<div class="non-recommend-item">
-					<div class="d-flex justify-content-center">
-						<h5>おすすめできる商品がありません</h5>
-						<img src="{% static 'img/2829.png' %}" alt="">
+				<div class="">
+					<h4 class="recommend-item-title d-flex align-items-center">おすすめのアイテム</h4>
+					<div class="d-flex justify-content-center align-items-center dokeza">
+						<p class="mr-4">おすすめできる商品がありません。<br>
+							違う条件で探していただく見つかると思います。
+						</p>
+						<img src="{% static 'img/2829.png' %}">
 					</div>
 					<div class="review-nav d-flex justify-content-center">
-						<a href="{% url 'review' %}">
-							クチコミから探す &gt; 
+						<a href="{% url 'index' %}">
+							もう一度肌チェックをする &gt; 
 						</a>
 					</div>
 				</div>

@@ -337,9 +337,9 @@ class MixskinView(View):
 		return render(request, 'app/mixskin.html')
 
 
-class SkinFeatureView(View):
-	def get(self, request, *args, **kwargs):
-		return render(request, 'app/skin_feature.html')
+# class SkinFeatureView(View):
+# 	def get(self, request, *args, **kwargs):
+# 		return render(request, 'app/skin_feature.html')
 
 
 class ReviewView(LoginRequiredMixin,View):

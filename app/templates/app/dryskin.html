@@ -121,11 +121,6 @@
 							<p class="point-accent">ポイント</p>
 						</div>
 						<p>化粧水、乳液•クリームなどでしっかり保湿をして肌の働きを良好に保ちましょう。</p>
-						<p class="text-center howto mx-auto">
-							<a href="{% url 'skin_feature' %}">
-								How Toを見る
-							</a>
-						</p>
 					</div>
 					<div class="advice-content advice-content-left">
 						<h5>外的刺激から<span class="accent">ブロック</span></h5>
@@ -396,10 +391,10 @@
 				</div>
 				{% endif %}
 				{% else %}
-				<div class="non-recommend-item">
+				<div class="">
 					<h4 class="recommend-item-title d-flex align-items-center">おすすめのアイテム</h4>
-					<div class="d-flex justify-content-center dokeza">
-						<p class="mt-4">おすすめできる商品がありません。<br>
+					<div class="d-flex justify-content-center align-items-center dokeza">
+						<p class="mr-4">おすすめできる商品がありません。<br>
 							違う条件で探していただく見つかると思います。
 						</p>
 						<img src="{% static 'img/2829.png' %}">
