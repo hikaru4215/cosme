@@ -1046,6 +1046,11 @@ text-align: center; */
 /* ==================================== */
 /* ==================================== */
 /* skin_feature.htmlここから */
+.skincare img {
+	max-width: 300px;
+}
+
+
 .skin-feature-title {
 	height: 50px;
 }
