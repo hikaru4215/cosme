@@ -1299,9 +1299,33 @@ text-align: center; */
 	background: var(--light-primary);
 }
 
+
+.men-point-wrap > p {
+	font-weight: 600;
+	font-size: 18px;
+	margin: 20px 0;
+}
+
+.men-point-wrap ul, ol {
+	margin-top: 20px;
+}
+
+.men-point-wrap ol {
+	list-style: decimal;
+	margin-left: 20px;
+}
+
+.men-point-wrap ul {
+	list-style: disc;
+	margin-left: 20px;
+}
+
+
+
+
+
 .men-point {
 	border-radius: 50px;
-	margin: 0 15px;
 }
 
 .men-point p{
@@ -1330,6 +1354,7 @@ text-align: center; */
 	-webkit-transform: rotate(-10deg);
 	opacity: 0.5;
 	top: 50px;
+	right: 0px;
 	width: 200px;
 	height: 200px;
 }
