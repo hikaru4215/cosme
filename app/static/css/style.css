@@ -270,9 +270,7 @@ header {
 }
 
 .header-nav-title a {
-	font-size: 24px;
-	color:var(--primary);
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 	text-decoration: none;
 }
 
@@ -1046,10 +1044,155 @@ text-align: center; */
 /* ==================================== */
 /* ==================================== */
 /* skin_feature.htmlここから */
-.skincare img {
-	max-width: 300px;
+.skincare-wrap > h4 {
+	height: 50px;
+	line-height: 50px;
+	font-weight: 600;
+	color: var(--text-icon);
+	background: var(--text-secondary);
 }
 
+.feature-skincare-title h4,h5 {
+	height: 50px;
+	line-height: 50px;
+	font-weight: 600;
+}
+
+.feature-skincare-title h4 {
+	background: var(--light-primary);
+}
+
+.feature-skincare-title h5{
+	padding-right: 148px;
+	width: 100%;
+	background: var(--divider);
+}
+
+.feature-skincare {
+	margin: 0 0 50px;
+}
+
+.feature-skincare > p {
+	font-size: 18px;
+	font-weight: 600;
+	margin-top: 35px;
+}
+
+.feature-wash-pic > div {
+	margin: 30px;
+}
+
+.feature-wash-pic img {
+	max-width: 250px;
+	max-height: 250px;
+}
+
+.feature-toner > div {
+	margin-top: 50px;
+}
+
+.feature-toner {
+	margin: 50px 0;
+	position: relative;
+}
+
+.feature-toner img {
+	margin: 0 15px;
+	width: 125px;
+	height: 125px;
+}
+
+.spray-pic {
+	position: absolute;
+	-webkit-transform: rotate(10deg);
+	opacity: 0.5;
+	top: 50px;
+	right: -50px;
+	min-width: 300px;
+	min-height: 300px;
+}
+
+.moisture-cream {
+	margin-top: 50px;
+}
+
+.moisture-cream > div {
+	margin: 0 15px;
+}
+
+.moisture-cream img {
+	max-width: 125px;
+	max-height: 125px;
+	margin: 0 auto 30px;
+}
+
+.moisture-cream li {
+	list-style: inside;
+}
+
+.moisture-cream p {
+	border-radius: 50px;
+	height: 2em;
+	line-height: 2em;
+	margin-bottom: 15px;
+}
+
+.moisture, .cream {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.moisture p {
+	background: #FFA184;
+}
+
+.cream p {
+	background: #DCF6F9;
+}
+
+.feature-moisture {
+	position: relative;
+}
+
+.milk {
+	position: absolute;
+	-webkit-transform: rotate(-10deg);
+	top: 130px;
+	left: 10px;
+	opacity: 0.5;
+	width: 150px;
+	height: 150px;
+}
+
+.cream-pic {
+	position: absolute;
+	-webkit-transform: rotate(10deg);
+	right: 30px;
+	opacity: 0.5;
+	width: 150px;
+	height: 150px;
+}
+
+.feature-sunscreen {
+	position: relative;
+}
+
+.feature-sunscreen img {
+	max-width: 125px;
+	max-height: 125px;
+	margin-right: 50px;
+}
+
+.feature-sunscreen > img {
+	-webkit-transform: rotate(10deg);
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	opacity: 0.5;
+	right: -40px;
+	bottom: -30px;
+}
 
 .skin-feature-title {
 	height: 50px;
@@ -1059,10 +1202,39 @@ text-align: center; */
 	line-height: 50px;
 	text-align: center;
 }
+
+.season-title, .men-title{
+	margin-top: 100px;
+	background: var(--text-secondary);
+	color: var(--text-icon);
+	height: 50px;
+	line-height: 50px;
+	font-weight: 600;
+}
+
+.men-title {
+	margin-bottom: 50px;
+}
+
 .title {
 	min-width: 50px;
-	background: #008E9E;
-	color: #fefefe;
+	font-weight: 600;
+}
+
+.title-spring {
+	background: #f8e8ea;
+}
+
+.summer-title {
+	background: #9FD9F6; 
+}
+
+.autumn-title {
+	background: #FACD89;
+}
+
+.winter-title {
+	background: #E0E0F0;
 }
 
 .sub-title {
@@ -1078,8 +1250,12 @@ text-align: center; */
 	line-height: 2em;
 	font-weight: 600;
 	letter-spacing: 0.3em;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
+
+/* .skin-feature p {
+	margin-top: 1em;
+} */
 
 .skin-feature-line {
 	margin: 50px 0;
@@ -1101,6 +1277,10 @@ text-align: center; */
 	border-bottom: 4px solid var(--dark-primary);
 }
 
+.men-second-title {
+	margin: 30px 0;
+}
+
 .feature-content {
 	margin-bottom: 50px;
 }
@@ -1117,6 +1297,72 @@ text-align: center; */
 
 .point2 {
 	background: var(--light-primary);
+}
+
+.men-point {
+	border-radius: 50px;
+	margin: 0 15px;
+}
+
+.men-point p{
+	height: 30px;
+	line-height: 30px;
+}
+
+.men-point1 {
+	background: rgba(178, 235, 242, 0.4);
+}
+
+.men-point2 {
+	background: rgba(0, 188, 212, 0.4);
+}
+
+.men-point3 {
+	background: rgba(0, 151, 167, 0.4);
+}
+
+.feature-serum {
+	position: relative;
+}
+
+.serum-pic {
+	position: absolute;
+	-webkit-transform: rotate(-10deg);
+	opacity: 0.5;
+	top: 50px;
+	width: 200px;
+	height: 200px;
+}
+
+.serum-img-wrap {
+	margin-top: 50px;
+}
+.serum-img-wrap > div {
+	margin: 0 15px;
+}
+
+.serum-img-wrap img {
+	width: 125px;
+	height: 125px;
+	margin: 0 15px;
+}
+
+.serum-content p {
+	margin-top: 25px;
+	border-radius: 50px;
+	height: 30px;
+	line-height: 30px;
+	color: var(--text-icon);
+}
+
+.serum-content1 {
+	background: var(--accent);
+}
+.serum-content2 {
+	background: var(--dark-primary);
+}
+.serum-content3 {
+	background: var(--primary);
 }
 /* basic.htmlここまで */
 /* ==================================== */

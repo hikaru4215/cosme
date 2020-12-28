@@ -10,6 +10,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="icon" href="{% static 'img/favicon.ico' %}">
+	
 	<title>Men's Cosme</title>
 </head>
 
@@ -40,6 +42,7 @@
 					<nav class="header-nav">
 						<ul class="d-flex">
 							<li><a href="{% url 'index' %}">肌チェック</a></li>
+							<li><a href="{% url 'skin_feature' %}">肌の知識</a></li>
 							<li><a href="{% url 'review' %}">クチコミを見る</a></li>
 							<li><a href="{% url 'review_new' %}">クチコミする</a></li>
 							<li><a href="{% url 'myreview_list' %}">マイページ</a></li>
@@ -58,7 +61,10 @@
 			<div id="sidebarMenu">
 				<ul class="sidebarMenuInner">
 					<li class="">
-						<a href="{% url 'index' %}" class="col-12">肌チェック</a>
+						<a href="{% url 'index' %}">肌チェック</a>
+					</li>
+					<li class="">
+						<a href="{% url 'skin_feature' %}">肌の知識</a>
 					</li>
 					<li class="">
 						<a href="{% url 'review' %}">クチコミを見る</a>
@@ -72,7 +78,6 @@
 					<li class="">
 						<a href="{% url 'contact' %}">お問い合わせ</a>
 					</li>
-
 					{% if user.is_authenticated %}
 					<li class="">
 						<a href="{% url 'account_logout' %}">ログアウト</a>

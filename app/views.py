@@ -11,7 +11,7 @@ from django.db.models import Q, Avg
 from functools import reduce
 from operator import and_
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger 
-import textwrap
+import textwrap, re
 
 class IndexView(View):
 	def get(self, request, *args, **kwargs):
@@ -693,6 +693,13 @@ class ContactView(View):
 			name = form.cleaned_data['name']
 			email = form.cleaned_data['email']
 			content = form.cleaned_data['content']
+
+			if re.search('[ぁ-ん]', content) == None:
+				return redirect('thanks')
+
+			if re.search('https://', contact) == None:
+				return redirect('thanks')
+
 			subject = 'お問い合わせありがとうございます。'
 			message = textwrap.dedent('''
 				※このメールはシステムからの自動返信です。
