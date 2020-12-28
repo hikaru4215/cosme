@@ -38,7 +38,9 @@
 		<div class="header-color d-flex align-items-center">
 			<div class="container col-10">
 				<div class="d-flex justify-content-between align-items-center header-nav-wrap">
-					<h4 class="header-nav-title d-flex"><a href="{% url 'index' %}">Men's Cosme</a></h4>
+					<h4 class="header-nav-title d-flex"><a href="{% url 'index' %}">
+						<img src="{% static 'img/title.png' %}" alt="">
+					</a></h4>
 					<nav class="header-nav">
 						<ul class="d-flex">
 							<li><a href="{% url 'index' %}">肌チェック</a></li>
@@ -112,8 +114,8 @@
 
 	{% endblock %}
 </body>
-<footer class="py-2">
-	<h5 class="text-center">COPYRIGHT @ <span>Men’s Cosme</span></h5>
+<footer class="py-1">
+	<h6 class="text-center">COPYRIGHT @ <span>Men’s Cosme</span></h6>
 </footer>
 
 </html>

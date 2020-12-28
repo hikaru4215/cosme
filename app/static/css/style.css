@@ -269,6 +269,10 @@ header {
 	height: 100%;
 }
 
+.header-nav-wrap img {
+	width: 170px;
+}
+
 .header-nav-title a {
 
 	text-decoration: none;
@@ -291,12 +295,13 @@ header {
 
 .header-nav a {
 	height: 100%;
-	padding: 0 10px;
+	padding: 0 5px;
 	text-decoration: none;
 	color: var(--text-primary);
 	font-weight: 600;
 	display: flex;
 	align-items: center;
+	font-size: 1em;
 }
 
 .header-nav a:hover {
@@ -480,10 +485,6 @@ input[type="checkbox"]:checked + .check-active + .check-active2 {
 	color: var(--light-primary);
 	font-size: 45px;
 	margin-right: 20px;
-}
-
-.puestion-title {
-	margin-top: 20px;
 }
 
 .puestion-title {
@@ -963,48 +964,6 @@ text-align: center; */
 	color: var(--primary);
 }
 
-.point-accent {
-	color: var(--accent);
-	border-bottom: 1px solid var(--accent);
-	/* border-right: 1px solid var(--accent); */
-	line-height: 22px;
-	padding: 0 10px;
-}
-
-.exclamation {
-	width: 29px;
-	height: 29px;
-	line-height: 22px;
-	background: var(--accent);
-	color: var(--text-icon);
-}
-
-.howto {
-	width: 120px;
-	height: 30px;
-	background: var(--accent);
-	border: 1px solid #ff1e22;
-	color: var(--text-icon);
-	line-height: 30px;
-	border-radius: 30px;
-}
-
-.howto:hover {
-	opacity: 0.7;
-}
-
-.howto a{
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	line-height: 30px;
-}
-
-.howto a:hover {
-	text-decoration: none;
-	color: var(--text-icon);
-}
-
 .skintype-dotted {
 	padding: 0 20px;
 }
@@ -1012,7 +971,6 @@ text-align: center; */
 .trouble_name li{
 	padding: 2px 5px;
 	width: auto;
-	/* height: 30px; */
 	text-align: center;
 	line-height: 25px;
 	margin-right: 10px;
@@ -1079,7 +1037,7 @@ text-align: center; */
 }
 
 .feature-wash-pic > div {
-	margin: 30px;
+	margin: 15px;
 }
 
 .feature-wash-pic img {
@@ -1196,6 +1154,7 @@ text-align: center; */
 
 .skin-feature-title {
 	height: 50px;
+	margin-bottom: 50px;
 }
 
 .skin-feature-title h4 {
@@ -1243,7 +1202,7 @@ text-align: center; */
 }
 
 .skin-feature {
-	padding: 50px;
+	margin-bottom: 50px;
 }
 
 .skin-feature h5 {
@@ -1252,10 +1211,6 @@ text-align: center; */
 	letter-spacing: 0.3em;
 	margin-bottom: 2em;
 }
-
-/* .skin-feature p {
-	margin-top: 1em;
-} */
 
 .skin-feature-line {
 	margin: 50px 0;
@@ -1297,6 +1252,10 @@ text-align: center; */
 
 .point2 {
 	background: var(--light-primary);
+}
+
+.men-point-wrap {
+	padding: 0 15px;
 }
 
 
@@ -1354,7 +1313,7 @@ text-align: center; */
 	-webkit-transform: rotate(-10deg);
 	opacity: 0.5;
 	top: 50px;
-	right: 0px;
+	right: ;
 	width: 200px;
 	height: 200px;
 }
@@ -2785,6 +2744,31 @@ footer span {
 }
 
 @media (min-width: 0px) and (max-width: 575px) {
+	.men-point-wrap {
+		margin-bottom: 20px;
+	}
+
+	.men-point-wrap:last-child {
+		margin-bottom: 0px;
+	}
+
+	.skin-feature h5 {
+		margin-top: 20px;
+	}
+	
+	.second-content div {
+		margin-bottom: 20px;
+	}
+
+	.feature-sunscreen img {
+		margin: 20px 0;
+	}
+
+	.moisture ul {
+		margin-bottom: 20px;
+	}
+
+
 	.dokeza {
 		display: none;
 	}
@@ -2931,19 +2915,10 @@ footer span {
 		width: 275px;
 		margin-left: 0px;
 	}
-	
-	.check5 {
-		display: flex;
-		justify-content: center;
-		width: 275px;
-		padding-left: 0px;
-		margin-left: 0px;
-	}
 
 	.list_item label {
 		margin-right: 0px;
 	}
-
 
 	.priority-wrap {
 		width: 225px;
@@ -2961,7 +2936,6 @@ footer span {
 		width: 225px;
 		height: auto;
 	}
-
 
 	.list {
 		width: 243px;
@@ -3002,6 +2976,18 @@ footer span {
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
+	.season-content-title {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.spray-pic, .serum-pic, .milk, .cream-pic, .sunscreen-pic {
+		display: none;
+	}
+	.feature-skincare-title h5 {
+		padding-right: 0px;
+	}
 	.skin-type-aser-wrap {
 		padding: 25px;
 	}
@@ -3209,10 +3195,32 @@ footer span {
 }
 
 @media(min-width: 768px) and (max-width: 991px) {
+	.spray-pic {
+		min-width: 200px;
+		min-height: 200px;
+	}
+	.serum-pic {
+		right: -30px;
+		max-width: 150px;
+		max-height: 150px;
+	}
+
+	.sunscreen-pic {
+		top: 50px;
+		right: -50px;
+	}
+
 	.review-page {
 		width: 440px;	
 	}
 
+	.milk {
+		left: -50px;
+	}
+
+	.cream-pic {
+		right: -30px;
+	}
 
 	.count1 {
 		margin-left: 22%;
