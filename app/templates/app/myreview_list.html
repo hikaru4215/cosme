@@ -9,7 +9,7 @@
 		<div class="myreview-list d-flex justify-content-between">
 			{% if all_review %}
 			<div class="mypage-review">
-				<h5>{{ user_data.first_name }}さんのクチコミ一覧</h5>
+				<h5 class="text-center">{{ user_data.first_name }}さんのクチコミ一覧</h5>
 				<div class="d-flex justify-content-between mb-2 page_num-top">
 					<div>
 						{{ count }}件中{{ all_review.start_index }}～{{ all_review.end_index }}件を表示
@@ -112,6 +112,7 @@
 				</div>
 			</div>
 				<div class="mypage">
+					<p>あなたのクチコミ件数</p>
 					<div class="review-user-bg-there">
 						<div class="review-user-none">
 							<h5>{{ user_data.first_name }}さん</h5>

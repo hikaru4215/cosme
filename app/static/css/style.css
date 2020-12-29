@@ -627,7 +627,7 @@ text-align: center; */
 	padding: 50px;
 }
 
-.skin-type-aser {
+.skin-type-aser, .feature-move-wrap {
 	margin-bottom: 50px;
 }
 
@@ -636,13 +636,22 @@ text-align: center; */
 	height: 80px;
 	font-size: 1.25em;
 	margin-right: 20px;
+	font-weight: 600;
+}
+
+.feature-move-wrap li{
+	width: 250px;
+	height: 80px;
+	font-size: 1.25em;
+	font-weight: 600;
+	
 }
 
 .skin-type-aser li:last-child {
 	margin-right: 0px;
 }
 
-.skin-type-aser1 {
+.skin-type-aser1, .feature-move1 {
 	background: var(--light-primary);
 	color: var(--text-primary);
 	line-height: 40px;
@@ -651,14 +660,14 @@ text-align: center; */
 
 }
 
-.skin-type-aser2 {
+.skin-type-aser2, .feature-move2 {
 	display: flex;
 	background: linear-gradient(var(--light-primary), 1%,  var(--text-icon));
 	border-bottom: 5px solid var(--light-primary);
 }
 
 
-.skin-type-aser2 a {
+.skin-type-aser2 a, .feature-move2 a {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -675,7 +684,18 @@ text-align: center; */
 	color: var(--text-primary);
 }
 
+.feature-move2 a:hover {
+	background: var(--light-primary);
+	transition: 0.7s;
+	color: var(--text-primary);
+}
+
 .skin-type-aser2 span {
+	position: absolute;
+	top: 10px;
+	right: 45%;
+}
+.feature-move2 span  {
 	position: absolute;
 	top: 10px;
 	right: 45%;
@@ -689,7 +709,6 @@ text-align: center; */
 	margin-bottom: 50px;
 	border-left: 5px solid var(--primary);
 	padding-left: 20px;
-	font-family: sans-serif;
 	font-weight: 600;
 }
 
@@ -699,6 +718,7 @@ text-align: center; */
 }
 
 .cause-wrap > h4 {
+	font-weight: 600;
 	height: 50px;
 	background: var(--divider);
 	padding: 10px;
@@ -758,6 +778,7 @@ text-align: center; */
 }
 
 .cause-ball h6 {
+	font-weight: 600;
 	display: flex;
 	flex-direction: column;
 	font-weight: 700px;
@@ -791,16 +812,18 @@ text-align: center; */
 
 .byuty-comment h5 {
 	margin-bottom: 20px;
+	font-weight: 600;
 }
 
 .byuty-comment p {
 	line-height: 2em;
 }
 
-.advice-wrap  h4 {
+.advice-wrap h4 {
 	margin-bottom: 30px;
 	border-left: 5px solid var(--primary);
 	padding-left: 20px;
+	font-weight: 600;
 }
 
 .advice-content-wrap > div {
@@ -845,6 +868,7 @@ text-align: center; */
 }
 
 .recommend-item-title {
+	font-weight: 600;
 	border-left: 5px solid var(--primary);
 	padding-left: 20px;
 }
@@ -1002,6 +1026,11 @@ text-align: center; */
 /* ==================================== */
 /* ==================================== */
 /* skin_feature.htmlここから */
+.feature-trouble {
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
 .skincare-wrap > h4 {
 	height: 50px;
 	line-height: 50px;
@@ -1010,7 +1039,7 @@ text-align: center; */
 	background: var(--text-secondary);
 }
 
-.feature-skincare-title h4,h5 {
+.feature-skincare-title h4,.feature-skincare-title h5 {
 	height: 50px;
 	line-height: 50px;
 	font-weight: 600;
@@ -1197,6 +1226,7 @@ text-align: center; */
 }
 
 .sub-title {
+	font-weight: 600;
 	width: 100%;
 	background: var(--divider);
 }
@@ -1226,6 +1256,7 @@ text-align: center; */
 }
 
 .second-title {
+	font-weight: 600;
 	line-height: 1em;
 	display: inline-block;
 	margin-bottom: 25px;
@@ -1384,7 +1415,6 @@ text-align: center; */
 }
 
 .review p {
-	font-size: 0.75em;
 	margin-left: 20px;
 }
 .review-user-name {
@@ -1457,6 +1487,12 @@ text-align: center; */
 	margin-left: 10px;
 }
 
+.review-page h4 {
+	font-weight: 600;
+	background: var(--divider);
+	/* color: var(--text-icon); */
+}
+
 .thanks {
 	border: 1px solid var(--text-primary);
 	width: 100px;
@@ -1466,21 +1502,26 @@ text-align: center; */
 }
 
 .category {
-	width: 155px;
+	width: 170px;
 	position: fixed;
-	border: 1px solid var(--divider);
+}
+
+.category-title-review {
+	background: rgba(233, 249, 251, 1);
+	border-radius: 4px 4px 0px 0px;
 }
 
 .category h5 {
+	padding: 4px 0;
 	font-size: 14px;
-	padding: 3px 0;
-	background: var(--primary);
-	color: var(--text-icon);
+	width: 100%;
+	font-weight: 600;
 }
 
 .category li {
 	font-size: 15px;
 	line-height: 1.25em;
+	background: rgba(242, 242, 242, 0.5);
 }
 
 .category a {
@@ -1500,8 +1541,16 @@ text-align: center; */
 }
 
 .search {
-	border-top: 1px solid var(--divider);
 	position: relative;
+	background: rgba(242, 242, 242, 0.5);
+	border-radius: 4px 4px 0px 0px;
+}
+
+.search p {
+	border-radius: 4px 4px 0px 0px;
+	background: rgba(233, 249, 251, 1);
+	padding: 4px 0;
+	font-weight: 600;
 }
 
 .search input {
@@ -1738,10 +1787,11 @@ text-align: center; */
 /* review-delete.htmlここから */
 
 .comment-img {
-	width: 16px;
-	height: 16px;
-	margin-left: 10px;
+	width: 20px;
+	height: 20px;
+	margin-right: 30px;
 }
+
 .review-delete {
 	margin-top: 50px;
 }
@@ -1855,6 +1905,10 @@ text-align: center; */
 
 .user {
 	margin-top: 95px;
+}
+
+.user > p {
+	font-weight: 600;
 }
 
 .review-user-bg {
@@ -1972,9 +2026,17 @@ text-align: center; */
 	margin-top: 10px;
 }
 
+.you-review {
+	font-weight: 600;
+}
+
 
 .profile li {
 	margin-top: 10px;
+}
+
+.my-review > p {
+	font-weight: 600;
 }
 
 
@@ -2102,6 +2164,14 @@ text-align: center; */
 	line-height: 20px;
 }
 
+.all-review-new-none > p{
+	font-weight: 600;
+}
+
+.all-review-new > p {
+	font-weight: 600;
+}
+
 .all-review-new {
 	margin-top: 15px;
 }
@@ -2149,13 +2219,29 @@ text-align: center; */
 }
 
 .myreview-list h5 {
-	font-weight: 600;
 	margin-bottom: 10px;
 	margin-top: 5px;
 }
 
+.mypage > p {
+	font-weight: 600;
+}
+
 .mypage-review {
 	min-width: 500px;
+}
+
+.mypage-review h5 {
+	font-weight: 600;
+	background: var(--divider);
+}
+
+.mypage_newreview > p {
+	font-weight: 600;
+}
+
+.mypage-allnew > p {
+	font-weight: 600;
 }
 
 .review-list-bg {
@@ -2568,6 +2654,10 @@ text-align: center; */
 /* ==================================== */
 /* ==================================== */
 /* logout.htmlここから */
+.logout-title {
+	font-weight: 600;
+}
+
 .logout-wrap {
 	margin-top: 50px;
 }
@@ -2739,9 +2829,6 @@ footer {
 	color: var(--text-icon);
 }
 
-footer span {
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
 
 @media (min-width: 0px) and (max-width: 575px) {
 	.check-wrap ul {
@@ -2980,6 +3067,13 @@ footer span {
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
+	.feature-move-wrap {
+		width: 240px;
+		margin: 0 auto;
+	}
+	.feature-move-wrap li {
+		margin-bottom: 20px;
+	}
 	.season-content-title {
 		display: flex;
 		flex-direction: column;
@@ -3324,12 +3418,20 @@ footer span {
 		max-width: 250px;
 	}
 
-.skin-type-aser li {
+	.skin-type-aser li {
 	width: 159px;
 	height: 80px;
 	font-size: 1.25em;
 	margin-right: 20px;
-}
+	}
+
+	.feature-move-wrap li {
+	width: 190px;
+	height: 80px;
+	font-size: 1.25em;
+	margin-right: 20px;
+	}
+
 
 .skin-type-aser li:last-child {
 	margin-right: 0px;
@@ -3351,10 +3453,6 @@ footer span {
 		margin-right: 20px;
 	}
 }
-
-/* .mypage_newreview {
-	margin-top: 125px;
-} */
 
 .relativ {
 	position: relative;
