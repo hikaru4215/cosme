@@ -66,6 +66,9 @@ button {
 .container {
 	margin: 0 auto;
 }
+.bold-font {
+	font-weight: 600;
+}
 /* リセットcssここまで */
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
@@ -1785,6 +1788,10 @@ text-align: center; */
 /* ==================================== */
 /* ==================================== */
 /* review-delete.htmlここから */
+.delete-title {
+	font-weight: 600;
+	font-size: 1.25em;
+}
 
 .comment-img {
 	width: 20px;
@@ -1945,7 +1952,7 @@ text-align: center; */
 	padding: 3px;
 	height: auto;
 	width: 283px;
-	margin: 21px 0 20px;
+	margin-bottom: 20px;
 }
 
 .review-user-none {

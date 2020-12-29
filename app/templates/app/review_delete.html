@@ -9,10 +9,9 @@
         <div class="myreview-list">
             <div class="row d-flex justify-content-between">
                 <div class="mypage-review">
-                    <h5>こちらのクチコミを本当に削除しますか?</h5>
+                    <h6 class="text-center delete-title">こちらのクチコミを本当に削除しますか?</h6>
                     <div class="review-list-bg">
                         <div class="list-bg top-bg">
-                            <h5 class="">{{ review_data.user }}さん</h5>
                             <div class="d-flex bottom-dotted">
                                 {% if review_data.image %}
                                 <img src="{{ review_data.image.url }}" alt="">
@@ -54,6 +53,7 @@
                 <!-- 商品詳細の終わり -->
                 <!-- ユーザー情報 -->
                 <div class="mypage-allnew">
+                    <p class="bold-font">あなたのクチコミ件数</p>
                     <div class="review-user-bg">
                         <div class="review-user">
                             <h5>{{ user_data.first_name }}さん</h5>
@@ -68,7 +68,7 @@
                     </div>
                     <!-- ユーザーのクチコミがあれば -->
                     <div class="">
-                        <p>あなたのクチコミ</p>
+                        <p class="bold-font">あなたのクチコミ</p>
                         {% if new_review %}
                         <div class="review-gray">
                             <div class="review-white">
@@ -95,7 +95,7 @@
                             </div>
                         </div>
                         <div class="all-review-detail">
-                            <p>最新のクチコミ</p>
+                            <p class="bold-font">最新のクチコミ</p>
                             <div class="review-gray">
                                 <div class="review-white">
                                     <div class="new-image">
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                     <div class="all-review-detail">
-                        <p>最新のクチコミ</p>
+                        <p class="bold-font">最新のクチコミ</p>
                         <div class="review-gray">
                             <div class="review-white">
                                 <div class="new-image">
