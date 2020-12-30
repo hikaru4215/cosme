@@ -1848,7 +1848,6 @@ text-align: center; */
 	line-height: 20px;
 	background: var(--text-icon);
 	border-radius: 4px;
-	padding: 10px;
 }
 
 .reviewform-wrap {
@@ -1911,7 +1910,7 @@ text-align: center; */
 }
 
 .user {
-	margin-top: 95px;
+	margin-top: 70px;
 }
 
 .user > p {
@@ -2212,7 +2211,7 @@ text-align: center; */
 }
 
 .myreview-list-wrap > h4 {
-	margin-top: 5px;
+	margin-top: 10px;
 	margin-bottom: 15px;
 	font-weight: 600;
 }
@@ -2838,8 +2837,11 @@ footer {
 
 
 @media (min-width: 0px) and (max-width: 575px) {
+	.check-list label {
+		width: 250px;
+	}
 	.check-wrap ul {
-		margin-top: 90px;
+		margin-top: 40px;
 	}
 
 	.men-point-wrap {
@@ -2874,7 +2876,7 @@ footer {
 		margin-left: 10px;
 	}
 	.review-page {
-		width: 327px;	
+		width: 350px;	
 	}
 	.logout-btn-bg {
 		margin-top: 20px;
@@ -2889,11 +2891,11 @@ footer {
 	}
 
 	.review-top-content {
-		width: 325px;
+		width: 350px;
 	}
 	.review-wrap {
-		min-width: 327px;
-		max-width: 327px;
+		min-width: 350px;
+		max-width: 350px;
 	}
 	.count1 {
 		margin-left: 0px;
@@ -2935,7 +2937,8 @@ footer {
 	}
 
 	.container {
-		max-width: 325px;
+		min-width: 350px;
+		max-width: 350px;
 	}
 
 	.menu {
@@ -2957,12 +2960,12 @@ footer {
 
 	.line {
 		height: 1px;
-		width: 307px;
+		width: 355px;
 		background: var(--text-secondary);
 	}
 
 	.first-content {
-		width: 307px;
+		width: 330px;
 	}
 
 	.bg-color-w {
@@ -3356,6 +3359,7 @@ footer {
 		width: 244px;
 	}
 
+
 	.reviewform-bg-w {
 		max-width: 638px;
 	}
@@ -3393,7 +3397,7 @@ footer {
 	}
 
 	.reviewform-bg {
-		max-width: 538px;	
+		max-width: 738px;	
 	}
 	
 	.myreview-list-wrap {
@@ -3436,7 +3440,7 @@ footer {
 	width: 190px;
 	height: 80px;
 	font-size: 1.25em;
-	margin-right: 20px;
+
 	}
 
 
