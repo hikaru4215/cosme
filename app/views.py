@@ -120,7 +120,7 @@ class IndexView(View):
 			recommend_data_acne = recommend_data.filter(trouble_name1='ニキビ')
 			recommend_data_pore = recommend_data.filter(trouble_name2='毛穴')
 			recommend_data_linkle = recommend_data.filter(trouble_name3='シワ')
-			recommend_data_spots = recommend_data.filter(trouble_name4='シミ')
+			recommend_data_spots = recommend_data.filter(trouble_name4='髭剃り負け')
 
 			for i in check_il:
 				if i == "trouble_name1":
@@ -173,7 +173,7 @@ class IndexView(View):
 			recommend_data_acne = recommend_data.filter(trouble_name1='ニキビ')
 			recommend_data_pore = recommend_data.filter(trouble_name2='毛穴')
 			recommend_data_linkle = recommend_data.filter(trouble_name3='シワ')
-			recommend_data_spots = recommend_data.filter(trouble_name4='シミ')
+			recommend_data_spots = recommend_data.filter(trouble_name4='髭剃り負け')
 
 			for i in check_il:
 				if i == "trouble_name1":
@@ -225,7 +225,7 @@ class IndexView(View):
 			recommend_data_acne = recommend_data.filter(trouble_name1='ニキビ')
 			recommend_data_pore = recommend_data.filter(trouble_name2='毛穴')
 			recommend_data_linkle = recommend_data.filter(trouble_name3='シワ')
-			recommend_data_spots = recommend_data.filter(trouble_name4='シミ')
+			recommend_data_spots = recommend_data.filter(trouble_name4='髭剃り負け')
 
 			for i in check_il:
 				if i == "trouble_name1":
@@ -276,7 +276,7 @@ class IndexView(View):
 			recommend_data_acne = recommend_data.filter(trouble_name1='ニキビ')
 			recommend_data_pore = recommend_data.filter(trouble_name2='毛穴')
 			recommend_data_linkle = recommend_data.filter(trouble_name3='シワ')
-			recommend_data_spots = recommend_data.filter(trouble_name4='シミ')
+			recommend_data_spots = recommend_data.filter(trouble_name4='髭剃り負け')
 
 			for i in check_il:
 				if i == "trouble_name1":
