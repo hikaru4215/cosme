@@ -3246,11 +3246,11 @@ footer {
 
 
 @media(min-width: 576px) and (max-width: 767px) {
+	.review-wrap {
+		max-width: 355px;
+	}
 	.review-page {
 		width: 355px;	
-	}
-	.review-top-content {
-		width: 375px;
 	}
 	.count1 {
 		margin-left: 30%;
