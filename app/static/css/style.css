@@ -2837,6 +2837,10 @@ footer {
 
 
 @media (min-width: 0px) and (max-width: 575px) {
+	.cp_ipradio .option-input:before,
+	.cp_ipradio .option-input:after {
+		width: 250px;
+	}
 	.check-list label {
 		width: 250px;
 	}
